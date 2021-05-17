@@ -556,4 +556,16 @@ header ul a:hover {
     width: 50%;
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .splash-screen {
+    padding: 3em;
+  }
+  .splash-screen h1 {
+    font-size: 4em;
+  }
+  .splash-screen p {
+    font-size: 0.8em;
+  }
+}
 /*# sourceMappingURL=main.css.map */
