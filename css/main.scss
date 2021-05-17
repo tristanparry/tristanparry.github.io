@@ -1,17 +1,18 @@
 @font-face {
     font-family: 'Beckman';
     src: url('BeckmanFree.woff2') format('woff2'),
-        url('BeckmanFree.woff') format('woff');
+        url('BeckmanFree.woff') format('woff'),
+        url('Beckman-Free.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 h1 {
-    font-family: 'Beckman';
+    font-family: 'Beckman', Arial, sans-serif;
 }
 h2 {
-    font-family: 'Beckman';
+    font-family: 'Beckman', Arial, sans-serif;
 }
 p {
     font-family: courier;
@@ -53,7 +54,7 @@ header {
 
     .logo {
         color: white;
-        font-family: 'Beckman';
+        font-family: 'Beckman', Arial, sans-serif;
         font-size: 1em;
         text-align: left;
         animation: fadeIn linear 1s;
@@ -156,7 +157,7 @@ header {
 
     .subtitle {
         color: white;
-        font-family: 'Beckman';
+        font-family: 'Beckman', Arial, sans-serif;
         font-size: 2.5em;
         text-align: center;
         letter-spacing: .15em;
@@ -233,7 +234,7 @@ header {
 
     .subtitle {
         color: white;
-        font-family: 'Beckman';
+        font-family: 'Beckman', Arial, sans-serif;
         font-size: 2.5em;
         letter-spacing: .15em;
         margin-bottom: -0.5em;
@@ -289,7 +290,7 @@ header {
 
         .subtitle {
             color: white;
-            font-family: 'Beckman';
+            font-family: 'Beckman', Arial, sans-serif;
             font-size: 2.5em;
             letter-spacing: .15em;
             margin-top: 0.15em;
