@@ -1,0 +1,510 @@
+@font-face {
+    font-family: 'Beckman Free';
+    src: url('BeckmanFree.woff2') format('woff2'),
+        url('BeckmanFree.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+h1 {
+    font-family: 'Beckman';
+}
+h2 {
+    font-family: 'Beckman';
+}
+p {
+    font-family: courier;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+img {width: 100%;}
+
+body {
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.nav-container {
+    background: black;
+
+    a {
+        font-family: courier;
+        color: #20F877;
+    }
+}
+
+header {
+    @keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+    }
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+
+    .logo {
+        color: white;
+        font-family: 'Beckman';
+        font-size: 1em;
+        text-align: left;
+        animation: fadeIn linear 1s;
+        transition: ease 0.3s;
+    }
+    .logo:hover {
+        color: #20F877
+    }
+
+    ul {
+        display: flex;
+        animation: fadeIn linear 1s;
+        a {
+            font-size: 0.8em;
+            display: block;
+            padding: 0 0.8em;
+            transition: ease 0.3s;
+        }
+        a:hover {
+            color: white;
+        }
+    }
+}
+
+.splash-screen {
+    @keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+    }
+
+    background: #16191C;
+    color: white;
+    display: grid;
+    padding: 4em;
+    text-align: center;
+    
+
+     h1 {
+         font-size: 5em;
+         animation: fadeIn linear 1s;
+         transition: ease 0.2s;
+     }
+     p {
+         color: #20F877;
+         font-size: 1em;
+         animation: fadeIn linear 1s;
+         transition: ease 0.2s;
+     }
+
+     ul {
+         display: flex;
+         padding: 4em;
+         animation: fadeIn linear 1s;
+         transition: ease 0.2s;
+         a {
+             display: block;
+             margin: auto;
+             padding: 0 1em;
+         }
+     }
+
+     a {
+        display: inline-block;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        animation: fadeIn linear 1s;
+
+        .buttonElement {
+            background-color: rgba(34, 138, 98, 0);
+            color: #20F877;
+            width: fit-content;
+            height: fit-content;
+            padding: 1em;
+            border: 1px solid #20F877;
+            border-radius: 10px;
+            box-shadow: inset 0 0 0 0 #20F877;
+            transition: ease 0.2s;
+            font-size: 1em;
+            font-family: courier;
+        }
+        .buttonElement:enabled:hover {
+            box-shadow: inset 50px 50px 50px 50px #20F877;
+            color: #13151a;
+        }
+     }
+}
+
+
+.projects {
+    @keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+    }
+
+    background: #111111;
+    color: white;
+    display: grid;
+    padding: 3em 2em;
+
+    .subtitle {
+        color: white;
+        font-family: 'Beckman';
+        font-size: 2.5em;
+        text-align: center;
+        letter-spacing: .15em;
+        animation: fadeIn linear 1s;
+    }
+    
+    .assets {
+        margin-bottom: 4em;
+        animation: fadeIn linear 1s;
+        
+        .project-header {
+            color: #20F877;
+            font-family: courier;
+            font-size: 1.5em;
+        }
+        
+        .project-caption {
+            color: #20F877;
+            font-family: courier;
+            font-size: 1em;
+            text-align: left;
+        }
+    
+        img {
+            border: 2px solid;
+            border-color: rgba(32, 248, 118, 0.527);
+            margin-top: -3em;
+            max-width: 500px;
+        }
+    }
+    .githubButton {
+        display: grid;
+        padding: 1em;
+        animation: fadeIn linear 1s;
+        a {
+            display: inline-block;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+    
+            .buttonElement {
+                background-color: rgba(34, 138, 98, 0);
+                color: #20F877;
+                width: fit-content;
+                height: fit-content;
+                padding: 1em;
+                border: 1px solid #20F877;
+                border-radius: 10px;
+                box-shadow: inset 0 0 0 0 #20F877;
+                transition: ease 0.2s;
+                font-size: 1em;
+                font-family: courier;
+            }
+            .buttonElement:enabled:hover {
+                box-shadow: inset 50px 50px 50px 50px #20F877;
+                color: #13151a;
+            }
+         }
+    }
+}
+
+
+.education {
+    @keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+    }
+
+    background: #16191C;
+    color: white;
+    display: grid;
+    padding: 2em 1em 2em;
+    text-align: center;
+
+    .subtitle {
+        color: white;
+        font-family: 'Beckman';
+        font-size: 2.5em;
+        letter-spacing: .15em;
+        margin-bottom: -0.5em;
+        animation: fadeIn linear 1s;
+    }
+    
+    .inner {
+        animation: fadeIn linear 1s;
+        &.one {
+            .education-header {
+                color: #20F877;
+                font-family: courier;
+                font-size: 1.5em;
+                margin-bottom: 0.3em;
+            }
+    
+            .education-caption {
+                color: #20F877;
+                font-family: courier;
+                font-size: 1em;
+                margin-bottom: -0.5em;
+            }
+        }
+        &.two {
+            padding: 0 0.5em;
+            img {
+                border: 2px solid;
+                border-color: rgba(32, 248, 118, 0.527);
+                margin-top: 2em;
+                margin-bottom: 1.5em;
+            }
+        }
+    }
+}
+
+
+.contact {
+    @keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+    }
+
+    background: #111111;
+    color: white;
+    padding: 1.5em;
+    display: flex;
+
+    .inner {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        animation: fadeIn linear 1s;
+
+        .subtitle {
+            color: white;
+            font-family: 'Beckman';
+            font-size: 2.5em;
+            letter-spacing: .15em;
+            margin-top: 0.15em;
+            margin-right: 0.5em;
+        }
+        
+        a {
+            .buttonElement {
+                background-color: rgba(34, 138, 98, 0);
+                color: #20F877;
+                width: fit-content;
+                height: fit-content;
+                padding: 1em;
+                border: 1px solid #20F877;
+                border-radius: 10px;
+                box-shadow: inset 0 0 0 0 #20F877;
+                transition: ease 0.2s;
+                font-size: 1em;
+                font-family: courier;
+            }
+            .buttonElement:enabled:hover {
+                box-shadow: inset 50px 50px 50px 50px #20F877;
+                color: #13151a;
+            }
+         }
+    }
+}
+
+
+.footer {
+    @keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+    }
+
+    background: #000000;
+    color: white;
+    text-align: center;
+    font-family: courier;
+    padding: 2em;
+
+    a {
+        color: white;
+        display: inline-block;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        transition: ease 0.2s;
+        animation: fadeIn linear 1s;
+     }
+     a:hover {
+        color: #20F877;
+     }
+}
+
+
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+
+
+@media only screen and (min-width: 870px) {
+    header {
+        .logo {
+            font-size: 1.5em;
+        }
+    
+        ul {
+            a {
+                font-size: 1em;
+                padding: 0 1em;
+            }
+        }
+    }
+
+    .splash-screen {
+        padding: 4em;
+    
+         h1 {
+             letter-spacing: 0.15em;
+         }
+
+         .byline {
+            p {
+                font-size: 1.2em;
+                margin-top: -0.8em;
+            }
+            ul {
+                margin: 0 20%;
+                a {
+                    display: block;
+                    padding: 0 0.5em;
+                }
+            }
+         }
+    }
+
+
+    .projects {
+        .subtitle {
+            font-size: 3em;
+            padding-right: 0.5em;
+        }
+
+        .assets {        
+            .project-header {
+                font-size: 2em;
+                padding: 0 0.65em;
+            }
+            p {
+                font-size: 1.2em;
+                padding: 0 1em;
+            }
+            .project-caption {
+                font-size: 1.1em;
+            }
+        }
+    }
+
+    .education {
+        text-align: left;
+        display: block;
+        #wrap {
+            width: 850px;
+            margin: 0 auto;
+        }
+
+        .inner {
+            overflow: hidden;
+
+            &.one {
+                float: left;
+                margin-right: 3em;
+                display: block;
+                position: relative;
+                padding-top: auto;
+                padding-bottom: auto;
+
+                .subtitle {
+                    padding-left: 0.55em;
+                    font-size: 3em;
+                }
+                .education {
+                    .education-header {
+                        padding-left: 0.5em;
+                        font-size: 1.5em;
+                    }
+        
+                    p {
+                        padding-left: 0.5em;
+                        font-size: 1.2em;
+                    }
+            
+                    .education-caption {
+                        padding-left: 0.5em;
+                        font-size: 1em;
+                    }
+                }
+            }
+            &.two {
+                max-width: 500px;
+            }
+        }
+    }
+
+    .contact {
+        .inner {
+            .subtitle {
+                font-size: 3em;
+                margin-top: 0em;
+            }
+        }
+    }
+}
+
+
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+
+
+@media only screen and (min-width: 1535px) {
+    .projects {
+        #wrap1, #wrap2, #wrap3 {
+            width: 1500px;
+            margin: 0 auto;
+        }
+
+        display: block;
+        padding-right: 0;
+    
+        .assets {
+            overflow: hidden;
+            padding: 0 auto;
+
+            img {
+                margin-top: 0;
+            }
+    
+            &.one {
+                float: left;
+                width: 50%;
+            }
+            &.three {
+                float: left;
+                width: 50%;
+            }
+            &.five {
+                float: left;
+                width: 50%;
+            }
+        }
+    }
+}
