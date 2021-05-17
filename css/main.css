@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Beckman';
-  src: url("FONT/BeckmanFree.woff2") format("woff2"), url("FONT/BeckmanFree.woff") format("woff"), url('FONT/Beckman-Free.otf') format('opentype');
+  src: url("../FONT/BeckmanFree.woff2") format("woff2"), url("../FONT/BeckmanFree.woff") format("woff"), url('../FONT/Beckman-Free.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
