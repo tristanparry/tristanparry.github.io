@@ -357,12 +357,12 @@ a {
 }
 
 #projects .buttonElement::before {
-  content: "ALL PROJECTS";
+  content: "BROWSE CODE";
 }
 #projects .buttonElement:hover::before {
   content: "GITHUB";
   letter-spacing: 0.1rem;
-  padding: 0 1.5em;
+  padding: 0 1.2em;
 }
 
 
