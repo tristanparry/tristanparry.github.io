@@ -553,12 +553,11 @@ a {
     display: grid;
     width: 90vw;
     grid-template-columns: 49.5% 50%;
-    column-gap: 1em;
-    margin-bottom: 2em;
+    gap: 1em;
   }
   .project-row {
     width: fit-content;
-    margin-bottom: 1em;
+    margin-bottom: 0;
   }
 
 
