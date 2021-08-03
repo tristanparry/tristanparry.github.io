@@ -554,6 +554,7 @@ a {
     width: 90vw;
     grid-template-columns: 49.5% 50%;
     gap: 1em;
+    margin-bottom: 2em;
   }
   .project-row {
     width: fit-content;
