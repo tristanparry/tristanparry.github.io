@@ -6,7 +6,7 @@ githubAPIrequest.onload = function() { // When the request is fulfilled...
     const data = JSON.parse(this.response); // Store the JSON in a variable, data
     let returnHTML = '';
     
-    $.each(data, function(i, status) { // Iterates over the data, using a callback function to return HTML for each element in the repository array
+    data.forEach(status => {
         returnHTML += `<a href="${status.html_url}" target="_blank">
                             <div class="project-row">
                                 <div class="project-info-1">
@@ -21,8 +21,7 @@ githubAPIrequest.onload = function() { // When the request is fulfilled...
                             </div>
                         </a>`
     });
-    
-    $('#project-list').html(returnHTML); // Sets the HTML of the #project-list to the HTML generated above
+    document.getElementById('project-list').innerHTML = returnHTML;
 }
 
 githubAPIrequest.send(); // Initiate the actual request to run the above code
