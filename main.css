@@ -85,6 +85,7 @@ body {
 
 ::-webkit-scrollbar {
   width: 0.3em;
+  height: 0.3em;
   background-color: var(--black);
 }
 ::-webkit-scrollbar-thumb {
@@ -190,7 +191,7 @@ a {
   animation: fadeSlideLeft 2s ease;
 }
 #nav-container ul a {
-  font-size: 0.8em;
+  font-size: 0.7em;
   padding: 0.7em;
   transition: ease 0.2s;
 }
@@ -368,6 +369,9 @@ a {
 
 
 
+
+
+
 /*****EDUCATION*****/
 
 #education {
@@ -390,7 +394,7 @@ a {
   animation: fadeSlideLeft 2s ease;
 }
 
-#education .education-caption {
+#education .caption {
   color: var(--accent-colour);
   font-family: courier;
   font-size: 1em;
@@ -419,10 +423,63 @@ a {
 
 
 
+/*****HOBBIES*****/
+
+#hobbies {
+  background-color: var(--darker-grey);
+  color: var(--white);
+  padding: 3em 2em;
+}
+
+#hobbies-inner {
+  display: flex;
+  overflow-x: scroll;
+  padding-bottom: 4em;
+}
+
+.hobby-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#hobbies h3 {
+  color: var(--accent-colour);
+  font-family: courier;
+  font-size: 1.4em;
+  animation: fadeSlideLeft 2s ease;
+}
+
+#hobbies p {
+  animation: fadeSlideLeft 2s ease;
+}
+
+#hobbies .caption {
+  color: var(--accent-colour);
+  font-family: courier;
+  font-size: 1em;
+  font-style: italic;
+  animation: fadeSlideLeft 2s ease;
+}
+
+#hobbies img {
+  width: 85vw;
+  max-width: 400px;
+  border: 2px solid var(--accent-colour);
+  border-radius: 8px;
+  margin: 1em 1em;
+  animation: fadeLower 2s ease;
+}
+
+
+
+
+
+
 /*****CONTACT*****/
 
 #contact {
-  background-color: var(--darker-grey);
+  background-color: var(--dark-grey);
   color: var(--white);
   padding: 2em;
   display: flex;
@@ -469,6 +526,12 @@ a {
 
 
 /*****MEDIA QUERIES*****/
+
+@media only screen and (min-width: 430px) {
+  #nav-container ul a {
+    font-size: 0.8em;
+  }
+}
 
 @media only screen and (min-width: 900px) {
   ::-webkit-scrollbar {
@@ -532,6 +595,10 @@ a {
   #education img {
     width: 60vw;
     margin-left: 1em;
+  }
+
+  #hobbies img {
+    width: 35vw;
   }
 }
 
