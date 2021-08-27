@@ -380,6 +380,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 3em 2em;
 }
 
@@ -587,7 +588,6 @@ a {
 
   #education {
     flex-direction: row;
-    justify-content: space-evenly;
   }
   #education h2 {
     text-align: left;
@@ -613,6 +613,10 @@ a {
   #circuit {
     right: -220px;
   }
+
+  #education img {
+    margin-left: 2em;
+  }
 }
 
 @media only screen and (min-width: 1200px) {  
@@ -624,12 +628,15 @@ a {
     margin-bottom: 2em;
   }
   .project-row {
-    width: fit-content;
+    width: -webkit-fill-available;
+    width: -moz-fill-available;
     margin-bottom: 0;
   }
 
 
-
+  #education img {
+    margin-left: 3em;
+  }
   #education img:hover {
     box-shadow: 0 0 20px var(--accent-colour);
   }
@@ -638,6 +645,10 @@ a {
 @media only screen and (min-width: 1300px) {
   #circuit {
     right: 0;
+  }
+
+  #education img {
+    margin-left: 5em;
   }
 }
 
