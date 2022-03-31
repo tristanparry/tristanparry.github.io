@@ -78,9 +78,7 @@
   --accent-colour: #20F877;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -275,7 +273,7 @@ a {
   transform: scale(85%);
 }
 
-#splash-screen .buttonElement {
+#splash-screen-resume-link-field {
   margin-top: 2em;
 }
 
@@ -407,13 +405,16 @@ a {
   animation: fadeSlideLeft 2s ease;
 }
 
+#education-uwphoto-link-field {
+  margin-top: 2em;
+  margin-bottom: 1.5em;
+}
+
 #education img {
   width: 85vw;
   max-width: 600px;
   border: 2px solid var(--accent-colour);
   border-radius: 8px;
-  margin-top: 2em;
-  margin-bottom: 1.5em;
   transition: ease 0.3s;
   animation: fadeLower 2s ease;
 }
@@ -596,9 +597,11 @@ a {
   #education h2 {
     text-align: left;
   }
+  #education-uwphoto-link-field {
+    margin-left: 1em;
+  }
   #education img {
     width: 60vw;
-    margin-left: 1em;
   }
 
   #hobbies img {
@@ -618,7 +621,7 @@ a {
     right: -220px;
   }
 
-  #education img {
+  #education-uwphoto-link-field {
     margin-left: 2em;
   }
 }
@@ -626,19 +629,17 @@ a {
 @media only screen and (min-width: 1200px) {  
   #project-list {
     display: grid;
-    width: 90vw;
-    grid-template-columns: 49.5% 50%;
+    grid-template-columns: 1fr 1fr;
     gap: 1em;
     margin-bottom: 2em;
   }
   .project-row {
-    width: -webkit-fill-available;
-    width: -moz-fill-available;
+    width: auto;
     margin-bottom: 0;
   }
 
 
-  #education img {
+  #education-uwphoto-link-field {
     margin-left: 3em;
   }
   #education img:hover {
@@ -651,7 +652,7 @@ a {
     right: 0;
   }
 
-  #education img {
+  #education-uwphoto-link-field {
     margin-left: 5em;
   }
 }
