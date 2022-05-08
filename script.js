@@ -10,7 +10,7 @@ fetch('https://api.github.com/users/tristanparry/repos')
                                         <span class="project-description">${status.description}</span>
                                     </div>
                                     <div class="project-info-2">
-                                        <img src="IMAGES/language.svg" alt="Language" height="25"><span>${((status.name === "SmiteBot") ? "JavaScript" : status.language)}</span>
+                                        <img src="IMAGES/language.svg" alt="Language" height="25"><span>${status.language}</span>
                                         <img src="IMAGES/fork.svg" alt="Forks" height="25"><span>${status.forks_count}</span>
                                         <img src="IMAGES/eye.svg" alt="Watchers" width="25"><span>${status.watchers_count}</span>
                                     </div>
