@@ -20,3 +20,14 @@ fetch('https://api.github.com/users/tristanparry/repos')
         document.getElementById('project-list').innerHTML = returnHTML;
     })
     .catch(error => console.log(error));
+
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-container-ul");
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+});
+document.querySelectorAll(".nav-container-ul-a").forEach(element => element.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}));

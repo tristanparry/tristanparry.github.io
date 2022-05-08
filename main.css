@@ -184,21 +184,52 @@ a {
   color: var(--accent-colour);
 }
 
-#nav-container ul {
-  display: flex;
+.nav-container-ul {
+  display: none;
+  flex-direction: column;
+  align-items: center;
   list-style-type: none;
   margin-top: auto;
   margin-bottom: auto;
   padding: 0;
+  margin-top: 2rem;
   animation: fadeSlideLeft 2s ease;
 }
-#nav-container ul a {
-  font-size: 0.7em;
+.nav-container-ul li {
+  margin-top: 0.5rem;
+}
+.nav-container-ul-a {
+  font-size: 0.75em;
   padding: 0.7em;
   transition: ease 0.2s;
 }
-#nav-container ul a:hover {
+.nav-container-ul-a:hover {
   color: var(--white);
+}
+.nav-container-ul.active {
+  display: flex;
+}
+
+.hamburger {
+  display: block;
+  cursor: pointer;
+}
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+.bar {
+  display: block;
+  width: 24px;
+  height: 1px;
+  margin: 6px auto;
+  transition: all 0.25s ease-in-out;
+  background-color: var(--accent-colour);
 }
 
 
@@ -346,7 +377,7 @@ a {
 }
 .project-row:hover {
   border-radius: 14px;
-  transform: translateX(6px);
+  transform: scale(99%);
 }
 .project-row:hover::after {
   opacity: 1;
@@ -555,24 +586,33 @@ a {
 /*****MEDIA QUERIES*****/
 
 @media only screen and (min-width: 430px) {
-  #nav-container ul a {
-    font-size: 0.8em;
+  .nav-container-ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 0;
+    margin-top: auto;
+    animation: fadeSlideLeft 2s ease;
+  }
+  .nav-container-ul li {
+    margin-top: auto;
+  }
+
+  .hamburger {
+    display: none;
   }
 }
 
-@media only screen and (min-width: 900px) {
-  ::-webkit-scrollbar {
-    width: 0.6em;
+@media only screen and (min-width: 600px) {
+  .nav-container-ul-a {
+    font-size: 0.9em;
+    padding: 1em;
   }
+}
 
-
-  
-  h2 {
-    font-size: 3em;
-  }
-
-  
-
+@media only screen and (min-width: 650px) {
   #logo-small {
     display: none;
   }
@@ -582,11 +622,16 @@ a {
   #logo-large {
     display: block;
   }
-  #nav-container ul a {
-    font-size: 0.9em;
-    padding: 1em;
-  }
+}
 
+@media only screen and (min-width: 900px) {
+  ::-webkit-scrollbar {
+    width: 0.6em;
+  }
+  
+  h2 {
+    font-size: 3em;
+  }
 
   #splash-screen {
     align-items: flex-start;
