@@ -214,6 +214,7 @@ a {
 .hamburger {
   display: block;
   cursor: pointer;
+  animation: fadeRaise 2s ease;
 }
 .hamburger.active .bar:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
