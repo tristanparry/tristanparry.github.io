@@ -497,7 +497,7 @@ a {
 
 #hobbies-inner {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
   padding-bottom: 4em;
 }
 
