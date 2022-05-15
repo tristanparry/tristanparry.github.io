@@ -371,10 +371,10 @@ a {
   content: "";
   opacity: 0;
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 1px;
+  bottom: 1px;
   left: 8px;
-  right: 0;
+  right: 1px;
   border-radius: 8px;
   z-index: -1;
   transition: ease 0.3s;
@@ -655,7 +655,6 @@ a {
     font-size: 1em;
   }
   #splash-screen-inner {
-    width: 670px;
     flex-direction: row;
     justify-content: space-between;
   }
