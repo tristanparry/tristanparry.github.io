@@ -1,5 +1,4 @@
 /*****FONT*****/
-
 @font-face {
   font-family: 'Beckman';
   src: url("../FONT/BeckmanFree.woff2") format("woff2"),
@@ -11,7 +10,6 @@
 }
 
 /*****ANIMATIONS*****/
-
 @keyframes fade {
   from {
     opacity: 0%;
@@ -47,7 +45,6 @@
     opacity: 100%;
   }
 }
-
 @keyframes typeWrite {
   to {
     left: 100%;
@@ -58,24 +55,68 @@
     background-color: transparent;
   }
 }
-
 @keyframes colorBreath {
-  from {
-    fill: rgba(59, 228, 127, 0.452);
+  0% {
+    fill: rgba(var(--theme-1), 0.4);
   }
-  to {
-    fill: var(--accent-colour);
+  8% {
+    fill: rgba(var(--theme-1), 0.75);
+  }
+  16% {
+    fill: rgba(var(--theme-1), 0.4);
+  }
+  24% {
+    fill: rgba(var(--theme-2), 0.4);
+  }
+  32% {
+    fill: rgba(var(--theme-2), 0.75);
+  }
+  40% {
+    fill: rgba(var(--theme-2), 0.4);
+  }
+  48% {
+    fill: rgba(var(--theme-3), 0.4);
+  }
+  56% {
+    fill: rgba(var(--theme-3), 0.75);
+  }
+  64% {
+    fill: rgba(var(--theme-3), 0.4);
+  }
+  72% {
+    fill: rgba(var(--theme-4), 0.4);
+  }
+  80% {
+    fill: rgba(var(--theme-4), 0.75);
+  }
+  88% {
+    fill: rgba(var(--theme-4), 0.4);
+  }
+  100% {
+    fill: rgba(var(--theme-1), 0.4);
   }
 }
 
 /*****ROOT + BODY + SCROLLBAR*****/
-
 :root {
   --black: #000000;
   --dark-grey: #16191C;
   --darker-grey: #111111;
   --white: #FFFFFF;
-  --accent-colour: #20F877;
+  --theme-1: ;
+  --theme-2: ;
+  --theme-3: ;
+  --theme-4: ;
+  --accent-color-1: rgb(var(--theme-1));
+  --accent-color-2: rgb(var(--theme-2));
+  --accent-color-3: rgb(var(--theme-3));
+  --accent-color-4: rgb(var(--theme-4));
+  --accent-color-gradient: linear-gradient(120deg, var(--accent-color-1) 0%, var(--accent-color-2) 68%, var(--accent-color-3) 87%, var(--accent-color-4) 100%);
+  --accent-color-gradient-hover: linear-gradient(300deg, var(--accent-color-1) 0%, var(--accent-color-2) 78%, var(--accent-color-3) 95%, var(--accent-color-4) 100%);
+  --project-card-gradient-hover: linear-gradient(288deg, rgba(var(--theme-4),0.25) 0%, rgba(var(--theme-3),0.2) 11%, rgba(var(--theme-2),0.2) 15%, rgba(var(--theme-1),0.15) 21%, rgba(17,17,17,0.5) 100%);
+  --border-radius: 6px;
+  --border-radius-hover: 10px;
+  --box-shadow-accent: 0 2px 8px var(--accent-color-2);
 }
 
 html { scroll-behavior: smooth; }
@@ -91,14 +132,10 @@ body {
   background-color: var(--black);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--accent-colour);
-}
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(25, 201, 96);
+  background-image: var(--accent-color-gradient);
 }
 
 /*****GLOBAL STYLES*****/
-
 h1 {
   font-family: 'Beckman', Arial, sans-serif;
   color: var(--white);
@@ -106,8 +143,11 @@ h1 {
 }
 
 h2 {
+  background: var(--accent-color-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-family: 'Beckman', Arial, sans-serif;
-  color: var(--white);
   font-size: 2.5em;
   text-align: center;
   letter-spacing: .12em;
@@ -122,15 +162,57 @@ p {
 a {
   text-decoration: none;
   font-family: courier;
-  color: var(--accent-colour);
+}
+
+.buttonGradient {
+  position: relative;
+  background-image: var(--accent-color-gradient);
+  z-index: 0;
+}
+.buttonGradient::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: var(--accent-color-gradient-hover);
+  z-index: -1;
+  transition: opacity 0.5s cubic-bezier(0.11, 0.56, 1, 1);
+  opacity: 0;
+  border-radius: var(--border-radius);
+}
+.buttonGradient:hover::before {
+  opacity: 1;
+  border-radius: var(--border-radius-hover);
+}
+
+.textGradient {
+  background: var(--accent-color-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: var(--white);
+  transition: color 0.3s cubic-bezier(0.11, 0.56, 1, 1);
+}
+.textGradient:hover {
+  color: transparent;
+}
+
+.borderGradient {
+  background: linear-gradient(var(--darker-grey), var(--darker-grey)) padding-box,
+              var(--accent-color-gradient) border-box;
+  border-radius: var(--border-radius);
+  border: 1px solid transparent;
+}
+.borderGradient:hover {
+  border-radius: var(--border-radius-hover);
 }
 
 .buttonElement {
-  background-color: transparent;
-  color: var(--accent-colour);
+  color: var(--black);
+  font-weight: bold;
   padding: 1em;
-  border: 1px solid var(--accent-colour);
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   font-size: 1em;
   font-family: courier;
   transition: ease 0.3s;
@@ -139,9 +221,8 @@ a {
 }
 
 .buttonElement:hover {
-  background-color: var(--accent-colour);
   color: var(--black);
-  font-weight: bold;
+  border-radius: var(--border-radius-hover);
   transform: translateY(5px);
   cursor: pointer;
 }
@@ -152,7 +233,6 @@ a {
 
 
 /*****NAVBAR*****/
-
 #nav-container {
   background-color: var(--black);
   display: flex;
@@ -165,25 +245,16 @@ a {
 }
 
 #logo-small {
-  color: var(--white);
-  font-family: 'Beckman', Arial, sans-serif;
   font-size: 1.5em;
-  transition: ease 0.2s;
+  font-family: 'Beckman', Arial, sans-serif;
   animation: fadeRaise 2s ease;
 }
-#logo-small:hover {
-  color: var(--accent-colour);
-}
+
 #logo-large {
   display: none;
-  color: var(--white);
   font-size: 1.5em;
   font-family: 'Beckman', Arial, sans-serif;
-  transition: ease 0.2s;
   animation: fadeRaise 2s ease;
-}
-#logo-large:hover {
-  color: var(--accent-colour);
 }
 
 .nav-container-ul {
@@ -204,9 +275,7 @@ a {
   font-size: 0.75em;
   padding: 0.7em;
   transition: ease 0.2s;
-}
-.nav-container-ul-a:hover {
-  color: var(--white);
+  font-weight: bold;
 }
 .nav-container-ul.active {
   display: flex;
@@ -232,7 +301,7 @@ a {
   height: 1px;
   margin: 6px auto;
   transition: all 0.25s ease-in-out;
-  background-color: var(--accent-colour);
+  background-image: var(--accent-color-gradient);
 }
 
 
@@ -241,7 +310,6 @@ a {
 
 
 /*****SPLASH SCREEN*****/
-
 #splash-screen {
   background-color: var(--dark-grey);
   display: flex;
@@ -253,6 +321,10 @@ a {
 }
 
 #name-title {
+  background: var(--accent-color-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 4em;
   letter-spacing: 0.4rem;
   transition: ease 0.3s;
@@ -266,7 +338,7 @@ a {
 }
 
 #personal-description {
-  color: var(--accent-colour);
+  color: var(--white);
   font-size: 0.9em;
   transition: ease 0.3s;
   position: relative;
@@ -282,12 +354,12 @@ a {
   left: 0;
 }
 #personal-description::before {
-  background-color: var(--dark-grey); /* Same colour as the page's background colour, hides the personal description */
+  background-color: var(--dark-grey); /* Same color as the page's background color, hides the personal description */
   animation: typeWrite 3s steps(30) 0.8s forwards; /* Strips away the pseudo element to reveal the text */
 }
 #personal-description::after {
   width: 0.095em; /* Small text cursor, that will animate over the text as the ::before element strips away */
-  background: var(--accent-colour);
+  background: var(--white);
   animation:
     typeWrite 3s steps(30) 0.8s forwards,
     typeBlink 750ms steps(30) infinite;
@@ -321,7 +393,7 @@ a {
   animation: fade 2s ease;
 }
 .cls-1 {
-  animation: colorBreath 2s linear alternate infinite;
+  animation: colorBreath 20s linear infinite;
 }
 
 
@@ -331,43 +403,33 @@ a {
 
 
 /*****PROJECTS*****/
-
 #projects {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--darker-grey);
-  color: var(--white);
   padding: 3em 2em;
 }
 
 #project-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  gap: 1em;
+  margin-bottom: 2em;
   animation: fadeLower 2s ease;
-}
-
-.project-row-parent-a {
-  margin-bottom: 1.5em;
-  height: 100%;
 }
 
 .project-row {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background: var(--darker-grey);
-  background-position: 0px 0px;
-  border: 1px solid rgba(32, 248, 118, 0.705);
-  border-radius: 8px;
+  justify-content: space-evenly;
   width: 75vw;
   height: 100%;
   padding: 0 1.2em;
   transition: ease 0.3s;
 }
 .project-row::after {
-  background: linear-gradient(to right, var(--darker-grey) 45%, rgba(32, 248, 118, 0.151));
+  border-radius: var(--border-radius);
+  background: var(--project-card-gradient-hover);
   content: "";
   opacity: 0;
   position: absolute;
@@ -375,12 +437,10 @@ a {
   bottom: 1px;
   left: 8px;
   right: 1px;
-  border-radius: 8px;
   z-index: -1;
   transition: ease 0.3s;
 }
 .project-row:hover {
-  border-radius: 14px;
   transform: scale(99%);
 }
 .project-row:hover::after {
@@ -388,6 +448,10 @@ a {
 }
 
 .project-title {
+  background: var(--accent-color-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: clamp(1em, 1.6em);
   margin-top: 0.8em;
   margin-bottom: 0.5em;
@@ -417,22 +481,12 @@ a {
   margin-right: 2.5em;
 }
 
-#projects .buttonElement::before {
-  content: "BROWSE CODE";
-}
-#projects .buttonElement:hover::before {
-  content: "GITHUB";
-  letter-spacing: 0.1rem;
-  padding: 0 1.2em;
-}
-
 
 
 
 
 
 /*****EDUCATION*****/
-
 #education {
   background-color: var(--dark-grey);
   color: var(--white);
@@ -444,7 +498,7 @@ a {
 }
 
 #education h3 {
-  color: var(--accent-colour);
+  color: var(--white);
   font-family: courier;
   font-size: 1.4em;
   animation: fadeSlideLeft 2s ease;
@@ -455,10 +509,14 @@ a {
 }
 
 #education .caption {
-  color: var(--accent-colour);
+  background: var(--accent-color-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-family: courier;
   font-size: 1em;
   font-style: italic;
+  font-weight: bold;
   animation: fadeSlideLeft 2s ease;
 }
 
@@ -470,16 +528,13 @@ a {
 #education img {
   width: 85vw;
   max-width: 600px;
-  border: 2px solid var(--accent-colour);
-  border-radius: 8px;
   transition: ease 0.3s;
   user-select: none;
   animation: fadeLower 2s ease;
 }
 #education img:hover {
   transform: translateY(5px);
-  border-radius: 14px;
-  box-shadow: 0 0 14px var(--accent-colour);
+  box-shadow: var(--box-shadow-accent);
 }
 
 
@@ -488,7 +543,6 @@ a {
 
 
 /*****HOBBIES*****/
-
 #hobbies {
   background-color: var(--darker-grey);
   color: var(--white);
@@ -508,7 +562,10 @@ a {
 }
 
 #hobbies h3 {
-  color: var(--accent-colour);
+  background: var(--accent-color-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-family: courier;
   font-size: 1.4em;
   animation: fadeSlideLeft 2s ease;
@@ -518,22 +575,15 @@ a {
   animation: fadeSlideLeft 2s ease;
 }
 
-#hobbies .caption {
-  color: var(--accent-colour);
-  font-family: courier;
-  font-size: 1em;
-  font-style: italic;
-  animation: fadeSlideLeft 2s ease;
-}
-
 #hobbies img {
   width: 85vw;
   max-width: 400px;
-  border: 2px solid var(--accent-colour);
-  border-radius: 8px;
   margin: 1em 1em;
   user-select: none;
   animation: fadeLower 2s ease;
+}
+#hobbies img:hover {
+  border-radius: var(--border-radius);
 }
 
 
@@ -542,7 +592,6 @@ a {
 
 
 /*****CONTACT*****/
-
 #contact {
   background-color: var(--dark-grey);
   color: var(--white);
@@ -569,7 +618,6 @@ a {
 
 
 /*****FOOTER*****/
-
 #footer {
   background-color: var(--black);
   text-align: center;
@@ -578,21 +626,14 @@ a {
 }
 
 #footer a {
-  color: var(--white);
-  transition: ease 0.2s;
   animation: fadeRaise 2s ease;
 }
-#footer a:hover {
-  color: var(--accent-colour);
-}
-
 
 
 
 
 
 /*****MEDIA QUERIES*****/
-
 @media only screen and (min-width: 430px) {
   .nav-container-ul {
     display: flex;
@@ -623,9 +664,6 @@ a {
 @media only screen and (min-width: 650px) {
   #logo-small {
     display: none;
-  }
-  #logo-small:hover {
-    color: var(--accent-colour);
   }
   #logo-large {
     display: block;
@@ -701,24 +739,18 @@ a {
 
 @media only screen and (min-width: 1200px) {  
   #project-list {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1em;
-    margin-bottom: 2em;
   }
   .project-row {
     width: auto;
   }
-  .project-row-parent-a {
-    margin-bottom: 0;
+  .project-title {
+    width: 60%;
   }
 
 
   #education-uwphoto-link-field {
     margin-left: 3em;
-  }
-  #education img:hover {
-    box-shadow: 0 0 20px var(--accent-colour);
   }
 }
 
