@@ -66,8 +66,14 @@
     <!-- PROJECTS SECTION -->
     <section id="projects">
         <h2 class="textGradient">PROJECTS</h2>
-        <div id="project-list"></div>
-        <a class="buttonElement buttonGradient" href="https://github.com/tristanparry?tab=repositories" target="_blank">BROWSE CODE</a>
+        <div id="project-list" expanded="true"></div>
+        <div id="project-list-under">
+            <button id="project-list-arrow-button" class="open textGradient" active="false">
+                <span id="arrow">&#8595;</span>
+                <span id="expand-collapse">OPEN</span>
+            </button>
+            <a class="buttonElement buttonGradient" href="https://github.com/tristanparry?tab=repositories" target="_blank">BROWSE CODE</a>
+        </div>
     </section>
 
     <!-- EDUCATION SECTION -->
@@ -91,37 +97,37 @@
         <div style="display: flex; justify-content: center;"><h2>HOBBIES</h2></div>
         <div id="hobbies-inner">
             <div class="hobby-div">
-                <div>
+                <div class="hobby-overlay">
                     <h3>Martial Arts</h3>
-                    <p>Second-degree Black Belt in<br>Shotokan Karate</p>
+                    <p>Second-degree Black Belt in Shotokan Karate</p>
                 </div>
                 <img class="borderGradient" src="IMAGES/karate_image.jpg" alt="University of Waterloo - E7">
             </div>
             <div class="hobby-div">
-                <div>
+                <div class="hobby-overlay">
                     <h3>Piano Playing</h3>
-                    <p>Level 8 RCM in<br>Piano Repertoire/Theory</p>
+                    <p>Level 8 RCM in Piano Repertoire/Theory</p>
                 </div>
                 <img class="borderGradient" src="IMAGES/piano_image.jpg" alt="University of Waterloo - E7">
             </div>
             <div class="hobby-div">
-                <div>
+                <div class="hobby-overlay">
                     <h3>Saxophone Playing</h3>
-                    <p>Alto, Tenor, & Baritone<br>Saxophone (Classical/Jazz)</p>
+                    <p>Alto, Tenor, & Baritone Saxophone (Classical/Jazz)</p>
                 </div>
                 <img class="borderGradient" src="IMAGES/saxophone_image.jpg" alt="University of Waterloo - E7">
             </div>
             <div class="hobby-div">
-                <div>
+                <div class="hobby-overlay">
                     <h3>Programming</h3>
-                    <p>Python, Java, HTML/CSS,<br>JavaScript/TypeScript, C/C++</p>
+                    <p>Python, Java, HTML/CSS, JavaScript/TypeScript, C/C++</p>
                 </div>
                 <img class="borderGradient" src="IMAGES/programming_image.jpg" alt="University of Waterloo - E7">
             </div>
             <div class="hobby-div">
-                <div>
+                <div class="hobby-overlay">
                     <h3>Video Gaming</h3>
-                    <p>SMITE, Minecraft, Mirror's Edge,<br>A Story About My Uncle</p>
+                    <p>SMITE, Minecraft, Mirror's Edge, A Story About My Uncle</p>
                 </div>
                 <img class="borderGradient" src="IMAGES/gaming_image.jpg" alt="University of Waterloo - E7">
             </div>

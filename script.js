@@ -26,7 +26,6 @@ const themes = [
 ];
 
 const randomThemeIndex = Math.floor(Math.random() * themes.length);
-
 document.documentElement.style.setProperty('--theme-1', `${themes[randomThemeIndex][0]}`);
 document.documentElement.style.setProperty('--theme-2', `${themes[randomThemeIndex][1]}`);
 document.documentElement.style.setProperty('--theme-3', `${themes[randomThemeIndex][2]}`);
@@ -51,7 +50,14 @@ fetch('https://api.github.com/users/tristanparry/repos')
                                 </div>
                             </a>`
         });
-        document.getElementById('project-list').innerHTML = returnHTML;
+        document.getElementById("project-list").innerHTML = returnHTML;
+        if ((data.length != null) && (data.length != undefined) && (data.length > 10)) {
+            document.getElementById("project-list").setAttribute("expanded", "false");
+            document.getElementById("project-list-arrow-button").setAttribute("active", "true");
+            document.getElementById("arrow").innerText = "\u2193";
+            document.getElementById("expand-collapse").innerText = "OPEN";
+            document.getElementById("project-list-under").style.boxShadow = "rgb(17, 17, 17) 0px -40px 20px 20px";
+        }
     })
     .catch(error => console.log(error));
 
@@ -65,3 +71,35 @@ document.querySelectorAll(".nav-container-ul-a").forEach(element => element.addE
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
 }));
+
+const projectList = document.getElementById("project-list");
+const projectListArrowButton = document.getElementById('project-list-arrow-button');
+const arrow = document.getElementById("arrow");
+const expandCollapse = document.getElementById("expand-collapse")
+const projectListUnder = document.getElementById("project-list-under");
+projectListArrowButton.addEventListener("click", () => {
+    if (projectListArrowButton.getAttribute("active") === "true") {
+        projectListArrowButton.setAttribute("active", "false");
+        arrow.innerText = "\u2191";
+        expandCollapse.innerText = "CLOSE";
+        projectList.setAttribute("expanded", "true");
+        projectListUnder.style.boxShadow = "";
+    } else {
+        projectListArrowButton.setAttribute("active", "true");
+        arrow.innerText = "\u2193";
+        expandCollapse.innerText = "OPEN";
+        projectList.setAttribute("expanded", "false");
+        projectListUnder.style.boxShadow = "rgb(17, 17, 17) 0px -40px 20px 20px";
+    }
+    projectListArrowButton.blur();
+});
+
+const hobbiesInner = document.getElementById("hobbies-inner");
+hobbiesInner.addEventListener("wheel", e => {
+    if (((e.deltaY > 0) && (hobbiesInner.offsetWidth + hobbiesInner.scrollLeft >= hobbiesInner.scrollWidth)) ||
+        ((e.deltaY < 0) && (hobbiesInner.offsetLeft + hobbiesInner.scrollLeft <= hobbiesInner.offsetLeft))) {
+        return
+    }
+    e.preventDefault();
+    hobbiesInner.scrollLeft += e.deltaY;
+});
