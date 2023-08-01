@@ -1,40 +1,40 @@
 const themes = [
     [
-        '169, 32, 248', // violet
-        '204, 78, 134', // pink
-        '180, 132, 29', // orange
-        '166, 243, 69', // yellow-green
+        "169, 32, 248", // violet
+        "204, 78, 134", // pink
+        "180, 132, 29", // orange
+        "166, 243, 69", // yellow-green
     ],
     [
-        '248, 35, 32',  // scarlet
-        '204, 122, 78', // red-orange
-        '180, 173, 29', // orange-yellow
-        '228, 243, 69', // yellow
+        "248, 35, 32",  // scarlet
+        "204, 122, 78", // red-orange
+        "180, 173, 29", // orange-yellow
+        "228, 243, 69", // yellow
     ],
     [
-        '32, 248, 255', // cyan
-        '29, 141, 180', // blue
-        '91, 78, 204',  // indigo
-        '192, 69, 243', // magenta
+        "32, 248, 255", // cyan
+        "29, 141, 180", // blue
+        "91, 78, 204",  // indigo
+        "192, 69, 243", // magenta
     ],
     [
-        '248, 238, 32', // yellow
-        '108, 204, 78', // light-green
-        '29, 180, 110', // dark-green
-        '69, 243, 226', // cyan
+        "248, 238, 32", // yellow
+        "108, 204, 78", // light-green
+        "29, 180, 110", // dark-green
+        "69, 243, 226", // cyan
     ],
 ];
 
 const randomThemeIndex = Math.floor(Math.random() * themes.length);
-document.documentElement.style.setProperty('--theme-1', `${themes[randomThemeIndex][0]}`);
-document.documentElement.style.setProperty('--theme-2', `${themes[randomThemeIndex][1]}`);
-document.documentElement.style.setProperty('--theme-3', `${themes[randomThemeIndex][2]}`);
-document.documentElement.style.setProperty('--theme-4', `${themes[randomThemeIndex][3]}`);
+document.documentElement.style.setProperty("--theme-1", `${themes[randomThemeIndex][0]}`);
+document.documentElement.style.setProperty("--theme-2", `${themes[randomThemeIndex][1]}`);
+document.documentElement.style.setProperty("--theme-3", `${themes[randomThemeIndex][2]}`);
+document.documentElement.style.setProperty("--theme-4", `${themes[randomThemeIndex][3]}`);
 
-fetch('https://api.github.com/users/tristanparry/repos')
+fetch("https://api.github.com/users/tristanparry/repos")
     .then(response => response.json())
     .then(data => {
-        let returnHTML = '';
+        let returnHTML = "";
         data.forEach(project => {
             returnHTML += `<a href="${project.html_url}" target="_blank">
                                 <div class="project-row borderGradient">
@@ -56,7 +56,7 @@ fetch('https://api.github.com/users/tristanparry/repos')
             document.getElementById("project-list-arrow-button").setAttribute("active", "true");
             document.getElementById("arrow").innerText = "\u2193";
             document.getElementById("expand-collapse").innerText = "OPEN";
-            document.getElementById("project-list-under").style.boxShadow = "rgb(17, 17, 17) 0px -40px 20px 20px";
+            document.getElementById("project-list-under").style.boxShadow = `${getComputedStyle(document.getElementById("projects")).getPropertyValue("background-color")} 0px -40px 20px 20px`;
         }
     })
     .catch(error => console.log(error));
@@ -73,7 +73,7 @@ document.querySelectorAll(".nav-container-ul-a").forEach(element => element.addE
 }));
 
 const projectList = document.getElementById("project-list");
-const projectListArrowButton = document.getElementById('project-list-arrow-button');
+const projectListArrowButton = document.getElementById("project-list-arrow-button");
 const arrow = document.getElementById("arrow");
 const expandCollapse = document.getElementById("expand-collapse")
 const projectListUnder = document.getElementById("project-list-under");
@@ -89,7 +89,7 @@ projectListArrowButton.addEventListener("click", () => {
         arrow.innerText = "\u2193";
         expandCollapse.innerText = "OPEN";
         projectList.setAttribute("expanded", "false");
-        projectListUnder.style.boxShadow = "rgb(17, 17, 17) 0px -40px 20px 20px";
+        projectListUnder.style.boxShadow = `${getComputedStyle(document.getElementById("projects")).getPropertyValue("background-color")} 0px -40px 20px 20px`;
     }
     projectListArrowButton.blur();
 });
@@ -102,4 +102,20 @@ hobbiesInner.addEventListener("wheel", e => {
     }
     e.preventDefault();
     hobbiesInner.scrollLeft += e.deltaY;
+});
+
+const experienceContainer = document.getElementById("experience-inner");
+const radioButtons = experienceContainer.querySelectorAll(':scope > div#experience-container-radio > label > input');
+const experienceDetails = experienceContainer.querySelectorAll(":scope > div.experience-details");
+radioButtons.forEach(e => {
+    e.addEventListener("click", () => {
+        for (let i = 0; i < radioButtons.length; i++) {
+            radioButtons[i].removeAttribute("checked");
+            experienceDetails[i].style.display = "none";
+            if (e === radioButtons[i]) {
+                radioButtons[i].setAttribute("checked", "checked");
+                experienceDetails[i].style.display = "block";
+            }
+        }
+    });
 });

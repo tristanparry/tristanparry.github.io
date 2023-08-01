@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charshet="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +7,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="main.css">
 </head>
-
 <body>
-    <!-- NAVBAR + HEADING -->
     <div id="nav-container">
         <a href="index.html" id="logo-large" class="textGradient">TRISTAN PARRY</a>
         <a href="index.html" id="logo-small" class="textGradient">TP</a>
@@ -26,8 +23,6 @@
             <span class="bar"></span>
         </div>
     </div>
-
-    <!-- PERSONAL INTRO + SPLASHSCREEN -->
     <div id="splash-screen">
         <div style="display:flex;flex-direction:column;">
             <h1 id="name-title">TRISTAN PARRY</h1>
@@ -48,7 +43,6 @@
             <defs>
                 <style>
                     .cls-1 {
-                        fill: #20f877;
                         opacity: 0.7;
                     }
                 </style>
@@ -62,10 +56,8 @@
             </g>
         </svg>
     </div>
-
-    <!-- PROJECTS SECTION -->
     <section id="projects">
-        <h2 class="textGradient">PROJECTS</h2>
+        <div style="display: flex; justify-content: center;"><h2>PROJECTS</h2></div>
         <div id="project-list" expanded="true"></div>
         <div id="project-list-under">
             <button id="project-list-arrow-button" class="open textGradient" active="false">
@@ -75,11 +67,78 @@
             <a class="buttonElement buttonGradient" href="https://github.com/tristanparry?tab=repositories" target="_blank">BROWSE CODE</a>
         </div>
     </section>
-
-    <!-- EDUCATION SECTION -->
+    <section id="experience">
+        <div>
+            <div style="display: flex; justify-content: center;"><h2>EXPERIENCE</h2></div>
+            <div id="experience-inner">
+                <div id="experience-container-radio">
+                    <label>
+                        <input type="radio" name="experience" value="amdocs" checked>
+                        <img src="IMAGES/amdocs_logo.svg" width="20px" height="20px" alt="amdocs">
+                    </label>
+                    <div id="line"></div>
+                    <label>
+                        <input type="radio" name="experience" value="lcbo">
+                        <img src="IMAGES/lcbo_logo.svg" width="20px" height="20px" alt="lcbo">
+                    </label>
+                    <div id="line"></div>
+                    <label>
+                        <input type="radio" name="experience" value="polaris">
+                        <img src="IMAGES/polaris_logo.svg" width="20px" height="20px" alt="polaris">
+                    </label>
+                    <div id="line"></div>
+                    <label>
+                        <input type="radio" name="experience" value="mircom">
+                        <img src="IMAGES/mircom_logo.svg" width="20px" height="20px" alt="mircom">
+                    </label>
+                </div>
+                <div class="experience-details" style="display: block;">
+                    <h3><a href="https://www.amdocs.com/" target="_blank">Amdocs</a></h3>
+                    <p class="experience-position-duration"><b>UI Developer</b><br><i>May 2023 - Aug. 2023</i></p>
+                    <ul class="experience-position-ul">
+                        <li>Directed full remodel for frontend Amdocs enterprise API calls using React Redux to lower corporate network traffic</li>
+                        <li>Implemented report functionality in Amdocs's Partnership Management app to deliver corporate lifecycle metrics</li>
+                        <li>Completed AWS workshops using Sagemaker/CodeWhisperer to design serverless Lambda functions with generative AI</li>
+                        <li>Utilized React/Material UI in developing 5 graphical components to fulfil mockups for Amdocs's proprietary software</li>
+                        <li>Coordinated with backend/management teams to perform regular Jira groomings and revise commercial business logic</li>
+                    </ul>
+                </div>
+                <div class="experience-details">
+                    <h3><a href="https://www.lcbonext.com/" target="_blank">LCBO|next</a></h3>
+                    <p class="experience-position-duration"><b>Full Stack Developer</b><br><i>Sep. 2022 - Dec. 2022</i></p>
+                    <ul class="experience-position-ul">
+                        <li>Developed product tag LED flash using a specialized API to indicate products at the LCBO's HQ store</li>
+                        <li>Built the LCBO Service Template using PostgreSQL/React to facilitate future app startup</li>
+                        <li>Implemented over 60 changes in the LCBO's Grocer Claims app to improve usability/new client features</li>
+                        <li>Managed Azure/Bitbucket repositories to maintain production applications/update live software</li>
+                        <li>Coordinated with various LCBO divisions to schedule app testing and deployment windows</li>
+                    </ul>
+                </div>
+                <div class="experience-details">
+                    <h3><a href="https://www.polarisintelligence.com/" target="_blank">Polaris Intelligence Inc.</a></h3>
+                    <p class="experience-position-duration"><b>Full Stack Developer</b><br><i>Jan. 2022 - Apr. 2022</i></p>
+                    <ul class="experience-position-ul">
+                        <li>Developed the Polaris Trend Analysis module using React/Plotly.js to delineate Canadian census data</li>
+                        <li>Employed Jira to solve over 70 bugs and improve cross-browser compatibility</li>
+                        <li>Collaborated using the Agile framework to facilitate the production of data mining software</li>
+                        <li>Orchestrated company meetings for Polaris Intelligence's codebase architecture and practices</li>
+                    </ul>
+                </div>
+                <div class="experience-details">
+                    <h3><a href="https://mircom.com/" target="_blank">Mircom Group of Companies</a></h3>
+                    <p class="experience-position-duration"><b>IT Intern</b><br><i>Jul. 2021 - Aug. 2021</i></p>
+                    <ul class="experience-position-ul">
+                        <li>Updated Active Directory users by developing PowerShell scripts to automate mass changes</li>
+                        <li>Constructed company dashboards and host groups in Nagios XI to regulate infrastructure monitoring</li>
+                        <li>Utilized Zendesk to solve company computer issues and generate scheduled IT reports</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="education">
         <div>
-            <h2>EDUCATION</h2>
+            <div style="display: flex; justify-content: center;"><h2>EDUCATION</h2></div>
             <div>
                 <h3>University of Waterloo</h3>
                 <p>Candidate for BASc<br>Computer Engineering (Honours)</p>
@@ -91,41 +150,39 @@
         <a id="education-uwphoto-link-field" href="https://uwaterloo.ca/engineering/" target="_blank"><img class="borderGradient" src="IMAGES/waterloo_image.png"
                 alt="University of Waterloo - E7"></a>
     </section>
-
-    <!-- HOBBIES SECTION -->
     <section id="hobbies">
         <div style="display: flex; justify-content: center;"><h2>HOBBIES</h2></div>
         <div id="hobbies-inner">
             <div class="hobby-div">
-                <div class="hobby-overlay">
+                <div>
                     <h3>Martial Arts</h3>
                     <p>Second-degree Black Belt in Shotokan Karate</p>
                 </div>
                 <img class="borderGradient" src="IMAGES/karate_image.jpg" alt="University of Waterloo - E7">
             </div>
             <div class="hobby-div">
-                <div class="hobby-overlay">
+                <div>
                     <h3>Piano Playing</h3>
                     <p>Level 8 RCM in Piano Repertoire/Theory</p>
                 </div>
                 <img class="borderGradient" src="IMAGES/piano_image.jpg" alt="University of Waterloo - E7">
             </div>
             <div class="hobby-div">
-                <div class="hobby-overlay">
+                <div>
                     <h3>Saxophone Playing</h3>
                     <p>Alto, Tenor, & Baritone Saxophone (Classical/Jazz)</p>
                 </div>
                 <img class="borderGradient" src="IMAGES/saxophone_image.jpg" alt="University of Waterloo - E7">
             </div>
             <div class="hobby-div">
-                <div class="hobby-overlay">
+                <div>
                     <h3>Programming</h3>
                     <p>Python, Java, HTML/CSS, JavaScript/TypeScript, C/C++</p>
                 </div>
                 <img class="borderGradient" src="IMAGES/programming_image.jpg" alt="University of Waterloo - E7">
             </div>
             <div class="hobby-div">
-                <div class="hobby-overlay">
+                <div>
                     <h3>Video Gaming</h3>
                     <p>SMITE, Minecraft, Mirror's Edge, A Story About My Uncle</p>
                 </div>
@@ -133,22 +190,15 @@
             </div>
         </div>
     </section>
-
-    <!-- CONTACT SECTION -->
     <section id="contact">
         <div id="contact-inner">
             <h2>CONTACT</h2>
             <a class="buttonElement buttonGradient" href="mailto:tristanparry@gmail.com">EMAIL</a>
         </div>
     </section>
-
-    <!-- FOOTER -->
     <section id="footer">
         <a href="index.html" class="textGradient">Tristan Parry | Ⓒ 2022</a>
     </section>
-
-    <!-- SCRIPT -->
     <script src="script.js"></script>
 </body>
-
 </html>

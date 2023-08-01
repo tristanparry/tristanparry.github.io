@@ -411,6 +411,100 @@ a {
   animation: colorBreath 20s linear infinite;
 }
 
+#experience {
+  background-color: var(--dark-grey);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3em 2em;
+}
+
+#experience-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.75rem;
+}
+
+#experience h3 {
+  background: var(--accent-color-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: courier;
+  font-size: 1.6em;
+  width: fit-content;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  animation: fadeSlideLeft 2s ease;
+}
+
+.experience-details {
+  display: none;
+  transition: display 0.2s ease-in-out;
+}
+
+.experience-position-duration {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  line-height: 1.4em;
+}
+
+.experience-position-ul li {
+  font-family: courier;
+  font-size: 0.9em;
+  margin-bottom: 1.3em;
+  animation: fadeSlideLeft 2s ease;
+}
+
+#experience p {
+  animation: fadeSlideLeft 2s ease;
+}
+
+#experience-container-radio {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  list-style-type: none;
+  animation: fadeSlideLeft 2s ease;
+}
+
+#experience-container-radio img {
+  padding: 0.8rem;
+}
+
+#experience-container-radio input[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+#experience-container-radio input[type=radio] + img {
+  background: var(--dark-grey);
+  border: 1px solid var(--dark-grey);
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, border 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+}
+
+#experience-container-radio input[type=radio]:checked + img {
+  background: linear-gradient(var(--dark-grey), var(--dark-grey)) padding-box,
+              var(--accent-color-gradient) border-box;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius);
+}
+
+#line {
+  height: 1px;
+  width: 100%;
+  background-color: var(--white);
+}  
+
 #projects {
   display: flex;
   flex-direction: column;
@@ -535,7 +629,7 @@ a {
 }
 
 #education {
-  background-color: var(--dark-grey);
+  background-color: var(--darker-grey);
   color: var(--white);
   display: flex;
   flex-direction: column;
@@ -587,7 +681,7 @@ a {
 }
 
 #hobbies {
-  background-color: var(--darker-grey);
+  background-color: var(--dark-grey);
   color: var(--white);
   padding: 3em 2em;
 }
@@ -599,31 +693,11 @@ a {
 }
 
 .hobby-div {
-  width: 100%;
-  position: relative;
-}
-
-.hobby-overlay {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  height: calc(100% - 2.35rem);
-  width: calc(100% - 2.1rem);
-  opacity: 0;
-  transition: ease 0.3s;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background: var(--hobby-card-gradient-hover) padding-box,
-              var(--accent-color-gradient) border-box;
-  border-radius: var(--border-radius);
-  border: 1px solid transparent;
-}
-
-.hobby-overlay:hover,
-.hobby-overlay:focus {
-  opacity: 1;
+  justify-content: space-between;
+  width: 100%;
 }
 
 #hobbies h3 {
@@ -633,11 +707,13 @@ a {
   -webkit-text-fill-color: transparent;
   font-family: courier;
   font-size: 1.4em;
+  text-align: center;
   margin-top: 0.4em;
   animation: fadeSlideLeft 2s ease;
 }
 
 #hobbies p {
+  padding: 0 3rem;
   word-wrap: break-word;
   text-align: center;
   animation: fadeSlideLeft 2s ease;
@@ -657,7 +733,7 @@ a {
 }
 
 #contact {
-  background-color: var(--dark-grey);
+  background-color: var(--darker-grey);
   color: var(--white);
   padding: 2em;
   display: flex;
@@ -799,6 +875,32 @@ a {
 @media only screen and (min-width: 1150px) {
   #circuit {
     right: -220px;
+  }
+
+  #experience {
+    display: block;
+  }
+
+  #experience-inner {
+    flex-direction: row;
+    justify-content: center;
+    gap: 5rem;
+    height: 300px;
+  }
+
+  #experience-inner label {
+    height: 47px;
+  }
+
+  #experience-container-radio {
+    flex-direction: column;
+    width: fit-content;
+    height: 100%;
+  }
+
+  #line {
+    width: 1px;
+    height: 100%;
   }
 
   #education-uwphoto-link-field {
