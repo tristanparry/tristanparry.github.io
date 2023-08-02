@@ -101,6 +101,10 @@
   }
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 :root {
   --black: #000000;
   --dark-grey: #16191C;
