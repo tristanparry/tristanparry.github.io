@@ -445,6 +445,18 @@ a {
   animation: fadeSlideLeft 2s ease;
 }
 
+#experience a::after {
+  content: "\2197";
+  font-size: 0.7em;
+  margin-left: 5px;
+  opacity: 0;
+}
+
+#experience a:hover::after,
+#experience a:focus::after {
+  opacity: 1;
+}
+
 .experience-details {
   display: none;
   transition: display 0.2s ease-in-out;
