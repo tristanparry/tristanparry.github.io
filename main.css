@@ -491,7 +491,7 @@ a {
 }
 
 #experience-container-radio img {
-  padding: 0.8rem;
+  padding: 12px;
 }
 
 #experience-container-radio input[type=radio] { 
@@ -895,7 +895,7 @@ a {
   }
 
   #experience-inner label {
-    height: 47px;
+    height: 45px;
   }
 
   #experience-container-radio {
