@@ -146,6 +146,11 @@ body {
   background-image: var(--accent-color-gradient);
 }
 
+section {
+  position: sticky;
+  box-sizing: border-box;
+}
+
 h1 {
   font-family: 'Beckman', Arial, sans-serif;
   color: var(--white);
@@ -329,7 +334,7 @@ a {
   padding: 2.5em;
   align-items: center;
   text-align: center;
-  position: relative;
+  top: -50%;
 }
 
 #name-title {
@@ -471,7 +476,7 @@ a {
 .experience-position-ul li {
   font-family: courier;
   font-size: 0.9em;
-  margin-bottom: 1.3em;
+  margin-bottom: 1em;
   animation: fadeSlideLeft 2s ease;
 }
 
@@ -833,6 +838,7 @@ a {
     align-items: flex-start;
     padding-bottom: 5em;
     padding-left: 4em;
+    top: 76px;
   }
 
   #name-title {
