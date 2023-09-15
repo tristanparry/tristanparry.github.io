@@ -531,7 +531,7 @@ a {
   flex-direction: column;
   align-items: center;
   background-color: var(--darker-grey);
-  padding: 3em 2em;
+  padding: 3em 2em 0 2em;
 }
 
 #project-list {
@@ -551,6 +551,7 @@ a {
   justify-content: space-between;
   width: 100%;
   margin-top: 2em;
+  padding-bottom: 3em;
   z-index: 0;
 }
 
