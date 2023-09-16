@@ -552,7 +552,7 @@ a {
 #project-list {
   display: grid;
   gap: 1em;
-  padding: 0 5em;
+  margin: 0 5em;
   animation: fadeLower 2s ease;
 }
 
@@ -824,16 +824,17 @@ a {
   .hamburger {
     display: none;
   }
+
+  #project-list {
+    padding: 0 2em;
+    margin: 0;
+  }
 }
 
 @media only screen and (min-width: 600px) {
   .nav-container-ul-a {
     font-size: 0.9em;
     padding: 1em;
-  }
-
-  #project-list {
-    padding: 0 4em;
   }
 }
 
@@ -945,7 +946,6 @@ a {
 @media only screen and (min-width: 1200px) {  
   #project-list {
     grid-template-columns: 1fr 1fr;
-    padding: 0 2em;
   }
 
   .project-row {
