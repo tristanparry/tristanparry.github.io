@@ -24,7 +24,7 @@
         </div>
     </div>
     <section id="splash-screen">
-        <div style="display:flex;flex-direction:column;">
+        <div id="splash-screen-flex-wrapper">
             <h1 id="name-title">TRISTAN PARRY</h1>
             <div id="splash-screen-inner">
                 <p id="personal-description">Student. Developer. Innovator.</p>
@@ -57,19 +57,23 @@
         </svg>
     </section>
     <section id="projects">
-        <div style="display: flex; justify-content: center;"><h2>PROJECTS</h2></div>
+        <div id="project-header-wrapper">
+            <div class="header-wrapper"><h2>PROJECTS</h2></div>
+        </div>
         <div id="project-list" expanded="true"></div>
         <div id="project-list-under">
-            <button id="project-list-arrow-button" class="open textGradient" active="false">
-                <span id="arrow">&#8595;</span>
-                <span id="expand-collapse">OPEN</span>
-            </button>
-            <a class="buttonElement buttonGradient" href="https://github.com/tristanparry?tab=repositories" target="_blank">BROWSE CODE</a>
+            <div id="project-list-under-inner">
+                <button id="project-list-arrow-button" class="open textGradient" active="false">
+                    <span id="arrow">&#8595;</span>
+                    <span id="expand-collapse">OPEN</span>
+                </button>
+                <a class="buttonElement buttonGradient" href="https://github.com/tristanparry?tab=repositories" target="_blank">BROWSE CODE</a>
+            </div>
         </div>
     </section>
     <section id="experience">
         <div>
-            <div style="display: flex; justify-content: center;"><h2>EXPERIENCE</h2></div>
+            <div class="header-wrapper"><h2>EXPERIENCE</h2></div>
             <div id="experience-inner">
                 <div id="experience-container-radio">
                     <label>
@@ -138,7 +142,7 @@
     </section>
     <section id="education">
         <div>
-            <div style="display: flex; justify-content: center;"><h2>EDUCATION</h2></div>
+            <div class="header-wrapper"><h2>EDUCATION</h2></div>
             <div>
                 <h3>University of Waterloo</h3>
                 <p>Candidate for BASc<br>Computer Engineering (Honours)</p>
@@ -151,7 +155,7 @@
                 alt="University of Waterloo - E7"></a>
     </section>
     <section id="hobbies">
-        <div style="display: flex; justify-content: center;"><h2>HOBBIES</h2></div>
+        <div class="header-wrapper"><h2>HOBBIES</h2></div>
         <div id="hobbies-inner">
             <div class="hobby-div">
                 <div>
