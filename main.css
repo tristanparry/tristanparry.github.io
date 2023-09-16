@@ -552,7 +552,7 @@ a {
 #project-list {
   display: grid;
   gap: 1em;
-  margin: 0 5em;
+  margin: 0 1em;
   animation: fadeLower 2s ease;
 }
 
