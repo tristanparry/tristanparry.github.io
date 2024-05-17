@@ -1,8 +1,18 @@
 @font-face {
   font-family: 'Beckman';
-  src: url("../FONT/BeckmanFree.woff2") format("woff2"),
-       url("../FONT/BeckmanFree.woff") format("woff"),
-       url("../FONT/Beckman-Free.otf") format("opentype");
+  src: url("../FONT/Beckman/Beckman.woff2") format("woff2"),
+       url("../FONT/Beckman/Beckman.woff") format("woff"),
+       url("../FONT/Beckman/Beckman.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Crescent';
+  src: url("../FONT/Crescent/Crescent.woff2") format("woff2"),
+       url("../FONT/Crescent/Crescent.woff") format("woff"),
+       url("../FONT/Crescent/Crescent.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -106,6 +116,8 @@
 }
 
 :root {
+  --primary-font: 'Beckman', Arial, sans-serif;
+  --secondary-font: 'Crescent', Arial, sans-serif;
   --black: #000000;
   --dark-grey: #16191C;
   --darker-grey: #111111;
@@ -152,7 +164,7 @@ section {
 }
 
 h1 {
-  font-family: 'Beckman', Arial, sans-serif;
+  font-family: var(--primary-font);
   color: var(--white);
 }
 
@@ -161,7 +173,7 @@ h2 {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: 'Beckman', Arial, sans-serif;
+  font-family: var(--primary-font);
   font-size: 2.5em;
   text-align: center;
   letter-spacing: .12em;
@@ -175,12 +187,12 @@ h2 {
 }
 
 p {
-  font-family: courier;
+  font-family: var(--secondary-font);
 }
 
 a {
   text-decoration: none;
-  font-family: courier;
+  font-family: var(--secondary-font);
 }
 
 .buttonGradient {
@@ -239,8 +251,8 @@ a {
   font-weight: bold;
   padding: 1em;
   border-radius: var(--border-radius);
-  font-size: 1em;
-  font-family: courier;
+  font-size: 0.9em;
+  font-family: var(--secondary-font);
   transition: ease 0.3s;
   user-select: none;
   animation: fade 2s ease;
@@ -268,14 +280,14 @@ a {
 
 #logo-small {
   font-size: 1.5em;
-  font-family: 'Beckman', Arial, sans-serif;
+  font-family: var(--primary-font);
   animation: fadeRaise 2s ease;
 }
 
 #logo-large {
   display: none;
   font-size: 1.5em;
-  font-family: 'Beckman', Arial, sans-serif;
+  font-family: var(--primary-font);
   animation: fadeRaise 2s ease;
 }
 
@@ -453,7 +465,7 @@ a {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: courier;
+  font-family: var(--secondary-font);
   font-size: 1.6em;
   width: fit-content;
   margin-top: 1rem;
@@ -485,7 +497,7 @@ a {
 }
 
 .experience-position-ul li {
-  font-family: courier;
+  font-family: var(--secondary-font);
   font-size: 0.9em;
   margin-bottom: 1em;
   animation: fadeSlideLeft 2s ease;
@@ -589,13 +601,13 @@ a {
 }
 
 #arrow {
-  font-size: 2em;
+  font-size: 1.1em;
   margin-right: 5px;
 }
 
 #expand-collapse {
-  font-family: courier;
-  font-size: 1.1em;
+  font-family: var(--secondary-font);
+  font-size: 1em;
 }
 
 .project-row {
@@ -679,7 +691,7 @@ a {
 
 #education h3 {
   color: var(--white);
-  font-family: courier;
+  font-family: var(--secondary-font);
   font-size: 1.4em;
   animation: fadeSlideLeft 2s ease;
 }
@@ -693,7 +705,7 @@ a {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: courier;
+  font-family: var(--secondary-font);
   font-size: 1em;
   font-style: italic;
   font-weight: bold;
@@ -743,7 +755,7 @@ a {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: courier;
+  font-family: var(--secondary-font);
   font-size: 1.4em;
   text-align: center;
   margin-top: 0.4em;
@@ -798,6 +810,7 @@ a {
   background-color: var(--black);
   text-align: center;
   padding: 2em;
+  font-size: 0.85em;
   user-select: none;
 }
 
@@ -920,7 +933,6 @@ a {
     flex-direction: row;
     justify-content: center;
     gap: 5rem;
-    height: 300px;
   }
 
   #experience-inner label {
@@ -930,7 +942,7 @@ a {
   #experience-container-radio {
     flex-direction: column;
     width: fit-content;
-    height: 100%;
+    height: 300px;
   }
 
   #line {

@@ -55,7 +55,7 @@ fetch("https://api.github.com/users/tristanparry/repos")
             document.getElementById("project-list").setAttribute("expanded", "false");
             document.getElementById("project-list-arrow-button").setAttribute("active", "true");
             document.getElementById("arrow").innerText = "\u2193";
-            document.getElementById("expand-collapse").innerText = "OPEN";
+            document.getElementById("expand-collapse").innerText = "Open";
             document.getElementById("project-list-under").style.boxShadow = `${getComputedStyle(document.getElementById("projects")).getPropertyValue("background-color")} 0px -40px 20px 20px`;
         }
     })
@@ -81,13 +81,13 @@ projectListArrowButton.addEventListener("click", () => {
     if (projectListArrowButton.getAttribute("active") === "true") {
         projectListArrowButton.setAttribute("active", "false");
         arrow.innerText = "\u2191";
-        expandCollapse.innerText = "CLOSE";
+        expandCollapse.innerText = "Close";
         projectList.setAttribute("expanded", "true");
         projectListUnder.style.boxShadow = "";
     } else {
         projectListArrowButton.setAttribute("active", "true");
         arrow.innerText = "\u2193";
-        expandCollapse.innerText = "OPEN";
+        expandCollapse.innerText = "Open";
         projectList.setAttribute("expanded", "false");
         projectListUnder.style.boxShadow = `${getComputedStyle(document.getElementById("projects")).getPropertyValue("background-color")} 0px -40px 20px 20px`;
     }
