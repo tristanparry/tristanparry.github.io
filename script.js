@@ -1,11 +1,5 @@
 const themes = [
     [
-        "169, 32, 248", // violet
-        "204, 78, 134", // pink
-        "180, 132, 29", // orange
-        "166, 243, 69", // yellow-green
-    ],
-    [
         "248, 35, 32",  // scarlet
         "204, 122, 78", // red-orange
         "180, 173, 29", // orange-yellow

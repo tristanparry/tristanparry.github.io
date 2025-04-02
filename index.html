@@ -38,7 +38,7 @@
                 </ul>
             </div>
         </div>
-        <a id="splash-screen-resume-link-field" class="buttonElement buttonGradient" href="Tristan_Parry___Resume.pdf" target="_blank">Résumé</a>
+        <a id="splash-screen-resume-link-field" class="buttonElement buttonGradient" href="Tristan_Parry___Resume.pdf">Résumé</a>
         <svg id="circuit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1002.27 742.01">
             <defs>
                 <style>
@@ -77,7 +77,12 @@
             <div id="experience-inner">
                 <div id="experience-container-radio">
                     <label>
-                        <input type="radio" name="experience" value="pointclickcare" checked>
+                        <input type="radio" name="experience" value="thescore" checked>
+                        <img src="IMAGES/thescore_logo.svg" width="20px" height="20px" alt="thescore">
+                    </label>
+                    <div id="line"></div>
+                    <label>
+                        <input type="radio" name="experience" value="pointclickcare">
                         <img src="IMAGES/pointclickcare_logo.svg" width="20px" height="20px" alt="pointclickcare">
                     </label>
                     <div id="line"></div>
@@ -102,16 +107,28 @@
                     </label>
                 </div>
                 <div class="experience-details" style="display: block;">
+                    <h3><a href="https://www.scoremediaandgaming.com/about" target="_blank">theScore</a></h3>
+                    <p class="experience-position-duration"><b>Software Developer</b><br><i>Jan. 2025 - Apr. 2025</i></p>
+                    <ul class="experience-position-ul">
+                        <li>Upgraded theScore.com web platform from React 16/Next 9 to React 19/Next 15, improving Lighthouse scores by >40%</li>
+                        <li>Restructured component library for 5 marketing applications by eliminating barrel files, reducing bundle size by 33%</li>
+                        <li>Built new ESPN Bet signup form with React/GQL, deployed for NFL Championship weekend with 25,000+ impressions</li>
+                        <li>Improved configs/scripts for CircleCI automation in 5 web applications, boosting Lighthouse scores from 67 to 100</li>
+                        <li>Led sportsbook marketing pages' development, adding 7 CMS components and eliminating engineering maintenance</li>
+                        <li>Identified and removed subscription-dependent libraries in CMS/web platforms, reducing costs by $2,800/year</li>
+                    </ul>
+                </div>
+                <div class="experience-details">
                     <h3><a href="https://www.pointclickcare.com/" target="_blank">PointClickCare</a></h3>
                     <p class="experience-position-duration"><b>Full Stack Developer</b><br><i>Jan. 2024 - Apr. 2024</i></p>
                     <ul class="experience-position-ul">
-                        <li>Implemented software changes across 6 services to support LTPAC products with >60% Skilled Nursing market share</li>
-                        <li>Adapted backend DTOs/API to achieve a 100% success rate in transmitting NPIs to Redox, from a previous 28%</li>
+                        <li>Updated 6 Spring Boot microservices to support Post-Acute Care products with >60% skilled nursing market share</li>
+                        <li>Adapted backend API to boost National Provider Identifier transmission success to Redox, from 28% to 100%</li>
+                        <li>Wrote automated unit/integration test suites using Cypress to maintain a Sonarqube code coverage score above 90%</li>
+                        <li>Created 5 Datadog monitors to enhance app observability/metric automation across demo/production environments</li>
                         <li>Remodeled frontend store/state management using Pinia to upgrade Carequality application to Vue 3 standard</li>
-                        <li>Wrote unit tests and automated test suites using Cypress to conserve a Sonarqube code coverage score above 90%</li>
                         <li>Resolved security violations using Sonatype build reports to maintain 0 vulnerabilities across various microservices</li>
                         <li>Overhauled inbound data service's dependencies by updating Spring Boot version to ensure service maintainability</li>
-                        <li>Created 5 monitors via Datadog to enhance app visibility and metric automation across demo/production environments</li>
                         <li>Communicated with product/UX teams using Figma to develop frontend for asynchronous facility enablement service</li>
                         <li>Led biweekly software demo sessions with engineering/product teams to discuss and solidify end-to-end changes</li>
                     </ul>
@@ -120,30 +137,31 @@
                     <h3><a href="https://www.amdocs.com/" target="_blank">Amdocs</a></h3>
                     <p class="experience-position-duration"><b>UI Developer</b><br><i>May 2023 - Aug. 2023</i></p>
                     <ul class="experience-position-ul">
-                        <li>Directed full remodel for frontend API calls using React Redux to lower corporate traffic by 10+ seconds per network call</li>
-                        <li>Implemented report functionality in partnership management app to deliver corporate lifecycle metrics for 100+ partners</li>
-                        <li>Utilized React/Material UI in developing 5 graphical components to fulfil mockups for Amdocs's proprietary software</li>
-                        <li>Completed AWS workshops using Sagemaker/CodeWhisperer to design serverless Lambda functions with generative AI</li>
+                        <li>Developed 10+ React components using Material UI to fulfil mockups for telecommunications enterprise software</li>
+                        <li>Directed full remodel for frontend API calls using React Redux, lowering traffic by 10+ seconds per network call</li>
+                        <li>Implemented report functionality in internal management app to deliver corporate lifecycle metrics for 100+ partners</li>
+                        <li>Completed AWS workshops using Sagemaker/CodeWhisperer to design AWS Lambda functions with generative AI</li>
                         <li>Coordinated with backend/management teams to perform regular Jira groomings and revise commercial business logic</li>
                     </ul>
                 </div>
                 <div class="experience-details">
-                    <h3><a href="https://www.lcbonext.com/" target="_blank">LCBO|next</a></h3>
+                    <h3><a href="https://www.lcbo.com/" target="_blank">LCBO|next</a></h3>
                     <p class="experience-position-duration"><b>Full Stack Developer</b><br><i>Sep. 2022 - Dec. 2022</i></p>
                     <ul class="experience-position-ul">
                         <li>Developed LED product tag flash functionality using a specialized API for 4,000+ products at the LCBO's flagship store</li>
-                        <li>Built the LCBO Service Template using PostgreSQL/React to facilitate future app startup with user authentication routes</li>
+                        <li>Oversaw business relations with exterior partner Danavision to design the LCBO’s LED product tag technology</li>
+                        <li>Built the LCBO Service Template using PostgreSQL/React to facilitate future app startup with user authentication</li>
                         <li>Implemented over 60 changes in the LCBO's Grocer Claims app to improve usability and introduce new client features</li>
                         <li>Managed Azure/Bitbucket repositories to maintain production applications and update the LCBO's live software</li>
                         <li>Coordinated with various LCBO divisions via email and meetings to schedule app testing and deployment windows</li>
-                        <li>Oversaw business relations with exterior partner Danavision to design the LCBO's LED product tag technology</li>
                     </ul>
                 </div>
                 <div class="experience-details">
                     <h3><a href="https://www.polarisintelligence.com/" target="_blank">Polaris Intelligence Inc.</a></h3>
                     <p class="experience-position-duration"><b>Full Stack Developer</b><br><i>Jan. 2022 - Apr. 2022</i></p>
                     <ul class="experience-position-ul">
-                        <li>Developed the Polaris Trend Analysis module using React/Plotly.js to delineate Canadian census data</li>
+                        <li>Developed the Polaris Trend Analysis module using React/Plotly.js to delineate historical Canadian census data</li>
+                        <li>Attracted a Big Five Canadian bank by pioneering the Trend Analysis module, leading to a potential partnership</li>
                         <li>Employed Jira to solve over 70 bugs and improve cross-browser compatibility</li>
                         <li>Collaborated using the Agile framework to facilitate the production of data mining software</li>
                         <li>Orchestrated company meetings for Polaris Intelligence's codebase architecture and practices</li>
