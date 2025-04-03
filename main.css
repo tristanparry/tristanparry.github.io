@@ -353,6 +353,7 @@ a {
   align-items: center;
   text-align: center;
   top: -50%;
+  overflow-x: hidden;
 }
 
 #splash-screen-flex-wrapper {
@@ -554,6 +555,7 @@ a {
   flex-direction: column;
   align-items: center;
   background-color: var(--darker-grey);
+  overflow-x: hidden;
 }
 
 #project-header-wrapper {
@@ -986,5 +988,11 @@ a {
 @media only screen and (min-width: 1620px) {
   #splash-screen {
     padding-left: 6em;
+  }
+}
+
+@media only screen and (min-width: 2250px) {
+  #hobbies-inner {
+    justify-content: center;
   }
 }

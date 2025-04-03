@@ -30,16 +30,16 @@ fetch("https://api.github.com/users/tristanparry/repos")
     .then(data => {
         let returnHTML = "";
         data.forEach(project => {
-            returnHTML += `<a href="${project.html_url}" target="_blank">
+            returnHTML += `<a href="${project.html_url ?? ""}" target="_blank">
                                 <div class="project-row borderGradient">
                                     <div class="project-info-1">
                                         <h3 class="project-title">${project.name}</h3>
                                         <span class="project-description">${project.description}</span>
                                     </div>
                                     <div class="project-info-2">
-                                        <img src="IMAGES/language.svg" alt="Language" height="25"><span>${project.language}</span>
-                                        <img src="IMAGES/fork.svg" alt="Forks" height="25"><span>${project.forks_count}</span>
-                                        <img src="IMAGES/eye.svg" alt="Watchers" width="25"><span>${project.watchers_count}</span>
+                                        <img src="IMAGES/language.svg" alt="Language" height="25"><span>${project.language ?? "N/A"}</span>
+                                        <img src="IMAGES/fork.svg" alt="Forks" height="25"><span>${project.forks_count ?? 0}</span>
+                                        <img src="IMAGES/eye.svg" alt="Watchers" width="25"><span>${project.watchers_count ?? 0}</span>
                                     </div>
                                 </div>
                             </a>`
