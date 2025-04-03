@@ -113,3 +113,6 @@ radioButtons.forEach(e => {
         }
     });
 });
+
+const footerCaption = document.getElementById("footer-caption");
+footerCaption.innerText = `Tristan Parry | \u00A9 ${new Date().getFullYear()}`;
