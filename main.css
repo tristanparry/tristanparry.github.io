@@ -545,12 +545,6 @@ a {
   border-radius: var(--border-radius);
 }
 
-#line {
-  height: 1px;
-  width: 100%;
-  background-color: var(--white);
-}  
-
 #projects {
   display: flex;
   flex-direction: column;
@@ -945,12 +939,8 @@ a {
   #experience-container-radio {
     flex-direction: column;
     width: fit-content;
+    gap: 0.5rem;
     height: 300px;
-  }
-
-  #line {
-    width: 1px;
-    height: 100%;
   }
 
   #education-uwphoto-link-field {
