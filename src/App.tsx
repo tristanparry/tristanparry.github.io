@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <PageTransition>
-      <div className="relative min-h-screen">
+      <div className="min-h-screen-safe relative">
         <FlowBackground />
         <div className="relative z-10">
           <ThemedCursors />

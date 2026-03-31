@@ -290,7 +290,10 @@ const Experience = () => {
   );
 
   return (
-    <Section id={SectionRoutes.Experience} className="h-screen overflow-hidden">
+    <Section
+      id={SectionRoutes.Experience}
+      className="h-screen-safe overflow-hidden"
+    >
       <ScrollLockPanel
         className="min-h-0 w-full flex-1 self-center text-sm"
         bottomSlot={bottomSlot}

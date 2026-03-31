@@ -75,7 +75,7 @@ const Hero = () => {
     <Section
       id={SectionRoutes.Hero}
       hero
-      className="grid h-screen [grid-template-areas:'stack']"
+      className="h-screen-safe grid [grid-template-areas:'stack']"
     >
       <motion.p
         initial={{ opacity: 0 }}

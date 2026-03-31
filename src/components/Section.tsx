@@ -24,7 +24,7 @@ const Section = ({
         'relative shrink-0 snap-start',
         !hero && 'snap-always',
         overlayChildren &&
-          'flex h-screen min-h-screen flex-col justify-between',
+          'h-screen-safe min-h-screen-safe flex flex-col justify-between',
       )}
     >
       <div

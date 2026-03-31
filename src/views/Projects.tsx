@@ -206,7 +206,10 @@ const Projects = () => {
 
   if (isLoading) {
     return (
-      <Section id={SectionRoutes.Projects} className="h-screen overflow-hidden">
+      <Section
+        id={SectionRoutes.Projects}
+        className="h-screen-safe overflow-hidden"
+      >
         <div className="flex w-full flex-1 items-center justify-center">
           <div className="border-secondary-text h-8 w-8 animate-spin rounded-full border-t-2 border-b-2 md:h-10 md:w-10"></div>
         </div>
@@ -216,7 +219,10 @@ const Projects = () => {
 
   if (!projects || projects.length === 0) {
     return (
-      <Section id={SectionRoutes.Projects} className="h-screen overflow-hidden">
+      <Section
+        id={SectionRoutes.Projects}
+        className="h-screen-safe overflow-hidden"
+      >
         <div className="flex w-full flex-1 items-center justify-center">
           <TextLink
             linkText="GitHub"
@@ -229,7 +235,10 @@ const Projects = () => {
   }
 
   return (
-    <Section id={SectionRoutes.Projects} className="h-screen overflow-hidden">
+    <Section
+      id={SectionRoutes.Projects}
+      className="h-screen-safe overflow-hidden"
+    >
       <ScrollLockPanel
         className="min-h-0 w-full flex-1 self-center text-sm"
         bottomSlot={bottomSlot}

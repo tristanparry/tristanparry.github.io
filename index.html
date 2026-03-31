@@ -20,14 +20,14 @@
           window.history.replaceState(
             null,
             null,
-            l.pathname.slice(0, -1) + decoded + l.hash
+            l.pathname.slice(0, -1) + decoded + l.hash,
           );
         }
       })(window.location);
     </script>
   </head>
   <body
-    class="font-body bg-primary-bg text-primary-text flex min-h-screen flex-col overflow-x-hidden transition-colors duration-200"
+    class="font-body bg-primary-bg text-primary-text min-h-screen-safe flex flex-col overflow-x-hidden transition-colors duration-200"
   >
     <main id="root" class="flex flex-1 flex-col"></main>
     <script type="module" src="/src/main.tsx"></script>

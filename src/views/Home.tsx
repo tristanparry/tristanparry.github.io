@@ -20,7 +20,7 @@ const Home = () => {
     <main
       ref={containerRef}
       data-scroll-container
-      className="no-scrollbar relative h-screen snap-y snap-mandatory overflow-y-auto overscroll-y-none"
+      className="no-scrollbar h-screen-safe relative snap-y snap-mandatory overflow-y-auto overscroll-y-none"
     >
       <TorontoTime />
       <Navbar />

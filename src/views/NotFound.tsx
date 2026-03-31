@@ -6,7 +6,7 @@ const NotFound = () => {
   const { t } = useTranslation();
 
   return (
-    <main className="flex h-screen flex-col justify-between">
+    <main className="h-screen-safe flex flex-col justify-between">
       <div className="flex flex-1 flex-col items-center justify-center gap-4 px-8">
         <h1 className="font-heading text-display leading-none font-bold">
           {t('notFound.title')}
