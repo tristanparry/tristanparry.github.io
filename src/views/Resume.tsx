@@ -54,7 +54,7 @@ const Resume = () => {
   };
 
   return (
-    <main className="h-screen-safe flex flex-1 flex-col justify-between">
+    <main className="min-h-screen-safe flex flex-1 flex-col justify-between">
       <div
         className={clsx(
           'sticky top-0 z-20 flex items-center justify-between px-4 py-2 select-none',
