@@ -242,7 +242,7 @@ const Projects = () => {
       <ScrollLockPanel
         className="min-h-0 w-full flex-1 self-center text-sm"
         bottomSlot={bottomSlot}
-        bottomSlotClassName="p-4 rounded-r-md backdrop-blur-sm"
+        bottomSlotClassName="p-4"
         bottomSlotMinSpace={DEFAULT_BOTTOM_SLOT_MIN_SPACE}
       >
         <div
@@ -257,7 +257,7 @@ const Projects = () => {
                 href={project.url}
                 target="_blank"
                 rel="noreferrer"
-                className="group relative p-4 transition-colors duration-200 hover:backdrop-blur-lg"
+                className="group relative p-4 transition-colors duration-200 hover:backdrop-blur-xl"
                 onMouseEnter={() => showPopup(i)}
                 onMouseOver={() =>
                   selectedProjectIndex === null &&

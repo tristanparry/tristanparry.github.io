@@ -20,7 +20,7 @@ const SettingsMenu = () => {
       className={clsx(
         'fixed right-0 bottom-0 z-[15] p-2',
         isScrolled &&
-          'group [&_button]:text-tertiary-text hover:[&_button]:text-primary-text [&_button]:mix-blend-difference [&_button]:hover:mix-blend-normal',
+          '[&_button]:text-tertiary-text hover:[&_button]:text-primary-text [&_button]:mix-blend-difference [&_button]:hover:mix-blend-normal',
       )}
     >
       <motion.div

@@ -3,13 +3,11 @@ import TextButton from '@/src/components/TextButton';
 import { Icons } from '@/src/constants/ui';
 import i18n from '@/src/i18n';
 import { type LanguageCode, Language } from '@/src/types/i18n';
-import { useWindowScroll } from '@/src/utils/useWindowScroll';
 import clsx from 'clsx';
 import { startCase } from 'lodash';
 import { useEffect, useRef, useState } from 'react';
 
 const LanguageMenu = () => {
-  const { isScrolled } = useWindowScroll();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -38,14 +36,10 @@ const LanguageMenu = () => {
       <Button
         iconName={Icons.Globe}
         onClick={() => setIsOpen((prev) => !prev)}
-        className={clsx(
-          'rounded-none rounded-b-md sm:rounded-none sm:rounded-r-md',
-          isScrolled &&
-            'group-hover:bg-secondary-bg/50 mix-blend-difference group-hover:mix-blend-normal',
-        )}
+        className="rounded-none rounded-b-md transition-all duration-200 sm:rounded-none sm:rounded-r-md"
       />
       {isOpen && (
-        <div className="border-secondary-border bg-primary-bg/80 absolute right-[100%] bottom-0 mb-4 flex flex-col gap-2 rounded-sm border p-2 backdrop-blur-sm sm:right-0 sm:bottom-[100%]">
+        <div className="border-secondary-border bg-primary-bg/75 hover:bg-primary-bg/90 absolute right-[100%] bottom-0 mb-4 flex flex-col gap-2 rounded-md border p-2 transition-all duration-200 sm:right-0 sm:bottom-[100%]">
           {Object.keys(Language).map((langCode) => (
             <TextButton
               className={clsx(

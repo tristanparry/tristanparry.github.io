@@ -9,7 +9,7 @@ const TextChip = ({ text, className }: TextChipProps) => {
   return (
     <small
       className={clsx(
-        'border-secondary-text text-secondary-text py-3/4 w-fit rounded-full border px-2 text-xs transition-all duration-200 select-none',
+        'border-secondary-text text-secondary-text py-3/4 w-fit rounded-full border px-2 text-xs backdrop-blur-md transition-all duration-200 select-none',
         className,
       )}
     >

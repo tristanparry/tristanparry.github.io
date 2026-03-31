@@ -121,14 +121,14 @@ const FlowBackground = () => {
       };
 
       const lightFallbacks = {
-        bg: 'hsl(0, 0%, 95%)',
-        text: 'hsl(0, 0%, 5%)',
-        secondaryText: 'hsl(0, 0%, 30%)',
+        bg: 'hsl(0 0% 95%)',
+        text: 'hsl(0 0% 5%)',
+        secondaryText: 'hsl(0 0% 30%)',
       };
       const darkFallbacks = {
-        bg: 'hsl(0, 0%, 5%)',
-        text: 'hsl(0, 0%, 95%)',
-        secondaryText: 'hsl(0, 0%, 70%)',
+        bg: 'hsl(0 0% 5%)',
+        text: 'hsl(0 0% 95%)',
+        secondaryText: 'hsl(0 0% 70%)',
       };
       const fallbacks = isDarkTheme ? darkFallbacks : lightFallbacks;
 

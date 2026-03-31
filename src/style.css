@@ -19,8 +19,6 @@ body,
     --vh: var(--vh-fallback);
   }
 }
-
-/* Safe screen height utilities that work correctly on mobile */
 .h-screen-safe {
   height: 100vh;
   height: 100dvh;
@@ -91,7 +89,6 @@ button {
   --text-display: clamp(3rem, calc(2rem + 4vw), 6rem);
   --text-hero: clamp(3.5rem, calc(2.5rem + 8vw), 12rem);
 }
-
 .dark {
   --color-primary-bg: hsl(0 0% 5%);
   --color-secondary-bg: hsl(0 0% 15%);
