@@ -288,8 +288,8 @@ const FlowBackground = () => {
   }, [theme]);
 
   return (
-    <div aria-hidden="true" className="pointer-events-none fixed inset-0">
-      <canvas ref={canvasRef} className="h-full w-full opacity-90" />
+    <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0">
+      <canvas ref={canvasRef} className="block h-full w-full opacity-90" />
     </div>
   );
 };

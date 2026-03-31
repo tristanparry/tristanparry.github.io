@@ -45,7 +45,7 @@ const LanguageMenu = () => {
         )}
       />
       {isOpen && (
-        <div className="border-secondary-border bg-primary-bg/80 absolute right-0 bottom-[100%] mb-4 flex flex-col gap-2 rounded-sm border p-2 backdrop-blur-sm">
+        <div className="border-secondary-border bg-primary-bg/80 absolute right-[100%] bottom-0 mb-4 flex flex-col gap-2 rounded-sm border p-2 backdrop-blur-sm sm:right-0 sm:bottom-[100%]">
           {Object.keys(Language).map((langCode) => (
             <TextButton
               className={clsx(
