@@ -206,7 +206,7 @@ const Projects = () => {
 
   if (isLoading) {
     return (
-      <Section id={SectionRoutes.Projects}>
+      <Section id={SectionRoutes.Projects} className="h-screen overflow-hidden">
         <div className="flex w-full flex-1 items-center justify-center">
           <div className="border-secondary-text h-8 w-8 animate-spin rounded-full border-t-2 border-b-2 md:h-10 md:w-10"></div>
         </div>

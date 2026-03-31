@@ -4,8 +4,15 @@ import { useEffect, useRef } from 'react';
 const clamp = (value: number, min: number, max: number) =>
   Math.min(max, Math.max(min, value));
 
-const withAlpha = (color: string, alpha: number) =>
-  color.replace(/\)$/, ` / ${alpha})`);
+const withAlpha = (color: string, alpha: number): string => {
+  if (!color || !color.includes('(')) {
+    return `rgba(128, 128, 128, ${alpha})`;
+  }
+  if (color.includes('/')) {
+    return color.replace(/\/\s*[\d.]+\s*\)$/, `/ ${alpha})`);
+  }
+  return color.replace(/\)$/, ` / ${alpha})`);
+};
 
 interface BlobConfig {
   radius: number;
@@ -105,12 +112,31 @@ const FlowBackground = () => {
     let washEndIntensity = 0.06;
 
     const syncColors = () => {
-      const styles = getComputedStyle(document.documentElement);
-      primaryBg = styles.getPropertyValue('--color-primary-bg').trim();
-      accentColor = styles.getPropertyValue('--color-secondary-text').trim();
-      secondaryAccent = styles.getPropertyValue('--color-primary-text').trim();
-      textColor = styles.getPropertyValue('--color-secondary-text').trim();
       const isDarkTheme = theme === 'dark';
+      const styles = getComputedStyle(document.documentElement);
+
+      const getColor = (varName: string, fallback: string): string => {
+        const value = styles.getPropertyValue(varName).trim();
+        return value || fallback;
+      };
+
+      const lightFallbacks = {
+        bg: 'hsl(0, 0%, 95%)',
+        text: 'hsl(0, 0%, 5%)',
+        secondaryText: 'hsl(0, 0%, 30%)',
+      };
+      const darkFallbacks = {
+        bg: 'hsl(0, 0%, 5%)',
+        text: 'hsl(0, 0%, 95%)',
+        secondaryText: 'hsl(0, 0%, 70%)',
+      };
+      const fallbacks = isDarkTheme ? darkFallbacks : lightFallbacks;
+
+      primaryBg = getColor('--color-primary-bg', fallbacks.bg);
+      accentColor = getColor('--color-secondary-text', fallbacks.secondaryText);
+      secondaryAccent = getColor('--color-primary-text', fallbacks.text);
+      textColor = getColor('--color-secondary-text', fallbacks.secondaryText);
+
       blobIntensity = isDarkTheme ? 0.27 : 0.51;
       pointerAccentIntensity = isDarkTheme ? 0.2 : 0.43;
       pointerSecondaryIntensity = isDarkTheme ? 0.15 : 0.37;
@@ -154,9 +180,14 @@ const FlowBackground = () => {
       context.fill();
     };
 
+    const supportsFilter =
+      typeof context.filter !== 'undefined' &&
+      CSS.supports('filter', 'blur(1px)');
+
     const drawFrame = (time: number) => {
       context.clearRect(0, 0, width, height);
-      context.fillStyle = primaryBg;
+      context.fillStyle =
+        primaryBg || (theme === 'dark' ? '#0d0d0d' : '#f2f2f2');
       context.fillRect(0, 0, width, height);
       pointer.currentX += (pointer.targetX - pointer.currentX) * 0.05;
       pointer.currentY += (pointer.targetY - pointer.currentY) * 0.05;
@@ -164,7 +195,9 @@ const FlowBackground = () => {
       const pointerY = pointer.currentY * height;
       const minDimension = Math.min(width, height);
       context.globalCompositeOperation = 'source-over';
-      context.filter = 'blur(56px)';
+      if (supportsFilter) {
+        context.filter = 'blur(56px)';
+      }
       for (const blob of blobConfigs) {
         const orbitX =
           Math.sin(time * 0.00018 + blob.phase) * width * blob.driftX;
@@ -193,7 +226,9 @@ const FlowBackground = () => {
         secondaryAccent,
         pointerSecondaryIntensity,
       );
-      context.filter = 'blur(0px)';
+      if (supportsFilter) {
+        context.filter = 'none';
+      }
       context.globalCompositeOperation = 'soft-light';
       const wash = context.createLinearGradient(0, 0, width, height);
       wash.addColorStop(0, withAlpha(accentColor, washStartIntensity));
