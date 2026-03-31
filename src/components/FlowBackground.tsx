@@ -137,12 +137,12 @@ const FlowBackground = () => {
       secondaryAccent = getColor('--color-primary-text', fallbacks.text);
       textColor = getColor('--color-secondary-text', fallbacks.secondaryText);
 
-      blobIntensity = isDarkTheme ? 0.27 : 0.51;
-      pointerAccentIntensity = isDarkTheme ? 0.2 : 0.43;
-      pointerSecondaryIntensity = isDarkTheme ? 0.15 : 0.37;
-      washStartIntensity = isDarkTheme ? 0.05 : 0.23;
-      washMidIntensity = isDarkTheme ? 0.025 : 0.19;
-      washEndIntensity = isDarkTheme ? 0.05 : 0.23;
+      blobIntensity = isDarkTheme ? 0.18 : 0.6;
+      pointerAccentIntensity = isDarkTheme ? 0.14 : 0.5;
+      pointerSecondaryIntensity = isDarkTheme ? 0.1 : 0.44;
+      washStartIntensity = isDarkTheme ? 0.03 : 0.28;
+      washMidIntensity = isDarkTheme ? 0.015 : 0.24;
+      washEndIntensity = isDarkTheme ? 0.03 : 0.28;
     };
 
     const resizeCanvas = () => {
