@@ -10,6 +10,7 @@ interface ScrollLockPanelProps {
   children: ReactNode;
   className?: string;
   wheelLock?: boolean;
+  isActive?: boolean;
   bottomSlot?: ReactNode;
   bottomSlotClassName?: string;
   bottomSlotMinSpace?: number;
@@ -19,13 +20,15 @@ const ScrollLockPanel = ({
   children,
   className,
   wheelLock = true,
+  isActive,
   bottomSlot,
   bottomSlotClassName,
   bottomSlotMinSpace = 0,
 }: ScrollLockPanelProps) => {
   const panelRef = useRef<HTMLDivElement | null>(null);
   const contentRef = useRef<HTMLDivElement | null>(null);
-  const [availableBottomSpace, setAvailableBottomSpace] = useState(0);
+  const wasActiveRef = useRef<boolean>(isActive);
+  const [availableBottomSpace, setAvailableBottomSpace] = useState<number>(0);
 
   useEffect(() => {
     if (!wheelLock) return;
@@ -72,6 +75,14 @@ const ScrollLockPanel = ({
       window.removeEventListener('resize', updateAvailableBottomSpace);
     };
   }, [bottomSlot]);
+
+  useEffect(() => {
+    const panelEl = panelRef.current;
+    if (wasActiveRef.current && isActive === false && panelEl) {
+      panelEl.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }
+    wasActiveRef.current = isActive;
+  }, [isActive]);
 
   const shouldRenderBottomSlot =
     !!bottomSlot && availableBottomSpace >= bottomSlotMinSpace;

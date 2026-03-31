@@ -25,6 +25,10 @@ import { useTranslation } from 'react-i18next';
 
 const POPUP_FADE_DURATION_MS = 200;
 
+interface ProjectsProps {
+  isActive?: boolean;
+}
+
 interface ProjectLanguagesProps {
   languages: string[];
   isSelected: boolean;
@@ -101,7 +105,7 @@ const ProjectRowContent = memo(
   ),
 );
 
-const Projects = () => {
+const Projects = ({ isActive }: ProjectsProps) => {
   const { t } = useTranslation();
   const [projects, setProjects] = useState<GithubProject[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -241,6 +245,7 @@ const Projects = () => {
     >
       <ScrollLockPanel
         className="min-h-0 w-full flex-1 self-center text-sm"
+        isActive={isActive}
         bottomSlot={bottomSlot}
         bottomSlotClassName="p-4"
         bottomSlotMinSpace={DEFAULT_BOTTOM_SLOT_MIN_SPACE}

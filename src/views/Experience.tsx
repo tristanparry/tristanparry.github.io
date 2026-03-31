@@ -50,6 +50,10 @@ type LogoIconComponent =
   | (typeof COMPANY_LOGOS)[keyof typeof COMPANY_LOGOS]
   | undefined;
 
+interface ExperienceProps {
+  isActive?: boolean;
+}
+
 interface ExperiencePositionDisplay {
   key: string;
   title: string;
@@ -230,7 +234,7 @@ const ExperienceMobileRow = memo(
   ),
 );
 
-const Experience = () => {
+const Experience = ({ isActive }: ExperienceProps) => {
   const { i18n, t } = useTranslation();
   const [hoveredExperienceIndex, setHoveredExperienceIndex] = useState<
     number | null
@@ -296,6 +300,7 @@ const Experience = () => {
     >
       <ScrollLockPanel
         className="min-h-0 w-full flex-1 self-center text-sm"
+        isActive={isActive}
         bottomSlot={bottomSlot}
         bottomSlotClassName="p-4"
         bottomSlotMinSpace={DEFAULT_BOTTOM_SLOT_MIN_SPACE}
