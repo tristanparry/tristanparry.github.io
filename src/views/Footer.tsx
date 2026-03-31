@@ -1,5 +1,5 @@
-import TpLogo from '@/assets/images/tp_logo.svg?react';
 import SocialButtons from '@/src/components/SocialButtons';
+import TpLogo from '@/src/images/tp_logo.svg?react';
 import { getCurrentYear } from '@/src/utils/dates';
 import clsx from 'clsx';
 import { useTranslation } from 'react-i18next';

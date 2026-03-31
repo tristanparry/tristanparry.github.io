@@ -1,7 +1,7 @@
-import bracketCursorSvg from '@/assets/images/bracket_cursor.svg?raw';
-import ringCursorSvg from '@/assets/images/ring_cursor.svg?raw';
 import { DEFAULT_CURSOR_SIZE } from '@/src/constants/ui';
 import { useTheme } from '@/src/contexts/ThemeContext';
+import bracketCursorSvg from '@/src/images/bracket_cursor.svg?raw';
+import ringCursorSvg from '@/src/images/ring_cursor.svg?raw';
 import { useEffect, useMemo, useState } from 'react';
 
 const COLOR_VAR = '--color-primary-text';

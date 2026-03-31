@@ -1,5 +1,5 @@
-import TpLogo from '@/assets/images/tp_logo.svg?react';
 import { DEFAULT_ICON_SIZE } from '@/src/constants/ui';
+import TpLogo from '@/src/images/tp_logo.svg?react';
 
 interface LogoProps {
   height?: number;

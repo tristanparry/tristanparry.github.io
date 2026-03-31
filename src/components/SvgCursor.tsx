@@ -1,6 +1,6 @@
-import bracketCursorSvg from '@/assets/images/bracket_cursor.svg?raw';
 import { DEFAULT_CURSOR_SIZE } from '@/src/constants/ui';
 import { useTheme } from '@/src/contexts/ThemeContext';
+import bracketCursorSvg from '@/src/images/bracket_cursor.svg?raw';
 import {
   cloneElement,
   useEffect,
