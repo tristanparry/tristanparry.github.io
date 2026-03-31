@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&family=Manrope:wght@200..800&display=swap');
+@import 'tailwindcss';
+@source "../node_modules/flowbite-react";
+
+html,
+body,
+#root {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  cursor: var(--cursor-default, default);
+}
+a,
+button {
+  cursor: var(--cursor-interactive, default);
+}
+
+::selection {
+  background: var(--color-secondary-text);
+  color: var(--color-primary-bg);
+}
+
+:root {
+  --color-primary-bg: hsl(0 0% 95%);
+  --color-secondary-bg: hsl(0 0% 85%);
+  --color-tertiary-bg: hsl(0 0% 70%);
+  --color-primary-text: hsl(0 0% 5%);
+  --color-secondary-text: hsl(0 0% 30%);
+  --color-tertiary-text: hsl(0 0% 50%);
+  --color-primary-accent: hsl(145 85% 30%);
+  --color-secondary-accent: hsl(145 85% 40%);
+  --logo-total-length: 2900px;
+  --font-size-base: 1rem;
+  --type-scale: 1.25;
+  --cursor-default: default;
+  --cursor-interactive: default;
+  --fluid-min-vw: 20rem;
+  --fluid-max-vw: 80rem;
+  --fluid-factor: 0.5;
+  --text-caption: clamp(0.5rem, calc(0.58rem + 0.2vw), 0.75rem);
+  --text-xs: clamp(0.6rem, calc(0.6rem + 0.2vw), 0.8rem);
+  --text-sm: clamp(0.65rem, calc(0.7rem + 0.25vw), 0.9rem);
+  --text-body: clamp(0.8rem, calc(0.8rem + 0.35vw), 2rem);
+  --text-lg: clamp(1rem, calc(0.9rem + 0.5vw), 3rem);
+  --text-h4: clamp(1.125rem, calc(1rem + 0.6vw), 2rem);
+  --text-h3: clamp(1.25rem, calc(1.1rem + 0.75vw), 3rem);
+  --text-h2: clamp(1.5rem, calc(1.2rem + 1.5vw), 4rem);
+  --text-h1: clamp(2rem, calc(1.5rem + 2.5vw), 8rem);
+  --text-display: clamp(3rem, calc(2rem + 4vw), 6rem);
+  --text-hero: clamp(3.5rem, calc(2.5rem + 8vw), 12rem);
+}
+
+.dark {
+  --color-primary-bg: hsl(0 0% 5%);
+  --color-secondary-bg: hsl(0 0% 15%);
+  --color-tertiary-bg: hsl(0 0% 30%);
+  --color-primary-text: hsl(0 0% 95%);
+  --color-secondary-text: hsl(0 0% 70%);
+  --color-tertiary-text: hsl(0 0% 50%);
+  --color-primary-accent: hsl(145 85% 70%);
+  --color-secondary-accent: hsl(145 85% 60%);
+}
+
+h1 {
+  font-size: var(--text-h1);
+}
+h2 {
+  font-size: var(--text-h2);
+}
+h3 {
+  font-size: var(--text-h3);
+}
+h4 {
+  font-size: var(--text-h4);
+}
+h5 {
+  font-size: var(--text-lg);
+}
+h6 {
+  font-size: var(--text-body);
+}
+p,
+li,
+td,
+th,
+label,
+input,
+textarea,
+select,
+button {
+  font-size: var(--text-body);
+}
+small,
+figcaption,
+caption {
+  font-size: var(--text-sm);
+}
+
+.text-caption {
+  font-size: var(--text-caption);
+}
+.text-xs {
+  font-size: var(--text-xs);
+}
+.text-sm {
+  font-size: var(--text-sm);
+}
+.text-body {
+  font-size: var(--text-body);
+}
+.text-lg {
+  font-size: var(--text-lg);
+}
+.text-h4 {
+  font-size: var(--text-h4);
+}
+.text-h3 {
+  font-size: var(--text-h3);
+}
+.text-h2 {
+  font-size: var(--text-h2);
+}
+.text-h1 {
+  font-size: var(--text-h1);
+}
+.text-display {
+  font-size: var(--text-display);
+}
+.text-hero {
+  font-size: var(--text-hero);
+}
+
+.draw-logo path {
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 4px;
+  stroke-dasharray: var(--logo-total-length);
+  stroke-dashoffset: var(--logo-total-length);
+  animation: var(--draw-logo);
+}
+
+body.page-transition,
+body.page-transition * {
+  overflow: hidden;
+}
+[data-section-scroll] {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+[data-section-scroll]::-webkit-scrollbar {
+  display: none;
+}
+
+.text-carousel-track {
+  will-change: transform;
+  animation: textCarouselScroll var(--text-carousel-duration, 20s) linear
+    infinite;
+}
+.text-carousel-track-reverse {
+  animation-direction: reverse;
+}
+.text-carousel-group {
+  flex: 0 0 auto;
+}
+
+@keyframes drawLogo {
+  from {
+    stroke-dashoffset: var(--logo-total-length);
+    fill-opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+    stroke-width: 0;
+  }
+}
+
+@keyframes textCarouselScroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(
+      calc(-1 * var(--text-carousel-segment-width, 0px)),
+      0,
+      0
+    );
+  }
+}
+
+@theme {
+  --color-primary-bg: var(--color-primary-bg);
+  --color-secondary-bg: var(--color-secondary-bg);
+  --color-tertiary-bg: var(--color-tertiary-bg);
+  --color-primary-text: var(--color-primary-text);
+  --color-secondary-text: var(--color-secondary-text);
+  --color-tertiary-text: var(--color-tertiary-text);
+  --color-primary-accent: var(--color-primary-accent);
+  --color-secondary-accent: var(--color-secondary-accent);
+  --font-heading: 'Fustat', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --draw-logo: drawLogo 2.5s ease-in-out forwards;
+}

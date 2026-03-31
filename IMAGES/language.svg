@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg class="language" width="800px" height="800px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
-    stroke-width="3" stroke="#ffffff" fill="none">
-    <line x1="36.62" y1="13.05" x2="27.08" y2="50.95" stroke-linecap="round" />
-    <polyline points="22.26 21.98 12.81 32.01 22.26 42.02" stroke-linecap="round"
-        stroke-linejoin="round" />
-    <polyline points="41.74 21.98 51.19 32.01 41.74 42.02" stroke-linecap="round"
-        stroke-linejoin="round" />
-</svg>

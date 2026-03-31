@@ -1,0 +1,97 @@
+{
+  "sections": {
+    "hero": "Home",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "resume": "Résumé"
+  },
+  "settings": {
+    "menu": "Settings",
+    "theme": {
+      "toggle": "{{theme}} mode"
+    },
+    "language": {
+      "current": "{{language}}"
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} Tristan Parry",
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "description": "The page you are looking for does not exist.",
+    "actions": {
+      "back": "Home"
+    }
+  },
+  "hero": {
+    "torontoCityCode": "YYZ",
+    "name": "Tristan Parry",
+    "description": "Software engineer and designer crafting impactful products for",
+    "descriptionOptions": [
+      "the web.",
+      "mobile.",
+      "the future.",
+      "media.",
+      "the world."
+    ]
+  },
+  "experience": {
+    "present": "Present",
+    "bottomSlot": {
+      "header": "Outside the timeline",
+      "description": "I build thoughtful, user-centered product experiences, from polished interfaces to full-stack systems.",
+      "cta": "Get in touch"
+    },
+    "positions": {
+      "softwareEngineer": "Software Engineer",
+      "softwareEngineerIntern": "Software Engineer Intern",
+      "itIntern": "IT Intern"
+    }
+  },
+  "projects": {
+    "bottomSlot": {
+      "header": "More to explore",
+      "description": "You can find all of my projects, experiments, and source code on GitHub. Feel free to take a look around!",
+      "cta": "Go to GitHub"
+    },
+    "repos": {
+      "descriptions": {
+        "feetback": "Bluetooth-enabled insole that tracks foot pressure, alignment, and temperature using a sensor mesh. Data is processed in an embedded system and sent to a mobile app, enabling users and physicians to monitor foot health without specialized assessments.",
+        "foodfind": "A MERN Stack app that finds nearby restaurants in realtime, and allows for restaurant saving in a user's account.",
+        "multility": "Multility, by MATDEV Technologies, is a revolutionary app containing 6 utilities for your convenience and productivity.",
+        "resonate": "A reverb VST plugin for audio processing, built in the JUCE framework (C++). Can be used in any major DAW.",
+        "rapidkeys": "A web app designed to test/improve one's typing speed and accuracy, built with Angular and deployed on Firebase.",
+        "tristanparry.github.io": "My personal portfolio website, built with React, Framer Motion, and Tailwind. The site utilizes flexbox/grid displays, animations, and a GitHub API request.",
+        "tristanparry": "About me",
+        "arrayassemble": "A sorting algorithm visualizer built in React, including Bubble/Insertion/Merge/Selection sorts and a simple UI.",
+        "switcher": "A unit converter app built in React, supporting currency/length/volume/time conversion, and responsive design.",
+        "codecompose": "A MERN Stack app that renders webdev projects in realtime, and allows for project saving in a user's account.",
+        "morsecodehangman": "Project Group 65's submission for their ECE 198 final prototype (1A Electrical/Computer Engineering, University of Waterloo).",
+        "p-11-wec2021": "Group P-11's submission for the University of Waterloo's 2021 Engineering Competition (Programming section).",
+        "betterbanking-gui": "A user-friendly banking software utilizing 3 account types and a MongoDB database. This is the GUI-enhanced version of the BetterBanking software.",
+        "betterbanking": "A user-friendly banking software with Chequing, Savings, and Investment accounts, that stores Client and Account details in a MongoDB database.",
+        "tictactoe": "A simple tic-tac-toe game, programmed in Java. The game is built with 2D array manipulation and dual-player interaction at its forefront.",
+        "romannumeralconverter": "A simple roman numeral converter for the range [1, 3999], using the subtraction principle and programmed in Java.",
+        "milkyway": "A Discord bot that displays various forms of interstellar information, accessed from NASA/Public ISS APIs.",
+        "apocalypse": "A classic dodging game with retro styling/graphics, programmed in Python, and using the Tk/Turtle libraries",
+        "perdiem": "A to-do list Android app programmed in Java/Android Studio. The app utilizes Cardviews and SharedPreferences saving.",
+        "monochrome": "A platformer game programmed in Python, using the PyGame library. The game includes multi-level/character design."
+      }
+    }
+  },
+  "resume": {
+    "actions": {
+      "back": "Back",
+      "download": "Download"
+    },
+    "loading": "Loading PDF...",
+    "error": "Failed to load PDF."
+  }
+}

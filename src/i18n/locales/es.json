@@ -1,0 +1,97 @@
+{
+  "sections": {
+    "hero": "Inicio",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "resume": "Currículum"
+  },
+  "settings": {
+    "menu": "Configuración",
+    "theme": {
+      "toggle": "modo {{theme}}"
+    },
+    "language": {
+      "current": "{{language}}"
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} Tristan Parry",
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Correo"
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "description": "La página que buscas no existe.",
+    "actions": {
+      "back": "Inicio"
+    }
+  },
+  "hero": {
+    "torontoCityCode": "YYZ",
+    "name": "Tristan Parry",
+    "description": "Ingeniero de software y diseñador que crea productos impactantes para",
+    "descriptionOptions": [
+      "la web.",
+      "móvil.",
+      "el futuro.",
+      "los medios.",
+      "el mundo."
+    ]
+  },
+  "experience": {
+    "present": "Actualidad",
+    "bottomSlot": {
+      "header": "Fuera de la cronología",
+      "description": "Creo experiencias de producto pensadas y centradas en el usuario, desde interfaces pulidas hasta sistemas full-stack.",
+      "cta": "Ponte en contacto"
+    },
+    "positions": {
+      "softwareEngineer": "Ingeniero de software",
+      "softwareEngineerIntern": "Practicante de ingeniería de software",
+      "itIntern": "Practicante de TI"
+    }
+  },
+  "projects": {
+    "bottomSlot": {
+      "header": "Más por explorar",
+      "description": "Puedes encontrar todos mis proyectos, experimentos y código fuente en GitHub. No dudes en echar un vistazo.",
+      "cta": "Ir a GitHub"
+    },
+    "repos": {
+      "descriptions": {
+        "feetback": "Plantilla con Bluetooth que rastrea la presión del pie, la alineación y la temperatura mediante una malla de sensores. Los datos se procesan en un sistema embebido y se envían a una aplicación móvil, lo que permite a usuarios y médicos supervisar la salud del pie sin evaluaciones especializadas.",
+        "foodfind": "Una app con MERN Stack que encuentra restaurantes cercanos en tiempo real y permite guardar restaurantes en la cuenta de un usuario.",
+        "multility": "Multility, de MATDEV Technologies, es una aplicación revolucionaria que contiene 6 utilidades para tu comodidad y productividad.",
+        "resonate": "Un plugin VST de reverb para procesamiento de audio, desarrollado con el framework JUCE (C++). Puede usarse en cualquier DAW importante.",
+        "rapidkeys": "Una aplicación web diseñada para probar y mejorar la velocidad y la precisión al escribir, desarrollada con Angular y desplegada en Firebase.",
+        "tristanparry.github.io": "Mi sitio web de portafolio personal, creado con React, Framer Motion y Tailwind. El sitio utiliza diseños con flexbox/grid, animaciones y una solicitud a la API de GitHub.",
+        "tristanparry": "Sobre mí",
+        "arrayassemble": "Un visualizador de algoritmos de ordenamiento creado en React, que incluye los métodos Bubble, Insertion, Merge y Selection, con una interfaz sencilla.",
+        "switcher": "Una aplicación de conversión de unidades creada en React, con soporte para conversiones de moneda, longitud, volumen y tiempo, además de diseño responsive.",
+        "codecompose": "Una aplicación MERN Stack que renderiza proyectos de desarrollo web en tiempo real y permite guardar proyectos en la cuenta de un usuario.",
+        "morsecodehangman": "La entrega del Grupo 65 para su prototipo final de ECE 198 (1A de Ingeniería Eléctrica/Computación, Universidad de Waterloo).",
+        "p-11-wec2021": "La propuesta del Grupo P-11 para la Competencia de Ingeniería 2021 de la Universidad de Waterloo (sección de programación).",
+        "betterbanking-gui": "Un software bancario fácil de usar que utiliza 3 tipos de cuenta y una base de datos MongoDB. Esta es la versión con interfaz gráfica del software BetterBanking.",
+        "betterbanking": "Un software bancario fácil de usar con cuentas de cheques, ahorros e inversión, que almacena los datos de clientes y cuentas en una base de datos MongoDB.",
+        "tictactoe": "Un sencillo juego de tres en raya programado en Java. El juego se centra en la manipulación de arreglos 2D y la interacción entre dos jugadores.",
+        "romannumeralconverter": "Un convertidor sencillo de números romanos para el rango [1, 3999], que utiliza el principio de sustracción y está programado en Java.",
+        "milkyway": "Un bot de Discord que muestra diversas formas de información interestelar, obtenidas a través de las API públicas de la NASA y la ISS.",
+        "apocalypse": "Un clásico juego de esquivar con estilo y gráficos retro, programado en Python y usando las bibliotecas Tk/Turtle.",
+        "perdiem": "Una aplicación Android de lista de tareas programada en Java/Android Studio. La app utiliza CardViews y guardado con SharedPreferences.",
+        "monochrome": "Un juego de plataformas programado en Python, usando la biblioteca PyGame. El juego incluye varios niveles y diseño de personajes."
+      }
+    }
+  },
+  "resume": {
+    "actions": {
+      "back": "Volver",
+      "download": "Descargar"
+    },
+    "loading": "Cargando PDF...",
+    "error": "No se pudo cargar el PDF."
+  }
+}

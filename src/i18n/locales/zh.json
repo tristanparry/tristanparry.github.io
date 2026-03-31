@@ -1,0 +1,91 @@
+{
+  "sections": {
+    "hero": "首页",
+    "experience": "经历",
+    "projects": "项目",
+    "contact": "联系",
+    "resume": "简历"
+  },
+  "settings": {
+    "menu": "设置",
+    "theme": {
+      "toggle": "{{theme}} 模式"
+    },
+    "language": {
+      "current": "{{language}}"
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} Tristan Parry",
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "电子邮件"
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "description": "你要查找的页面不存在。",
+    "actions": {
+      "back": "首页"
+    }
+  },
+  "hero": {
+    "torontoCityCode": "YYZ",
+    "name": "Tristan Parry",
+    "description": "软件工程师兼设计师，致力于打造有影响力的产品，服务于",
+    "descriptionOptions": ["网页。", "移动端。", "未来。", "媒体。", "世界。"]
+  },
+  "experience": {
+    "present": "至今",
+    "bottomSlot": {
+      "header": "时间线之外",
+      "description": "我打造用心且以用户为中心的产品体验，从精致界面到全栈系统。",
+      "cta": "联系我"
+    },
+    "positions": {
+      "softwareEngineer": "软件工程师",
+      "softwareEngineerIntern": "软件工程师实习生",
+      "itIntern": "IT 实习生"
+    }
+  },
+  "projects": {
+    "bottomSlot": {
+      "header": "更多可探索内容",
+      "description": "你可以在 GitHub 上找到我的所有项目、实验和源代码。欢迎随时看看！",
+      "cta": "前往 GitHub"
+    },
+    "repos": {
+      "descriptions": {
+        "feetback": "支持 Bluetooth 的鞋垫，可通过传感器网格跟踪足部压力、对齐情况和温度。数据会在嵌入式系统中处理后发送到移动应用，让用户和医生无需专业评估即可监测足部健康。",
+        "foodfind": "一个基于 MERN Stack 的应用，可实时查找附近的餐厅，并允许用户将餐厅保存到自己的账户中。",
+        "multility": "MATDEV Technologies 推出的 Multility 是一款革命性的应用，内含 6 种实用工具，提升你的便利性与生产力。",
+        "resonate": "一款用于音频处理的 reverb VST plugin, 基于 JUCE framework (C++）构建。可在任何主流 DAW 中使用。",
+        "rapidkeys": "一款用于测试和提升打字速度与准确率的 Web 应用，基于 Angular 构建并部署在 Firebase 上。",
+        "tristanparry.github.io": "我的个人作品集网站，使用 React、Framer Motion 和 Tailwind 构建。该网站使用 flexbox/grid 布局、动画以及 GitHub API 请求。",
+        "tristanparry": "关于我",
+        "arrayassemble": "一个使用 React 构建的排序算法可视化工具，包含冒泡、插入、归并和选择排序，并配有简洁的 UI。",
+        "switcher": "一个使用 React 构建的单位换算应用，支持货币、长度、体积和时间转换，并采用响应式设计。",
+        "codecompose": "一个 MERN Stack 应用，可实时渲染 Web 开发项目，并允许将项目保存到用户账户中。",
+        "morsecodehangman": "Group 65 为 ECE 198 期末原型提交的作品（滑铁卢大学 1A 电气/计算机工程）。",
+        "p-11-wec2021": "Group P-11 为滑铁卢大学 2021 年工程竞赛（编程组）提交的作品。",
+        "betterbanking-gui": "一个易于使用的银行软件，使用 3 种账户类型和 MongoDB 数据库。这是 BetterBanking 软件的图形界面增强版。",
+        "betterbanking": "一个易于使用的银行软件，包含支票、储蓄和投资账户，并将客户和账户信息存储在 MongoDB 数据库中。",
+        "tictactoe": "一个用 Java 编写的简单井字棋游戏。该游戏主要围绕二维数组操作和双人互动构建。",
+        "romannumeralconverter": "一个适用于范围 [1, 3999] 的简单罗马数字转换器，使用减法原则，并用 Java 编写。",
+        "milkyway": "一个 Discord 机器人，可显示多种星际信息，数据来自 NASA/Public ISS APIs。",
+        "apocalypse": "一款经典的躲避类游戏，采用复古风格和图形，用 Python 编写，并使用 Tk/Turtle 库。",
+        "perdiem": "一个用 Java/Android Studio 编写的待办事项 Android 应用。该应用使用 CardViews 和 SharedPreferences 保存数据。",
+        "monochrome": "一款用 Python 编写的平台游戏，使用 PyGame 库。游戏包含多个关卡和角色设计。"
+      }
+    }
+  },
+  "resume": {
+    "actions": {
+      "back": "返回",
+      "download": "下载"
+    },
+    "loading": "正在加载 PDF...",
+    "error": "PDF 加载失败。"
+  }
+}

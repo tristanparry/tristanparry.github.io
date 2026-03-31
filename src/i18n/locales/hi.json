@@ -1,0 +1,97 @@
+{
+  "sections": {
+    "hero": "होम",
+    "experience": "अनुभव",
+    "projects": "प्रोजेक्ट्स",
+    "contact": "संपर्क",
+    "resume": "रिज़्यूमे"
+  },
+  "settings": {
+    "menu": "सेटिंग्स",
+    "theme": {
+      "toggle": "{{theme}} मोड"
+    },
+    "language": {
+      "current": "{{language}}"
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} Tristan Parry",
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "ईमेल"
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "description": "आप जिस पेज को खोज रहे हैं वह मौजूद नहीं है।",
+    "actions": {
+      "back": "होम"
+    }
+  },
+  "hero": {
+    "torontoCityCode": "YYZ",
+    "name": "Tristan Parry",
+    "description": "सॉफ्टवेयर इंजीनियर और डिज़ाइनर, जो प्रभावशाली उत्पाद तैयार कर रहा है",
+    "descriptionOptions": [
+      "वेब के लिए।",
+      "मोबाइल के लिए।",
+      "भविष्य के लिए।",
+      "मीडिया के लिए।",
+      "दुनिया के लिए।"
+    ]
+  },
+  "experience": {
+    "present": "वर्तमान",
+    "bottomSlot": {
+      "header": "टाइमलाइन से परे",
+      "description": "मैं सोच-समझकर और उपयोगकर्ता-केंद्रित प्रोडक्ट अनुभव बनाता हूं, परिष्कृत इंटरफेस से लेकर फुल-स्टैक सिस्टम तक।",
+      "cta": "संपर्क करें"
+    },
+    "positions": {
+      "softwareEngineer": "सॉफ्टवेयर इंजीनियर",
+      "softwareEngineerIntern": "सॉफ्टवेयर इंजीनियर इंटर्न",
+      "itIntern": "आईटी इंटर्न"
+    }
+  },
+  "projects": {
+    "bottomSlot": {
+      "header": "और भी देखने को है",
+      "description": "आप मेरे सभी प्रोजेक्ट्स, प्रयोग और सोर्स कोड GitHub पर देख सकते हैं। बेझिझक एक नज़र डालें!",
+      "cta": "GitHub पर जाएं"
+    },
+    "repos": {
+      "descriptions": {
+        "feetback": "Bluetooth-सक्षम इनसोल जो सेंसर मेश की मदद से पैर के दबाव, एलाइनमेंट और तापमान को ट्रैक करता है। डेटा को एक एम्बेडेड सिस्टम में प्रोसेस किया जाता है और मोबाइल ऐप पर भेजा जाता है, जिससे उपयोगकर्ता और डॉक्टर विशेष जांच के बिना पैर के स्वास्थ्य की निगरानी कर सकते हैं।",
+        "foodfind": "एक MERN Stack ऐप जो रियलटाइम में नज़दीकी रेस्तरां ढूंढता है और उपयोगकर्ता के खाते में रेस्तरां सहेजने की सुविधा देता है।",
+        "multility": "MATDEV Technologies का Multility एक क्रांतिकारी ऐप है, जिसमें आपकी सुविधा और उत्पादकता के लिए 6 यूटिलिटीज़ शामिल हैं।",
+        "resonate": "ऑडियो प्रोसेसिंग के लिए एक reverb VST plugin, जिसे JUCE framework (C++) में बनाया गया है। इसे किसी भी प्रमुख DAW में इस्तेमाल किया जा सकता है।",
+        "rapidkeys": "एक वेब ऐप जिसे टाइपिंग की गति और सटीकता को जांचने और बेहतर बनाने के लिए डिज़ाइन किया गया है, Angular में बनाया गया है और Firebase पर डिप्लॉय किया गया है।",
+        "tristanparry.github.io": "मेरी व्यक्तिगत पोर्टफोलियो वेबसाइट, जिसे React, Framer Motion और Tailwind के साथ बनाया गया है। यह साइट flexbox/grid layouts, animations और GitHub API request का उपयोग करती है।",
+        "tristanparry": "मेरे बारे में",
+        "arrayassemble": "React में बनाया गया एक sorting algorithm visualizer, जिसमें Bubble, Insertion, Merge और Selection sorts के साथ एक सरल UI शामिल है।",
+        "switcher": "React में बनी एक unit converter app, जो currency, length, volume और time conversion के साथ responsive design को सपोर्ट करती है।",
+        "codecompose": "एक MERN Stack ऐप जो webdev projects को realtime में render करता है और projects को उपयोगकर्ता के account में save करने देता है।",
+        "morsecodehangman": "ECE 198 के final prototype के लिए Group 65 की submission (1A Electrical/Computer Engineering, University of Waterloo)।",
+        "p-11-wec2021": "University of Waterloo की 2021 Engineering Competition (programming section) के लिए Group P-11 की submission।",
+        "betterbanking-gui": "एक user-friendly banking software जो 3 account types और MongoDB database का उपयोग करता है। यह BetterBanking software का GUI-enhanced version है।",
+        "betterbanking": "एक user-friendly banking software जिसमें Chequing, Savings और Investment accounts हैं, और जो Client तथा Account details को MongoDB database में store करता है।",
+        "tictactoe": "Java में प्रोग्राम किया गया एक सरल tic-tac-toe game। यह game 2D array manipulation और two-player interaction पर केंद्रित है।",
+        "romannumeralconverter": "रेंज [1, 3999] के लिए एक सरल roman numeral converter, जो subtraction principle का उपयोग करता है और Java में प्रोग्राम किया गया है।",
+        "milkyway": "एक Discord bot जो NASA/Public ISS APIs से प्राप्त विभिन्न प्रकार की interstellar information दिखाता है।",
+        "apocalypse": "retro style/graphics वाला एक classic dodging game, जिसे Python में Tk/Turtle libraries का उपयोग करके प्रोग्राम किया गया है।",
+        "perdiem": "Java/Android Studio में प्रोग्राम किया गया एक to-do list Android app। यह app CardViews और SharedPreferences saving का उपयोग करता है।",
+        "monochrome": "Python में प्रोग्राम किया गया एक platformer game, जो PyGame library का उपयोग करता है। इस game में कई levels और character design शामिल हैं।"
+      }
+    }
+  },
+  "resume": {
+    "actions": {
+      "back": "वापस",
+      "download": "डाउनलोड"
+    },
+    "loading": "PDF लोड हो रहा है...",
+    "error": "PDF लोड नहीं हो सका।"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "sections": {
+    "hero": "Accueil",
+    "experience": "Expérience",
+    "projects": "Projets",
+    "contact": "Contact",
+    "resume": "CV"
+  },
+  "settings": {
+    "menu": "Paramètres",
+    "theme": {
+      "toggle": "mode {{theme}}"
+    },
+    "language": {
+      "current": "{{language}}"
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} Tristan Parry",
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "E-mail"
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "description": "La page que vous recherchez n'existe pas.",
+    "actions": {
+      "back": "Accueil"
+    }
+  },
+  "hero": {
+    "torontoCityCode": "YYZ",
+    "name": "Tristan Parry",
+    "description": "Ingénieur logiciel et designer créant des produits percutants pour",
+    "descriptionOptions": [
+      "le web.",
+      "le mobile.",
+      "l'avenir.",
+      "les médias.",
+      "le monde."
+    ]
+  },
+  "experience": {
+    "present": "Présent",
+    "bottomSlot": {
+      "header": "En dehors de la chronologie",
+      "description": "Je conçois des expériences produit réfléchies et centrées sur l'utilisateur, des interfaces soignées aux systèmes full-stack.",
+      "cta": "Me contacter"
+    },
+    "positions": {
+      "softwareEngineer": "Ingénieur logiciel",
+      "softwareEngineerIntern": "Stagiaire ingénieur logiciel",
+      "itIntern": "Stagiaire informatique"
+    }
+  },
+  "projects": {
+    "bottomSlot": {
+      "header": "Plus à explorer",
+      "description": "Vous pouvez retrouver tous mes projets, expérimentations et le code source sur GitHub. N'hésitez pas à y jeter un oeil !",
+      "cta": "Aller sur GitHub"
+    },
+    "repos": {
+      "descriptions": {
+        "feetback": "Semelle intérieure compatible Bluetooth qui suit la pression du pied, l'alignement et la température grâce à un maillage de capteurs. Les données sont traitées dans un système embarqué puis envoyées vers une application mobile, permettant aux utilisateurs et aux médecins de surveiller la santé du pied sans évaluations spécialisées.",
+        "foodfind": "Application MERN Stack qui trouve des restaurants à proximité en temps réel et permet d'enregistrer des restaurants dans le compte d'un utilisateur.",
+        "multility": "Multility, par MATDEV Technologies, est une application révolutionnaire regroupant 6 utilitaires pour votre confort et votre productivité.",
+        "resonate": "Plugin VST de reverb pour le traitement audio, développé avec le framework JUCE (C++). Peut être utilisé dans n'importe quel DAW majeur.",
+        "rapidkeys": "Application web conçue pour tester et améliorer la vitesse de frappe et la précision, construite avec Angular et déployée sur Firebase.",
+        "tristanparry.github.io": "Mon site portfolio personnel, construit avec React, Framer Motion et Tailwind. Le site utilise des mises en page flexbox/grille, des animations et une requête vers l'API GitHub.",
+        "tristanparry": "À propos de moi",
+        "arrayassemble": "Un visualiseur d'algorithmes de tri construit en React, incluant les tris à bulles, par insertion, fusion et sélection, avec une interface simple.",
+        "switcher": "Une application de conversion d'unités construite en React, prenant en charge les conversions de devises, longueurs, volumes et temps, avec un design responsive.",
+        "codecompose": "Une application MERN Stack qui affiche des projets web en temps réel et permet d'enregistrer des projets dans le compte d'un utilisateur.",
+        "morsecodehangman": "Le prototype final soumis par le groupe 65 pour le cours ECE 198 (1A en génie électrique/informatique, Université de Waterloo).",
+        "p-11-wec2021": "La soumission du groupe P-11 pour la compétition d'ingénierie 2021 de l'Université de Waterloo (section programmation).",
+        "betterbanking-gui": "Un logiciel bancaire convivial utilisant 3 types de comptes et une base de données MongoDB. Il s'agit de la version avec interface graphique du logiciel BetterBanking.",
+        "betterbanking": "Un logiciel bancaire convivial avec des comptes chèques, épargne et investissement, qui stocke les informations des clients et des comptes dans une base de données MongoDB.",
+        "tictactoe": "Un simple jeu de morpion programmé en Java. Le jeu repose principalement sur la manipulation de tableaux 2D et l'interaction à deux joueurs.",
+        "romannumeralconverter": "Un convertisseur simple de chiffres romains pour l'intervalle [1, 3999], utilisant le principe de soustraction et programmé en Java.",
+        "milkyway": "Un bot Discord qui affiche différentes informations interstellaires, accessibles via les API publiques de la NASA et de l'ISS.",
+        "apocalypse": "Un jeu d'esquive classique au style et aux graphismes rétro, programmé en Python et utilisant les bibliothèques Tk/Turtle.",
+        "perdiem": "Une application Android de liste de tâches programmée en Java/Android Studio. L'application utilise des CardViews et l'enregistrement via SharedPreferences.",
+        "monochrome": "Un jeu de plateforme programmé en Python, utilisant la bibliothèque PyGame. Le jeu comprend plusieurs niveaux et des designs de personnages."
+      }
+    }
+  },
+  "resume": {
+    "actions": {
+      "back": "Retour",
+      "download": "Télécharger"
+    },
+    "loading": "Chargement du PDF...",
+    "error": "Échec du chargement du PDF."
+  }
+}
