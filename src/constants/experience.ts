@@ -54,10 +54,10 @@ export const EXPERIENCES: Experience[] = [
     url: 'https://stackadapt.com',
     logo: 'StackAdapt',
     positions: [
-      // {
-      //   title: 'experience.positions.softwareEngineer',
-      //   start: '2026-06',
-      // },
+      {
+        title: 'experience.positions.softwareEngineer',
+        start: '2026-06',
+      },
       {
         title: 'experience.positions.softwareEngineerIntern',
         start: '2025-09',
