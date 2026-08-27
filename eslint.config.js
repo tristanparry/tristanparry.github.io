@@ -48,7 +48,12 @@ export default defineConfig([
       'import/order': [
         'error',
         {
-          groups: [['builtin', 'external', 'internal'], 'index', ['parent', 'sibling'], 'object'],
+          groups: [
+            ['builtin', 'external', 'internal'],
+            'index',
+            ['parent', 'sibling'],
+            'object',
+          ],
           alphabetize: {
             order: 'asc',
             caseInsensitive: true,
