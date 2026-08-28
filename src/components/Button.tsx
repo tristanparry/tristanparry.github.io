@@ -5,7 +5,7 @@ import {
   Icons,
   SMALL_SCREEN_BREAKPOINT,
 } from '@/src/constants/ui';
-import type { TooltipPlacement } from '@/src/types/tooltip';
+import type { TooltipPlacement } from '@/src/types/ui';
 import { useWindowSize } from '@/src/utils/useWindowSize';
 import { Icon } from '@iconify/react';
 import clsx from 'clsx';

@@ -1,4 +1,4 @@
-import { Theme } from '@/src/types/theme';
+import { Theme } from '@/src/types/ui';
 import {
   createContext,
   useContext,

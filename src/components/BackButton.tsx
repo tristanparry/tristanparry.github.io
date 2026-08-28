@@ -1,7 +1,7 @@
 import Button from '@/src/components/Button';
 import { AppRoutes } from '@/src/constants/routes';
 import { Icons } from '@/src/constants/ui';
-import { TooltipPlacement } from '@/src/types/tooltip';
+import { TooltipPlacement } from '@/src/types/ui';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 

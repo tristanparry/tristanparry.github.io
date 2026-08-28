@@ -1,5 +1,6 @@
 import { useTheme } from '@/src/contexts/ThemeContext';
 import { useEffect, useRef } from 'react';
+import { Theme } from '../types/ui';
 
 const clamp = (value: number, min: number, max: number) =>
   Math.min(max, Math.max(min, value));
@@ -81,6 +82,7 @@ const blobConfigs: BlobConfig[] = [
 const FlowBackground = () => {
   const { theme } = useTheme();
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const transparency = theme === Theme.Light ? 0.5 : 0.25;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -107,12 +109,12 @@ const FlowBackground = () => {
     let blobIntensity = 0.3;
     let pointerAccentIntensity = 0.24;
     let pointerSecondaryIntensity = 0.18;
-    let washStartIntensity = 0.06;
-    let washMidIntensity = 0.03;
-    let washEndIntensity = 0.06;
+    let washStartIntensity = 0.06 * transparency;
+    let washMidIntensity = 0.03 * transparency;
+    let washEndIntensity = 0.06 * transparency;
 
     const syncColors = () => {
-      const isDarkTheme = theme === 'dark';
+      const isDarkTheme = theme === Theme.Dark;
       const styles = getComputedStyle(document.documentElement);
 
       const getColor = (varName: string, fallback: string): string => {
@@ -170,10 +172,16 @@ const FlowBackground = () => {
       intensity: number,
     ) => {
       const gradient = context.createRadialGradient(x, y, 0, x, y, radius);
-      gradient.addColorStop(0, withAlpha(color, intensity));
-      gradient.addColorStop(0.45, withAlpha(color, intensity * 0.45));
-      gradient.addColorStop(0.8, withAlpha(color, intensity * 0.12));
-      gradient.addColorStop(1, withAlpha(color, 0));
+      gradient.addColorStop(0, withAlpha(color, intensity * transparency));
+      gradient.addColorStop(
+        0.45,
+        withAlpha(color, intensity * 0.45 * transparency),
+      );
+      gradient.addColorStop(
+        0.8,
+        withAlpha(color, intensity * 0.12 * transparency),
+      );
+      gradient.addColorStop(1, withAlpha(color, 0 * transparency));
       context.fillStyle = gradient;
       context.beginPath();
       context.arc(x, y, radius, 0, Math.PI * 2);
@@ -187,7 +195,7 @@ const FlowBackground = () => {
     const drawFrame = (time: number) => {
       context.clearRect(0, 0, width, height);
       context.fillStyle =
-        primaryBg || (theme === 'dark' ? '#0d0d0d' : '#f2f2f2');
+        primaryBg || (theme === Theme.Dark ? '#0d0d0d' : '#f2f2f2');
       context.fillRect(0, 0, width, height);
       pointer.currentX += (pointer.targetX - pointer.currentX) * 0.05;
       pointer.currentY += (pointer.targetY - pointer.currentY) * 0.05;
@@ -245,8 +253,8 @@ const FlowBackground = () => {
         height * 0.45,
         Math.max(width, height) * 0.7,
       );
-      vignette.addColorStop(0, withAlpha(primaryBg, 0));
-      vignette.addColorStop(1, withAlpha(primaryBg, 0.22));
+      vignette.addColorStop(0, withAlpha(primaryBg, 0 * transparency));
+      vignette.addColorStop(1, withAlpha(primaryBg, 0.22 * transparency));
       context.fillStyle = vignette;
       context.fillRect(0, 0, width, height);
     };

@@ -8,7 +8,7 @@ import {
   DEFAULT_ANIMATION_STAGGER_CHILDREN,
   Icons,
 } from '@/src/constants/ui';
-import { TooltipPlacement } from '@/src/types/tooltip';
+import { TooltipPlacement } from '@/src/types/ui';
 import { openUrl } from '@/src/utils/urls';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';

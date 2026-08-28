@@ -1,4 +1,4 @@
-import { TooltipPlacement } from '@/src/types/tooltip';
+import { TooltipPlacement } from '@/src/types/ui';
 import type { Easing } from 'framer-motion';
 
 // Common UI

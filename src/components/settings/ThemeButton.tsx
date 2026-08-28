@@ -1,7 +1,7 @@
 import Button from '@/src/components/Button';
 import { Icons } from '@/src/constants/ui';
 import { useTheme } from '@/src/contexts/ThemeContext';
-import { Theme } from '@/src/types/theme';
+import { Theme } from '@/src/types/ui';
 
 const ThemeButton = () => {
   const { theme, toggleTheme } = useTheme();

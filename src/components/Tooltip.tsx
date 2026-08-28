@@ -1,6 +1,6 @@
 import { DEFAULT_TOOLTIP_PLACEMENT } from '@/src/constants/ui';
 import { useTheme } from '@/src/contexts/ThemeContext';
-import type { TooltipPlacement } from '@/src/types/tooltip';
+import type { TooltipPlacement } from '@/src/types/ui';
 import { Tooltip as FlowbiteTooltip } from 'flowbite-react';
 import type { ReactNode } from 'react';
 
