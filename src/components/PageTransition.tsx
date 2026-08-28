@@ -117,7 +117,7 @@ const PageTransition = ({ children }: PageTransitionProps) => {
       {displayChildren}
       {isTransitioning && (
         <motion.div
-          className="bg-primary-text fixed inset-0 z-50 flex items-center justify-center"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black"
           initial={{ opacity: isInitialLoad ? 1 : 0 }}
           animate={{ opacity: overlayOpacity }}
           transition={{
@@ -128,7 +128,7 @@ const PageTransition = ({ children }: PageTransitionProps) => {
           {showLogo && (
             <motion.div
               key={logoKey}
-              className="text-primary-bg max-w-full px-4"
+              className="max-w-full px-4 text-white"
               initial={{ opacity: 0 }}
               animate={{ opacity: logoOpacity }}
               transition={{
