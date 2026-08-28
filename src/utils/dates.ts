@@ -28,6 +28,7 @@ export const getCurrentTorontoTime = (locale: string): TorontoTimeType => {
   return {
     time: now.toLocaleTimeString(locale, {
       timeZone: 'America/Toronto',
+      hour12: false,
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit',

@@ -18,9 +18,7 @@ const TorontoTime = () => {
   const { t } = useTranslation();
   const { isScrolled, currentScrollPosition } = useWindowScroll();
   const { hasCompleted } = usePageTransitionComplete();
-  const [torontoTime, setTorontoTime] = useState<TorontoTimeType>(
-    getCurrentTorontoTime(i18n.language),
-  );
+  const [torontoTime, setTorontoTime] = useState<TorontoTimeType | null>(null);
   const [viewportHeight, setViewportHeight] = useState<number>(1);
 
   useEffect(() => {
@@ -60,9 +58,9 @@ const TorontoTime = () => {
     >
       <div className="flex flex-col">
         <small className="text-xs">
-          {t('hero.torontoCityCode')}&nbsp;&bull;&nbsp;{torontoTime.time}
+          {t('hero.torontoCityCode')}&nbsp;&bull;&nbsp;{torontoTime?.time}
         </small>
-        <small className="text-xs">{torontoTime.date}</small>
+        <small className="text-xs">{torontoTime?.date}</small>
       </div>
     </motion.div>
   );
