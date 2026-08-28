@@ -27,6 +27,7 @@ const Experience = ({ isActive }: ExperienceProps) => {
         linkText={t('experience.sectionCta')}
         linkType="section"
         path={SectionRoutes.Contact}
+        className="font-semibold"
       />
     ),
     className: 'pl-4 pb-1 pt-4',

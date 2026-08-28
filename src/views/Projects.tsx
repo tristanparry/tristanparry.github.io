@@ -195,6 +195,7 @@ const Projects = ({ isActive }: ProjectsProps) => {
       linkText={t('projects.sectionCta')}
       linkType="external"
       path={SocialLinks.GitHub}
+      className="font-semibold"
     />
   );
 
