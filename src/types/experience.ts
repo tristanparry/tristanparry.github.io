@@ -21,7 +21,6 @@ export type ExperienceRowContentProps = Pick<
 
 export interface ExperienceRowProps {
   experience: ExperienceEntry;
-  index: number;
-  hoveredExperienceIndex: number | null;
-  setHoveredExperienceIndex: Dispatch<SetStateAction<number | null>>;
+  hoveredExperienceId: string | null;
+  setHoveredExperienceId: Dispatch<SetStateAction<string | null>>;
 }

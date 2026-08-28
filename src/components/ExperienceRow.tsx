@@ -52,9 +52,8 @@ const ExperienceRowContent = memo(
 const ExperienceRow = memo(
   ({
     experience,
-    index,
-    hoveredExperienceIndex,
-    setHoveredExperienceIndex,
+    hoveredExperienceId,
+    setHoveredExperienceId,
   }: ExperienceRowProps) => (
     <SvgCursor svg={COMPANY_ASSETS[experience.id].svg}>
       <motion.a
@@ -62,11 +61,11 @@ const ExperienceRow = memo(
         target="_blank"
         rel="noreferrer"
         className="group col-span-3 grid grid-cols-1 gap-1 p-4 transition-colors duration-200 hover:backdrop-blur-xl sm:grid-cols-[subgrid] sm:items-baseline sm:gap-x-6"
-        onMouseEnter={() => setHoveredExperienceIndex(index)}
+        onMouseEnter={() => setHoveredExperienceId(experience.id)}
         onMouseOver={() =>
-          hoveredExperienceIndex !== null && setHoveredExperienceIndex(index)
+          hoveredExperienceId === null && setHoveredExperienceId(experience.id)
         }
-        onMouseLeave={() => setHoveredExperienceIndex(null)}
+        onMouseLeave={() => setHoveredExperienceId(null)}
         initial="hidden"
         whileInView="show"
         variants={ROW_VARIANTS}
@@ -75,8 +74,8 @@ const ExperienceRow = memo(
         <div
           className={clsx(
             'col-span-3 grid grid-cols-1 gap-1 transition-opacity duration-200 sm:grid-cols-[subgrid] sm:items-baseline sm:gap-x-6',
-            hoveredExperienceIndex !== null &&
-              hoveredExperienceIndex !== index &&
+            hoveredExperienceId !== null &&
+              hoveredExperienceId !== experience.id &&
               'opacity-25',
           )}
         >

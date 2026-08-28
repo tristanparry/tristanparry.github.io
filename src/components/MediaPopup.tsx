@@ -1,4 +1,4 @@
-import type { GithubProject } from '@/src/utils/getGithubProjects';
+import type { GithubProject } from '@/src/types/projects';
 import clsx from 'clsx';
 import { useEffect, useRef } from 'react';
 

@@ -1,3 +1,5 @@
+import type { GithubProject } from '@/src/types/projects';
+
 const GITHUB_USERNAME = 'tristanparry';
 const GITHUB_USERS_API_URL = `https://api.github.com/users/${GITHUB_USERNAME}`;
 const GITHUB_REPOS_API_URL = `https://api.github.com/repos/${GITHUB_USERNAME}`;
@@ -9,15 +11,6 @@ interface GithubProjectResponse {
   html_url: string;
   forks: number;
   pushed_at: string;
-}
-
-export interface GithubProject {
-  name: string;
-  description: string;
-  url: string;
-  languages: string[];
-  forks: number;
-  media?: { image?: Blob; video?: Blob };
 }
 
 export const getGithubProjects = async (): Promise<GithubProject[]> => {

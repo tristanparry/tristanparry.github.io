@@ -102,10 +102,10 @@ const Resume = () => {
             </p>
           }
         >
-          {Array.from(new Array(numPages), (_, index) => (
+          {Array.from(new Array(numPages), (_, i) => (
             <Page
-              key={`page_${index + 1}`}
-              pageNumber={index + 1}
+              key={`page_${i + 1}`}
+              pageNumber={i + 1}
               width={containerWidth}
               className="mb-4 shadow-lg"
             />

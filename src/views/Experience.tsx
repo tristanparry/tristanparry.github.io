@@ -13,25 +13,13 @@ interface ExperienceProps {
 
 const Experience = ({ isActive }: ExperienceProps) => {
   const { t } = useTranslation();
-  const [hoveredExperienceIndex, setHoveredExperienceIndex] = useState<
-    number | null
-  >(null);
+  const [hoveredExperienceId, setHoveredExperienceId] = useState<string | null>(
+    null,
+  );
 
   const experiences = t('experience.timeline', {
     returnObjects: true,
   }) as ExperienceEntry[];
-
-  const sectionCta = {
-    content: (
-      <TextLink
-        linkText={t('experience.sectionCta')}
-        linkType="section"
-        path={SectionRoutes.Contact}
-        className="font-semibold"
-      />
-    ),
-    className: 'pl-4 pb-1 pt-4',
-  };
 
   return (
     <Section
@@ -41,19 +29,28 @@ const Experience = ({ isActive }: ExperienceProps) => {
       <ScrollLockPanel
         className="min-h-0 w-full flex-1 self-center text-sm"
         isActive={isActive}
-        sectionCta={sectionCta}
+        sectionCta={{
+          content: (
+            <TextLink
+              linkText={t('experience.sectionCta')}
+              linkType="section"
+              path={SectionRoutes.Contact}
+              className="font-semibold"
+            />
+          ),
+          className: 'pl-4 pb-1 pt-4',
+        }}
       >
         <div
           className="divide-tertiary-bg grid grid-cols-[minmax(0,2fr)_minmax(0,2fr)_minmax(0,1fr)] divide-y"
-          onMouseLeave={() => setHoveredExperienceIndex(null)}
+          onMouseLeave={() => setHoveredExperienceId(null)}
         >
-          {experiences.map((experience, i) => (
+          {experiences.map((experience) => (
             <ExperienceRow
               key={experience.id}
               experience={experience}
-              index={i}
-              hoveredExperienceIndex={hoveredExperienceIndex}
-              setHoveredExperienceIndex={setHoveredExperienceIndex}
+              hoveredExperienceId={hoveredExperienceId}
+              setHoveredExperienceId={setHoveredExperienceId}
             />
           ))}
         </div>
