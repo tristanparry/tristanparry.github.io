@@ -36,7 +36,7 @@ const ScrollLockPanel = ({
             duration: DEFAULT_ANIMATION_DURATION,
             ease: DEFAULT_ANIMATION_EASE,
           }}
-          viewport={{ amount: 'all', once: false }}
+          viewport={{ once: false }}
           className={clsx('mt-auto', sectionCta.className)}
         >
           {sectionCta.content}

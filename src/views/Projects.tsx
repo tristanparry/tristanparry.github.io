@@ -190,6 +190,14 @@ const Projects = ({ isActive }: ProjectsProps) => {
     };
   }, [hidePopup]);
 
+  const CtaButton = (
+    <TextLink
+      linkText={t('projects.sectionCta')}
+      linkType="external"
+      path={SocialLinks.GitHub}
+    />
+  );
+
   if (isLoading) {
     return (
       <Section
@@ -210,25 +218,14 @@ const Projects = ({ isActive }: ProjectsProps) => {
         className="h-screen-safe overflow-hidden"
       >
         <div className="flex w-full flex-1 items-center justify-center">
-          <TextLink
-            linkText="GitHub"
-            linkType="external"
-            path={SocialLinks.GitHub}
-          />
+          {CtaButton}
         </div>
       </Section>
     );
   }
 
   const sectionCta = {
-    content: (
-      <TextLink
-        linkText={t('projects.sectionCta')}
-        linkType="external"
-        path={SocialLinks.GitHub}
-        className="font-semibold"
-      />
-    ),
+    content: CtaButton,
     className: 'pl-4 pb-1 pt-4',
   };
 
