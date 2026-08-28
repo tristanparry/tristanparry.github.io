@@ -1,4 +1,9 @@
 /* eslint-disable import/no-duplicates */
+import {
+  DEFAULT_ANIMATION_DAMPING,
+  DEFAULT_ANIMATION_ROW_VIEWPORT_AMOUNT,
+  DEFAULT_ANIMATION_STIFFNESS,
+} from '@/src/constants/ui';
 import AmdocsLogoSvg from '@/src/images/amdocs_logo.svg?raw';
 import AmdocsLogo from '@/src/images/amdocs_logo.svg?react';
 import LcboLogoSvg from '@/src/images/lcbo_logo.svg?raw';
@@ -15,126 +20,32 @@ import TheScoreLogoSvg from '@/src/images/thescore_logo.svg?raw';
 import TheScoreLogo from '@/src/images/thescore_logo.svg?react';
 /* eslint-enable import/no-duplicates */
 
-export interface Position {
-  title: string;
-  start: string; // YYYY-MM
-  end?: string; // YYYY-MM or undefined for ongoing
-}
-
-export interface Experience {
-  company: string;
-  url: string;
-  logo?: keyof typeof COMPANY_LOGOS;
-  positions: Position[];
-}
-
-export const COMPANY_LOGOS = {
-  StackAdapt: StackAdaptLogo,
-  theScore: TheScoreLogo,
-  PointClickCare: PointClickCareLogo,
-  Amdocs: AmdocsLogo,
-  LCBO: LcboLogo,
-  'Polaris Intelligence': PolarisLogo,
-  Mircom: MircomLogo,
+export const COMPANY_ASSETS = {
+  stackadapt: { icon: StackAdaptLogo, svg: StackAdaptLogoSvg },
+  thescore: { icon: TheScoreLogo, svg: TheScoreLogoSvg },
+  pointclickcare: { icon: PointClickCareLogo, svg: PointClickCareLogoSvg },
+  amdocs: { icon: AmdocsLogo, svg: AmdocsLogoSvg },
+  lcbo: { icon: LcboLogo, svg: LcboLogoSvg },
+  polarisintelligence: {
+    icon: PolarisLogo,
+    svg: PolarisLogoSvg,
+  },
+  mircom: { icon: MircomLogo, svg: MircomLogoSvg },
 } as const;
 
-export const COMPANY_LOGOS_SVGS = {
-  StackAdapt: StackAdaptLogoSvg,
-  theScore: TheScoreLogoSvg,
-  PointClickCare: PointClickCareLogoSvg,
-  Amdocs: AmdocsLogoSvg,
-  LCBO: LcboLogoSvg,
-  'Polaris Intelligence': PolarisLogoSvg,
-  Mircom: MircomLogoSvg,
+export const ROW_VARIANTS = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      stiffness: DEFAULT_ANIMATION_STIFFNESS,
+      damping: DEFAULT_ANIMATION_DAMPING,
+    },
+  },
 } as const;
 
-export const EXPERIENCES: Experience[] = [
-  {
-    company: 'StackAdapt',
-    url: 'https://stackadapt.com',
-    logo: 'StackAdapt',
-    positions: [
-      {
-        title: 'experience.positions.softwareEngineer',
-        start: '2026-06',
-      },
-      {
-        title: 'experience.positions.softwareEngineerIntern',
-        start: '2025-09',
-        end: '2025-12',
-      },
-    ],
-  },
-  {
-    company: 'theScore',
-    url: 'https://thescore.com',
-    logo: 'theScore',
-    positions: [
-      {
-        title: 'experience.positions.softwareEngineerIntern',
-        start: '2025-01',
-        end: '2025-04',
-      },
-    ],
-  },
-  {
-    company: 'PointClickCare',
-    url: 'https://pointclickcare.com',
-    logo: 'PointClickCare',
-    positions: [
-      {
-        title: 'experience.positions.softwareEngineerIntern',
-        start: '2024-01',
-        end: '2024-04',
-      },
-    ],
-  },
-  {
-    company: 'Amdocs',
-    url: 'https://amdocs.com',
-    logo: 'Amdocs',
-    positions: [
-      {
-        title: 'experience.positions.softwareEngineerIntern',
-        start: '2023-05',
-        end: '2023-08',
-      },
-    ],
-  },
-  {
-    company: 'LCBO',
-    url: 'https://lcbo.com',
-    logo: 'LCBO',
-    positions: [
-      {
-        title: 'experience.positions.softwareEngineerIntern',
-        start: '2022-09',
-        end: '2022-12',
-      },
-    ],
-  },
-  {
-    company: 'Polaris Intelligence',
-    url: 'https://polarisintelligence.com',
-    logo: 'Polaris Intelligence',
-    positions: [
-      {
-        title: 'experience.positions.softwareEngineerIntern',
-        start: '2022-01',
-        end: '2022-04',
-      },
-    ],
-  },
-  {
-    company: 'Mircom',
-    url: 'https://mircom.com',
-    logo: 'Mircom',
-    positions: [
-      {
-        title: 'experience.positions.itIntern',
-        start: '2021-07',
-        end: '2021-08',
-      },
-    ],
-  },
-];
+export const ROW_VIEWPORT = {
+  amount: DEFAULT_ANIMATION_ROW_VIEWPORT_AMOUNT,
+  once: false,
+} as const;

@@ -1,15 +1,7 @@
-import type { Experience, Position } from '@/src/constants/experience';
 import type { TorontoTimeType } from '@/src/types/dates';
+import type { Position } from '@/src/types/experience';
 
 export const getCurrentYear = () => new Date().getFullYear();
-
-export const getLatestPositionStartDate = (experience: Experience): Date => {
-  const latest = experience.positions.reduce<string | undefined>(
-    (acc, pos) => (acc && acc > pos.start ? acc : pos.start),
-    undefined,
-  );
-  return new Date(`${latest ?? '1970-01'}-01`);
-};
 
 const parseYearMonth = (value: string): Date => {
   const [year, month] = value.split('-').map(Number);

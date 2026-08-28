@@ -49,6 +49,96 @@
       "description": "I build thoughtful, user-centered product experiences, from polished interfaces to full-stack systems.",
       "cta": "Get in touch"
     },
+    "timeline": [
+      {
+        "id": "stackadapt",
+        "company": "StackAdapt",
+        "url": "https://stackadapt.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineer)",
+            "start": "2026-06"
+          },
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2025-09",
+            "end": "2025-12"
+          }
+        ]
+      },
+      {
+        "id": "thescore",
+        "company": "theScore",
+        "url": "https://thescore.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2025-01",
+            "end": "2025-04"
+          }
+        ]
+      },
+      {
+        "id": "pointclickcare",
+        "company": "PointClickCare",
+        "url": "https://pointclickcare.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2024-01",
+            "end": "2024-04"
+          }
+        ]
+      },
+      {
+        "id": "amdocs",
+        "company": "Amdocs",
+        "url": "https://amdocs.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2023-05",
+            "end": "2023-08"
+          }
+        ]
+      },
+      {
+        "id": "lcbo",
+        "company": "LCBO",
+        "url": "https://lcbo.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2022-09",
+            "end": "2022-12"
+          }
+        ]
+      },
+      {
+        "id": "polarisintelligence",
+        "company": "Polaris Intelligence",
+        "url": "https://polarisintelligence.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2022-01",
+            "end": "2022-04"
+          }
+        ]
+      },
+      {
+        "id": "mircom",
+        "company": "Mircom",
+        "url": "https://mircom.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.itIntern)",
+            "start": "2021-07",
+            "end": "2021-08"
+          }
+        ]
+      }
+    ],
     "positions": {
       "softwareEngineer": "Software Engineer",
       "softwareEngineerIntern": "Software Engineer Intern",
