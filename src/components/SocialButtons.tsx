@@ -9,8 +9,8 @@ import {
   Icons,
 } from '@/src/constants/ui';
 import { TooltipPlacement } from '@/src/types/tooltip';
+import { openUrl } from '@/src/utils/urls';
 import { motion } from 'framer-motion';
-import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface SocialButtonsProps {
@@ -25,8 +25,6 @@ const SocialButtons = ({
   setHoveredLink,
 }: SocialButtonsProps) => {
   const { t } = useTranslation();
-
-  const openLink = useCallback((url: string) => window.open(url, '_blank'), []);
 
   return (
     <motion.div
@@ -57,7 +55,7 @@ const SocialButtons = ({
           tooltipPlacement={toolTipPlacement ?? undefined}
           iconName={Icons[name as keyof typeof Icons]}
           altText={t(`footer.links.${name.toLowerCase()}`)}
-          onClick={() => openLink(url)}
+          onClick={() => openUrl(url)}
           onMouseEnter={() => setHoveredLink?.(url)}
           onMouseLeave={() => setHoveredLink?.(null)}
         />

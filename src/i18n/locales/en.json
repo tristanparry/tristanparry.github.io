@@ -44,11 +44,7 @@
   },
   "experience": {
     "present": "Present",
-    "bottomSlot": {
-      "header": "Outside the timeline",
-      "description": "I build thoughtful, user-centered product experiences, from polished interfaces to full-stack systems.",
-      "cta": "Get in touch"
-    },
+    "sectionCta": "Get in touch",
     "timeline": [
       {
         "id": "stackadapt",
@@ -146,11 +142,7 @@
     }
   },
   "projects": {
-    "bottomSlot": {
-      "header": "More to explore",
-      "description": "You can find all of my projects, experiments, and source code on GitHub. Feel free to take a look around!",
-      "cta": "Go to GitHub"
-    },
+    "sectionCta": "Explore repositories",
     "repos": {
       "descriptions": {
         "feetback": "Bluetooth-enabled insole that tracks foot pressure, alignment, and temperature using a sensor mesh. Data is processed in an embedded system and sent to a mobile app, enabling users and physicians to monitor foot health without specialized assessments.",

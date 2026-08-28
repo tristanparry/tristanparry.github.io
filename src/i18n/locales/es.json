@@ -44,11 +44,7 @@
   },
   "experience": {
     "present": "Actualidad",
-    "bottomSlot": {
-      "header": "Fuera de la cronología",
-      "description": "Creo experiencias de producto pensadas y centradas en el usuario, desde interfaces pulidas hasta sistemas full-stack.",
-      "cta": "Ponte en contacto"
-    },
+    "sectionCta": "Ponte en contacto",
     "positions": {
       "softwareEngineer": "Ingeniero de software",
       "softwareEngineerIntern": "Practicante de ingeniería de software",
@@ -56,11 +52,7 @@
     }
   },
   "projects": {
-    "bottomSlot": {
-      "header": "Más por explorar",
-      "description": "Puedes encontrar todos mis proyectos, experimentos y código fuente en GitHub. No dudes en echar un vistazo.",
-      "cta": "Ir a GitHub"
-    },
+    "sectionCta": "Explorar repositorios",
     "repos": {
       "descriptions": {
         "feetback": "Plantilla con Bluetooth que rastrea la presión del pie, la alineación y la temperatura mediante una malla de sensores. Los datos se procesan en un sistema embebido y se envían a una aplicación móvil, lo que permite a usuarios y médicos supervisar la salud del pie sin evaluaciones especializadas.",

@@ -10,7 +10,6 @@ import {
   DEFAULT_ANIMATION_ROW_VIEWPORT_AMOUNT,
   DEFAULT_ANIMATION_DAMPING,
   DEFAULT_ANIMATION_STIFFNESS,
-  DEFAULT_BOTTOM_SLOT_MIN_SPACE,
   Icons,
 } from '@/src/constants/ui';
 import {
@@ -191,23 +190,6 @@ const Projects = ({ isActive }: ProjectsProps) => {
     };
   }, [hidePopup]);
 
-  const bottomSlot = (
-    <div className="flex max-w-xl flex-col gap-2">
-      <h4 className="font-heading text-primary-text font-semibold">
-        {t('projects.bottomSlot.header')}
-      </h4>
-      <small className="text-secondary-text text-balance">
-        {t('projects.bottomSlot.description')}
-      </small>
-      <TextLink
-        linkText={t('projects.bottomSlot.cta')}
-        linkType="external"
-        path={SocialLinks.GitHub}
-        className="font-semibold"
-      />
-    </div>
-  );
-
   if (isLoading) {
     return (
       <Section
@@ -238,6 +220,18 @@ const Projects = ({ isActive }: ProjectsProps) => {
     );
   }
 
+  const sectionCta = {
+    content: (
+      <TextLink
+        linkText={t('projects.sectionCta')}
+        linkType="external"
+        path={SocialLinks.GitHub}
+        className="font-semibold"
+      />
+    ),
+    className: 'pl-4 pb-1 pt-4',
+  };
+
   return (
     <Section
       id={SectionRoutes.Projects}
@@ -246,9 +240,7 @@ const Projects = ({ isActive }: ProjectsProps) => {
       <ScrollLockPanel
         className="min-h-0 w-full flex-1 self-center text-sm"
         isActive={isActive}
-        bottomSlot={bottomSlot}
-        bottomSlotClassName="p-4"
-        bottomSlotMinSpace={DEFAULT_BOTTOM_SLOT_MIN_SPACE}
+        sectionCta={sectionCta}
       >
         <div
           className="divide-tertiary-bg flex flex-col divide-y"

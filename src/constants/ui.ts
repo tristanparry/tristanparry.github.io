@@ -9,7 +9,6 @@ export const SCROLL_THRESHOLD: number = 20;
 export const DEFAULT_ICON_SIZE: number = 24;
 export const DEFAULT_CURSOR_SIZE: number = 16;
 export const DEFAULT_TOOLTIP_PLACEMENT: TooltipPlacement = TooltipPlacement.Top;
-export const DEFAULT_BOTTOM_SLOT_MIN_SPACE: number = 200;
 
 // Icon Library
 const DEFAULT_ICON_LIBRARY = 'mynaui';

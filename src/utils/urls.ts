@@ -6,3 +6,5 @@ export const prettifyUrl = (url: string) => {
   }
   return url.replace(URL_REGEX, '');
 };
+
+export const openUrl = (url: string) => window.open(url, '_blank');

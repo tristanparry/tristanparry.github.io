@@ -44,11 +44,7 @@
   },
   "experience": {
     "present": "Présent",
-    "bottomSlot": {
-      "header": "En dehors de la chronologie",
-      "description": "Je conçois des expériences produit réfléchies et centrées sur l'utilisateur, des interfaces soignées aux systèmes full-stack.",
-      "cta": "Me contacter"
-    },
+    "sectionCta": "Me contacter",
     "positions": {
       "softwareEngineer": "Ingénieur logiciel",
       "softwareEngineerIntern": "Stagiaire ingénieur logiciel",
@@ -56,11 +52,7 @@
     }
   },
   "projects": {
-    "bottomSlot": {
-      "header": "Plus à explorer",
-      "description": "Vous pouvez retrouver tous mes projets, expérimentations et le code source sur GitHub. N'hésitez pas à y jeter un oeil !",
-      "cta": "Aller sur GitHub"
-    },
+    "sectionCta": "Explorer les dépôts",
     "repos": {
       "descriptions": {
         "feetback": "Semelle intérieure compatible Bluetooth qui suit la pression du pied, l'alignement et la température grâce à un maillage de capteurs. Les données sont traitées dans un système embarqué puis envoyées vers une application mobile, permettant aux utilisateurs et aux médecins de surveiller la santé du pied sans évaluations spécialisées.",

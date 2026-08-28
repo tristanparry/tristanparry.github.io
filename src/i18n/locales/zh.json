@@ -38,11 +38,7 @@
   },
   "experience": {
     "present": "至今",
-    "bottomSlot": {
-      "header": "时间线之外",
-      "description": "我打造用心且以用户为中心的产品体验，从精致界面到全栈系统。",
-      "cta": "联系我"
-    },
+    "sectionCta": "联系我",
     "positions": {
       "softwareEngineer": "软件工程师",
       "softwareEngineerIntern": "软件工程师实习生",
@@ -50,11 +46,7 @@
     }
   },
   "projects": {
-    "bottomSlot": {
-      "header": "更多可探索内容",
-      "description": "你可以在 GitHub 上找到我的所有项目、实验和源代码。欢迎随时看看！",
-      "cta": "前往 GitHub"
-    },
+    "sectionCta": "浏览存储库",
     "repos": {
       "descriptions": {
         "feetback": "支持 Bluetooth 的鞋垫，可通过传感器网格跟踪足部压力、对齐情况和温度。数据会在嵌入式系统中处理后发送到移动应用，让用户和医生无需专业评估即可监测足部健康。",
