@@ -45,9 +45,137 @@
   "experience": {
     "present": "वर्तमान",
     "sectionCta": "संपर्क करें",
+    "timeline": [
+      {
+        "id": "stackadapt",
+        "company": "StackAdapt",
+        "url": "https://stackadapt.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineer)",
+            "start": "2026-06"
+          },
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2025-09",
+            "end": "2025-12"
+          }
+        ],
+        "details": [
+          "मैंने GQL/Redux के साथ 5 प्रकार की विज्ञापन श्रेणियों के लिए कई फ्रिक्वेंसी फीचर विकसित किए, जिससे $10M+ मीडिया खर्च पर सूक्ष्म प्रबंधन संभव हुआ।",
+          "मैंने 3 टीमों के ऑन-कॉल इतिहास का विश्लेषण करने वाला AI agent बनाया, जिससे हैंडऑफ मेट्रिक तैयार हुई और सालाना 100 कर्मचारी-घंटे की बचत हुई।",
+          "मैंने Playwright लोकेटर पैटर्न को मानकीकृत करके Buildkite validation को 100% वापस बहाल किया, 30+ e2e टेस्ट्स स्थिर किए।",
+          "मैंने 30,000-रिकॉर्ड rake ingest और RSpec स्क्रिप्ट्स का उपयोग करके geo-targeting डेटा अपडेट किया और लाइव ad кампेन फिर से प्रकाशित किए।",
+          "मैंने native ad validation logic को बेहतर बनाकर backend डेटा अखंडता को मजबूत किया, 11,000,000+ production records के लिए।",
+          "मैंने GQL error callbacks और nested-path handling को 80+ references में सुधारा ताकि Sentry error observability बेहतर हो।",
+          "मैंने StackHack टीम का नेतृत्व करते हुए 5 सदस्यों की टीम को एक वैश्विक advertiser filter प्रदान किया, 4 repositories में cross-platform logic को एकीकृत किया।"
+        ]
+      },
+      {
+        "id": "thescore",
+        "company": "theScore",
+        "url": "https://thescore.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2025-01",
+            "end": "2025-04"
+          }
+        ],
+        "details": [
+          "मैंने theScore.com वेब प्लेटफ़ॉर्म को React 16/Next 9 से React 19/Next 15 तक अपग्रेड किया, जिससे Lighthouse स्कोर 40% से अधिक बेहतर हुए।",
+          "मैंने 5 marketing applications के लिए component library को restructured किया, barrel files हटाकर bundle size 33% कम की।",
+          "मैंने React/GQL के साथ नया ESPN Bet signup form बनाया, NFL Championship weekend पर 25,000+ impressions के साथ deploy किया।",
+          "मैंने 5 web applications में CircleCI automation के लिए configs/scripts बेहतर किए, Lighthouse score 67 से 100 तक बढ़ाया।"
+        ]
+      },
+      {
+        "id": "pointclickcare",
+        "company": "PointClickCare",
+        "url": "https://pointclickcare.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2024-01",
+            "end": "2024-04"
+          }
+        ],
+        "details": [
+          "मैंने 6 Spring Boot microservices को Post-Acute Care products के लिए अपडेट किया, जिनकी skilled nursing market share 60% से अधिक थी।",
+          "मैंने Redox API का उपयोग करके backend request को अनुकूलित किया, जिससे National Provider Identifier transmission success 28% से 100% तक बढ़ा।",
+          "मैंने Cypress का उपयोग करके automated unit/integration test suites लिखीं ताकि SonarQube कोड coverage >90% बना रहे।"
+        ]
+      },
+      {
+        "id": "amdocs",
+        "company": "Amdocs",
+        "url": "https://amdocs.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2023-05",
+            "end": "2023-08"
+          }
+        ],
+        "details": [
+          "मैंने टेलीकॉम enterprise software के mockups को पूरा करने के लिए Material UI का उपयोग करके 10+ React components विकसित किए।",
+          "मैंने React Redux का उपयोग करके frontend API calls की पूरी remodel की, जिससे network call प्रति 10+ सेकंड ट्रैफिक कम हुआ।",
+          "मैंने internal management app में report functionality लागू की ताकि 100+ partners के लिए corporate lifecycle metrics उपलब्ध हो सकें।"
+        ]
+      },
+      {
+        "id": "lcbo",
+        "company": "LCBO",
+        "url": "https://lcbo.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2022-09",
+            "end": "2022-12"
+          }
+        ],
+        "details": [
+          "मैंने LCBO के flagship store में 4,000+ products के लिए specialized API का उपयोग करके LED product tag flash functionality डिजाइन की।",
+          "मैंने बाहरी पार्टनर Danavision के साथ business relations की निगरानी करते हुए LCBO की LED product tag technology को डिजाइन किया।"
+        ]
+      },
+      {
+        "id": "polarisintelligence",
+        "company": "Polaris Intelligence",
+        "url": "https://polarisintelligence.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2022-01",
+            "end": "2022-04"
+          }
+        ],
+        "details": [
+          "मैंने React/Plotly का उपयोग करके Polaris Trend Analysis module विकसित किया, ताकि historical Canadian census data को स्पष्ट रूप से दर्शाया जा सके।",
+          "मैंने Trend Analysis module में नया विचार पेश करके एक Big Five Canadian bank को आकर्षित किया, जिससे संभावित partnership की शुरुआत हुई।"
+        ]
+      },
+      {
+        "id": "mircom",
+        "company": "Mircom",
+        "url": "https://mircom.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.itIntern)",
+            "start": "2021-07",
+            "end": "2021-08"
+          }
+        ],
+        "details": [
+          "मैंने PowerShell scripts विकसित करके Active Directory users को bulk changes के लिए अपडेट किया।",
+          "मैंने Nagios XI में company dashboards और host groups बनाए ताकि infrastructure monitoring को नियंत्रित किया जा सके।",
+          "मैंने Zendesk का उपयोग करके company computer issues हल किए और scheduled IT reports तैयार किए।"
+        ]
+      }
+    ],
     "positions": {
       "softwareEngineer": "सॉफ्टवेयर इंजीनियर",
-      "softwareEngineerIntern": "सॉफ्टवेयर इंजीनियर इंटर्न",
+      "softwareEngineerIntern": "सॉफ्ट웨어 इंजीनियर इंटर्न",
       "itIntern": "आईटी इंटर्न"
     }
   },

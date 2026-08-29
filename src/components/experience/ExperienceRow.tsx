@@ -1,3 +1,4 @@
+import ExperienceDetails from '@/src/components/experience/ExperienceDetails';
 import SvgCursor from '@/src/components/SvgCursor';
 import {
   COMPANY_ASSETS,
@@ -11,11 +12,12 @@ import {
 import { formatPositionDateRange } from '@/src/utils/dates';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import i18n from 'i18next';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ExperienceRowContent = memo(
   ({ id, company, positions }: ExperienceRowContentProps) => {
+    const { i18n, t } = useTranslation();
     const CompanyIcon = COMPANY_ASSETS[id].icon;
 
     return (
@@ -39,7 +41,7 @@ const ExperienceRowContent = memo(
               {formatPositionDateRange(
                 position,
                 i18n.language,
-                i18n.t('experience.present'),
+                t('experience.present'),
               )}
             </small>
           </div>
@@ -81,6 +83,10 @@ const ExperienceRow = memo(
         >
           <ExperienceRowContent {...experience} />
         </div>
+        <ExperienceDetails
+          experience={experience}
+          hoveredExperienceId={hoveredExperienceId}
+        />
       </motion.a>
     </SvgCursor>
   ),

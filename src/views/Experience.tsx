@@ -1,4 +1,4 @@
-import ExperienceRow from '@/src/components/ExperienceRow';
+import ExperienceRow from '@/src/components/experience/ExperienceRow';
 import ScrollLockPanel from '@/src/components/ScrollLockPanel';
 import Section from '@/src/components/Section';
 import TextLink from '@/src/components/TextLink';

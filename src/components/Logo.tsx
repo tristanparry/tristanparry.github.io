@@ -5,8 +5,8 @@ interface LogoProps {
   height?: number;
 }
 
-const Logo = ({ height = DEFAULT_ICON_SIZE }: LogoProps) => {
-  return <TpLogo height={height} className="draw-logo h-auto max-w-full" />;
-};
+const Logo = ({ height = DEFAULT_ICON_SIZE }: LogoProps) => (
+  <TpLogo height={height} className="draw-logo h-auto max-w-full" />
+);
 
 export default Logo;

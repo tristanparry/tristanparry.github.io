@@ -39,6 +39,134 @@
   "experience": {
     "present": "至今",
     "sectionCta": "联系我",
+    "timeline": [
+      {
+        "id": "stackadapt",
+        "company": "StackAdapt",
+        "url": "https://stackadapt.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineer)",
+            "start": "2026-06"
+          },
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2025-09",
+            "end": "2025-12"
+          }
+        ],
+        "details": [
+          "我为 5 种广告类型开发了多个频率控制功能，使用 GQL/Redux，支持对超过 1000 万美元媒体支出的精细节流控制。",
+          "我构建了一个 AI agent，分析 3 个团队的值班历史，生成交接指标，替代了每年 100 个员工小时的手动工作。",
+          "我通过标准化 Playwright 定位器组件模式恢复了 100% 的 Buildkite 校验，稳定了 30+ 个 e2e 测试。",
+          "我使用 30,000 条记录的 rake ingest 和 RSpec 脚本更新了地理定位数据，以重新发布实时广告活动。",
+          "我通过改进原生广告校验逻辑增强了后端数据完整性，覆盖 11000000+ 条生产记录。",
+          "我改进了 GQL 错误回调和嵌套路径处理，覆盖 80+ 处引用，从而提升了 Sentry 错误可观测性。",
+          "我领导了一个 5 人的 StackHack 团队，交付了一个全球广告主筛选器，将跨平台逻辑统一到 4 个代码仓库中。"
+        ]
+      },
+      {
+        "id": "thescore",
+        "company": "theScore",
+        "url": "https://thescore.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2025-01",
+            "end": "2025-04"
+          }
+        ],
+        "details": [
+          "我将 theScore.com 网站平台从 React 16/Next 9 升级到 React 19/Next 15，Lighthouse 分数提升了 40% 以上。",
+          "我重构了 5 个营销应用的组件库，移除了 barrel files，Bundle size 降低了 33%。",
+          "我使用 React/GQL 构建了新的 ESPN Bet 注册表单，并在 NFL 锦标赛周末上线，获得了 25,000+ 次展示量。",
+          "我改进了 5 个 Web 应用中的 CircleCI 自动化配置和脚本，使 Lighthouse 分数从 67 提升到 100。"
+        ]
+      },
+      {
+        "id": "pointclickcare",
+        "company": "PointClickCare",
+        "url": "https://pointclickcare.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2024-01",
+            "end": "2024-04"
+          }
+        ],
+        "details": [
+          "我更新了 6 个 Spring Boot 微服务，以支持 Post-Acute Care 产品，并覆盖了超过 60% 的专科护理市场份额。",
+          "我通过 Redox API 调整了后端请求，使 National Provider Identifier 传输成功率从 28% 提升到 100%。",
+          "我使用 Cypress 编写了自动化单元/集成测试套件，保持 SonarQube 代码覆盖率高于 90%。"
+        ]
+      },
+      {
+        "id": "amdocs",
+        "company": "Amdocs",
+        "url": "https://amdocs.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2023-05",
+            "end": "2023-08"
+          }
+        ],
+        "details": [
+          "我使用 Material UI 开发了 10+ 个 React 组件，以满足电信企业软件的原型需求。",
+          "我主导了前端 API 调用的全面重构，使用 React Redux，减少了每次网络请求 10+ 秒的流量。",
+          "我在内部管理应用中实现了报表功能，为 100+ 合作伙伴交付了企业生命周期指标。"
+        ]
+      },
+      {
+        "id": "lcbo",
+        "company": "LCBO",
+        "url": "https://lcbo.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2022-09",
+            "end": "2022-12"
+          }
+        ],
+        "details": [
+          "我设计了用于 4,000+ 产品的 LED 商品标签闪烁功能，使用专门的 API，为 LCBO 旗舰店提供支持。",
+          "我监督了与外部合作伙伴 Danavision 的业务关系，设计了 LCBO 的 LED 商品标签技术。"
+        ]
+      },
+      {
+        "id": "polarisintelligence",
+        "company": "Polaris Intelligence",
+        "url": "https://polarisintelligence.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2022-01",
+            "end": "2022-04"
+          }
+        ],
+        "details": [
+          "我使用 React/Plotly 开发了 Polaris Trend Analysis 模块，用于分析历史加拿大人口普查数据。",
+          "我通过开创 Trend Analysis 模块吸引了一家加拿大五大银行，促成潜在合作机会。"
+        ]
+      },
+      {
+        "id": "mircom",
+        "company": "Mircom",
+        "url": "https://mircom.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.itIntern)",
+            "start": "2021-07",
+            "end": "2021-08"
+          }
+        ],
+        "details": [
+          "我通过开发 PowerShell 脚本更新了 Active Directory 用户，自动化处理批量更改。",
+          "我在 Nagios XI 中构建了公司仪表板和主机组，以管理基础设施监控。",
+          "我使用 Zendesk 处理公司计算机问题并生成定期 IT 报告。"
+        ]
+      }
+    ],
     "positions": {
       "softwareEngineer": "软件工程师",
       "softwareEngineerIntern": "软件工程师实习生",

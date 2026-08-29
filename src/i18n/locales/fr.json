@@ -45,6 +45,134 @@
   "experience": {
     "present": "Présent",
     "sectionCta": "Me contacter",
+    "timeline": [
+      {
+        "id": "stackadapt",
+        "company": "StackAdapt",
+        "url": "https://stackadapt.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineer)",
+            "start": "2026-06"
+          },
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2025-09",
+            "end": "2025-12"
+          }
+        ],
+        "details": [
+          "J'ai développé plusieurs fonctionnalités de fréquence pour 5 types de publicités avec GQL/Redux, permettant un pilotage fin sur plus de 10 M$ de dépenses média.",
+          "J'ai créé un agent IA analysant l'historique d'on-call de 3 équipes pour générer des métriques de transfert, remplaçant 100 heures de travail par an.",
+          "J'ai restauré la validation complète de Buildkite en standardisant les modèles de localisateurs Playwright, stabilisant plus de 30 tests e2e.",
+          "J'ai mis à jour les données de géolocalisation via un flux de 30 000 enregistrements et des scripts RSpec pour republier des campagnes publicitaires en direct.",
+          "J'ai renforcé l'intégrité des données backend en améliorant la logique de validation des publicités natives pour 11 000 000+ d'enregistrements de production.",
+          "J'ai amélioré les callbacks d'erreurs GQL et la gestion des chemins imbriqués sur plus de 80 références pour mieux observer les erreurs Sentry.",
+          "J'ai dirigé une équipe StackHack de 5 personnes pour livrer un filtre global pour annonceurs, unifiant la logique multiplateforme sur 4 dépôts."
+        ]
+      },
+      {
+        "id": "thescore",
+        "company": "theScore",
+        "url": "https://thescore.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2025-01",
+            "end": "2025-04"
+          }
+        ],
+        "details": [
+          "J'ai mis à niveau la plateforme web de theScore.com de React 16/Next 9 vers React 19/Next 15, améliorant les scores Lighthouse de plus de 40 %.",
+          "J'ai restructuré la bibliothèque de composants de 5 applications marketing en supprimant les barrel files, réduisant la taille du bundle de 33 %.",
+          "J'ai construit un nouveau formulaire d'inscription ESPN Bet avec React/GQL, déployé pendant le week-end du championnat NFL avec plus de 25 000 impressions.",
+          "J'ai amélioré les configurations et scripts d'automatisation CircleCI dans 5 applications web, faisant passer la performance Lighthouse de 67 à 100."
+        ]
+      },
+      {
+        "id": "pointclickcare",
+        "company": "PointClickCare",
+        "url": "https://pointclickcare.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2024-01",
+            "end": "2024-04"
+          }
+        ],
+        "details": [
+          "J'ai mis à jour 6 microservices Spring Boot pour supporter des produits de soins post-aigus avec plus de 60 % de part de marché en soins infirmiers spécialisés.",
+          "J'ai adapté une requête backend via l'API Redox pour faire passer le taux de transmission du National Provider Identifier de 28 % à 100 %.",
+          "J'ai écrit des tests unitaires et d'intégration automatisés avec Cypress pour maintenir un score de couverture SonarQube supérieur à 90 %."
+        ]
+      },
+      {
+        "id": "amdocs",
+        "company": "Amdocs",
+        "url": "https://amdocs.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2023-05",
+            "end": "2023-08"
+          }
+        ],
+        "details": [
+          "J'ai développé plus de 10 composants React avec Material UI pour répondre aux maquettes d'un logiciel d'entreprise de télécommunications.",
+          "J'ai piloté la refonte complète des appels API frontend avec React Redux, réduisant le trafic de plus de 10 secondes par appel réseau.",
+          "J'ai mis en place une fonctionnalité de rapports dans une application interne de gestion pour livrer des métriques de cycle de vie aux plus de 100 partenaires."
+        ]
+      },
+      {
+        "id": "lcbo",
+        "company": "LCBO",
+        "url": "https://lcbo.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2022-09",
+            "end": "2022-12"
+          }
+        ],
+        "details": [
+          "J'ai conçu la fonctionnalité d'étiquettes LED pour les produits via une API spécialisée pour plus de 4 000 produits dans le magasin phare de la LCBO.",
+          "J'ai supervisé les relations commerciales avec Danavision pour concevoir la technologie d'étiquettes LED des produits LCBO."
+        ]
+      },
+      {
+        "id": "polarisintelligence",
+        "company": "Polaris Intelligence",
+        "url": "https://polarisintelligence.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.softwareEngineerIntern)",
+            "start": "2022-01",
+            "end": "2022-04"
+          }
+        ],
+        "details": [
+          "J'ai développé le module Polaris Trend Analysis avec React/Plotly pour analyser les données historiques du recensement canadien.",
+          "J'ai attiré une grande banque canadienne en pionnier sur le module Trend Analysis, menant à une potentielle collaboration."
+        ]
+      },
+      {
+        "id": "mircom",
+        "company": "Mircom",
+        "url": "https://mircom.com",
+        "positions": [
+          {
+            "title": "$t(experience.positions.itIntern)",
+            "start": "2021-07",
+            "end": "2021-08"
+          }
+        ],
+        "details": [
+          "J'ai mis à jour les utilisateurs Active Directory en développant des scripts PowerShell pour automatiser les changements massifs.",
+          "J'ai construit des tableaux de bord d'entreprise et des groupes d'hôtes dans Nagios XI pour réguler la supervision de l'infrastructure.",
+          "J'ai utilisé Zendesk pour résoudre les problèmes informatiques de l'entreprise et générer des rapports IT programmés."
+        ]
+      }
+    ],
     "positions": {
       "softwareEngineer": "Ingénieur logiciel",
       "softwareEngineerIntern": "Stagiaire ingénieur logiciel",

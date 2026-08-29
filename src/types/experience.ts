@@ -12,6 +12,7 @@ export interface ExperienceEntry {
   company: string;
   url: string;
   positions: Position[];
+  details?: string[];
 }
 
 export type ExperienceRowContentProps = Pick<
@@ -23,4 +24,9 @@ export interface ExperienceRowProps {
   experience: ExperienceEntry;
   hoveredExperienceId: string | null;
   setHoveredExperienceId: Dispatch<SetStateAction<string | null>>;
+}
+
+export interface ExperienceDetailsProps {
+  experience: Pick<ExperienceEntry, 'id' | 'details'>;
+  hoveredExperienceId: string | null;
 }

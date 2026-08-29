@@ -60,6 +60,15 @@
             "start": "2025-09",
             "end": "2025-12"
           }
+        ],
+        "details": [
+          "Built multiple frequency feature for 5 ad types with GQL/Redux, enabling granular pacing across $10M+ in media spend",
+          "Developed AI agent analyzing 3 teams' on-call histories to generate handoff metrics, replacing 100 employee-hours/year",
+          "Restored 100% Buildkite validation by standardizing Playwright locator component patterns, stabilizing 30+ e2e tests",
+          "Updated geo-targeting data using a 30,000-record rake ingest and RSpec scripts to republish live ad campaigns",
+          "Strengthened backend data integrity by improving native ad validation logic for 11,000,000+ production records",
+          "Improved GQL error callbacks and nested-path handling across 80+ references to boost Sentry error observability",
+          "Directed a StackHack team of 5 to deliver a global advertiser filter, unifying cross-platform logic across 4 repositories"
         ]
       },
       {
@@ -72,6 +81,12 @@
             "start": "2025-01",
             "end": "2025-04"
           }
+        ],
+        "details": [
+          "Upgraded theScore.com web platform from React 16/Next 9 to React 19/Next 15, improving Lighthouse scores by >40%",
+          "Restructured component library for 5 marketing applications by eliminating barrel files, reducing bundle size by 33%",
+          "Built new ESPN Bet signup form with React/GQL, deployed for NFL Championship weekend with 25,000+ impressions",
+          "Improved configs/scripts for CircleCI automation in 5 web applications, boosting Lighthouse scores from 67 to 100"
         ]
       },
       {
@@ -84,6 +99,11 @@
             "start": "2024-01",
             "end": "2024-04"
           }
+        ],
+        "details": [
+          "Updated 6 Spring Boot microservices to support Post-Acute Care products with >60% skilled nursing market share",
+          "Adapted backend request using Redox API to boost National Provider Identifier transmission success from 28% to 100%",
+          "Wrote automated unit/integration test suites using Cypress to maintain a Sonarqube code coverage score >90%"
         ]
       },
       {
@@ -96,6 +116,11 @@
             "start": "2023-05",
             "end": "2023-08"
           }
+        ],
+        "details": [
+          "Developed 10+ React components using Material UI to fulfil mockups for telecommunications enterprise software",
+          "Directed full remodel for frontend API calls using React Redux, lowering traffic by 10+ seconds per network call",
+          "Implemented report functionality in internal management app to deliver corporate lifecycle metrics for 100+ partners"
         ]
       },
       {
@@ -108,6 +133,10 @@
             "start": "2022-09",
             "end": "2022-12"
           }
+        ],
+        "details": [
+          "Designed LED product tag flash functionality using a specialized API for 4,000+ products at the LCBO's flagship store",
+          "Oversaw business relations with exterior partner Danavision to design the LCBO's LED product tag technology"
         ]
       },
       {
@@ -120,6 +149,10 @@
             "start": "2022-01",
             "end": "2022-04"
           }
+        ],
+        "details": [
+          "Developed the Polaris Trend Analysis module using React/Plotly to delineate historical Canadian census data",
+          "Attracted a Big Five Canadian bank by pioneering the Trend Analysis module, leading to a potential partnership"
         ]
       },
       {
@@ -132,6 +165,11 @@
             "start": "2021-07",
             "end": "2021-08"
           }
+        ],
+        "details": [
+          "Updated Active Directory users by developing PowerShell scripts to automate mass changes",
+          "Constructed company dashboards and host groups in Nagios XI to regulate infrastructure monitoring",
+          "Utilized Zendesk to solve company computer issues and generate scheduled IT reports"
         ]
       }
     ],
