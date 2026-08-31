@@ -18,7 +18,7 @@ const Footer = ({ showSocialLinks = true, className }: FooterProps) => {
         className,
       )}
     >
-      <small className="text-secondary-text text-center">
+      <small className="text-secondary-text">
         {t('footer.copyright', {
           year: getCurrentYear(),
         })}
