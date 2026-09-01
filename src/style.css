@@ -191,18 +191,6 @@ body.page-transition * {
   display: none;
 }
 
-.text-carousel-track {
-  will-change: transform;
-  animation: textCarouselScroll var(--text-carousel-duration, 20s) linear
-    infinite;
-}
-.text-carousel-track-reverse {
-  animation-direction: reverse;
-}
-.text-carousel-group {
-  flex: 0 0 auto;
-}
-
 @keyframes drawLogo {
   from {
     stroke-dashoffset: var(--logo-total-length);
@@ -212,19 +200,6 @@ body.page-transition * {
     stroke-dashoffset: 0;
     fill-opacity: 1;
     stroke-width: 0;
-  }
-}
-
-@keyframes textCarouselScroll {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(
-      calc(-1 * var(--text-carousel-segment-width, 0px)),
-      0,
-      0
-    );
   }
 }
 
@@ -239,5 +214,6 @@ body.page-transition * {
   --color-secondary-accent: var(--color-secondary-accent);
   --font-heading: 'Fustat', sans-serif;
   --font-body: 'Manrope', sans-serif;
+  --font-terminal: courier, monospace;
   --draw-logo: drawLogo 2.5s ease-in-out forwards;
 }
