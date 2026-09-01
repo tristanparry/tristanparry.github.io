@@ -16,13 +16,11 @@ import { useTranslation } from 'react-i18next';
 interface SocialButtonsProps {
   toolTipPlacement?: TooltipPlacement | null;
   className?: string;
-  setHoveredLink?: (url: string | null) => void;
 }
 
 const SocialButtons = ({
   toolTipPlacement = TooltipPlacement.Top,
   className,
-  setHoveredLink,
 }: SocialButtonsProps) => {
   const { t } = useTranslation();
 
@@ -56,8 +54,6 @@ const SocialButtons = ({
           iconName={Icons[name as keyof typeof Icons]}
           altText={t(`footer.links.${name.toLowerCase()}`)}
           onClick={() => openUrl(url)}
-          onMouseEnter={() => setHoveredLink?.(url)}
-          onMouseLeave={() => setHoveredLink?.(null)}
         />
       ))}
     </motion.div>
