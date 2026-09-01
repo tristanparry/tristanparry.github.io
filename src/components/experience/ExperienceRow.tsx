@@ -1,10 +1,7 @@
 import ExperienceDetails from '@/src/components/experience/ExperienceDetails';
 import SvgCursor from '@/src/components/SvgCursor';
-import {
-  COMPANY_ASSETS,
-  ROW_VARIANTS,
-  ROW_VIEWPORT,
-} from '@/src/constants/experience';
+import { COMPANY_ASSETS } from '@/src/constants/experience';
+import { ROW_VARIANTS, ROW_VIEWPORT } from '@/src/constants/ui';
 import {
   type ExperienceRowContentProps,
   type ExperienceRowProps,
@@ -63,10 +60,7 @@ const ExperienceRow = memo(
         target="_blank"
         rel="noreferrer"
         className="group col-span-3 grid grid-cols-1 gap-1 p-4 transition-colors duration-200 hover:backdrop-blur-xl sm:grid-cols-[subgrid] sm:items-baseline sm:gap-x-6"
-        onMouseEnter={() => setHoveredExperienceId(experience.id)}
-        onMouseOver={() =>
-          hoveredExperienceId === null && setHoveredExperienceId(experience.id)
-        }
+        onMouseMove={() => setHoveredExperienceId(experience.id)}
         onMouseLeave={() => setHoveredExperienceId(null)}
         initial="hidden"
         whileInView="show"

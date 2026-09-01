@@ -1,6 +1,6 @@
 import {
-  DEFAULT_ANIMATION_DURATION,
   DEFAULT_ANIMATION_EASE,
+  DEFAULT_ANIMATION_SCROLL_DURATION,
 } from '@/src/constants/ui';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
@@ -33,7 +33,7 @@ const ScrollLockPanel = ({
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{
-            duration: DEFAULT_ANIMATION_DURATION,
+            duration: DEFAULT_ANIMATION_SCROLL_DURATION,
             ease: DEFAULT_ANIMATION_EASE,
           }}
           viewport={{ once: false }}

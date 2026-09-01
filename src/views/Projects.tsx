@@ -3,14 +3,15 @@ import ProjectRow from '@/src/components/projects/ProjectRow';
 import ScrollLockPanel from '@/src/components/ScrollLockPanel';
 import Section from '@/src/components/Section';
 import TextLink from '@/src/components/TextLink';
+import { DEFAULT_QUERY_STALE_TIME, QueryKeys } from '@/src/constants/query';
 import { SectionRoutes } from '@/src/constants/routes';
 import { SocialLinks } from '@/src/constants/socials';
 import type { GithubProject } from '@/src/types/projects';
 import { getGithubProjects } from '@/src/utils/getGithubProjects';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { AnimatePresence } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
-const POPUP_FADE_DURATION_MS = 200;
 
 interface ProjectsProps {
   isActive?: boolean;
@@ -18,89 +19,23 @@ interface ProjectsProps {
 
 const Projects = ({ isActive }: ProjectsProps) => {
   const { t } = useTranslation();
-  const [projects, setProjects] = useState<GithubProject[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const { data: projects = [], isLoading } = useQuery<GithubProject[]>({
+    queryKey: [QueryKeys.GithubProjects],
+    queryFn: getGithubProjects,
+    staleTime: DEFAULT_QUERY_STALE_TIME,
+  });
   const [hoveredProjectUrl, setHoveredProjectUrl] = useState<string | null>(
     null,
   );
-  const [isPopupVisible, setIsPopupVisible] = useState(false);
-  const [mediaUrlsByProjectUrl, setMediaUrlsByProjectUrl] = useState<
-    Record<string, string>
-  >({});
-  const hidePopupTimeoutRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    (async () => {
-      setIsLoading(true);
-      try {
-        const projects = await getGithubProjects();
-        setProjects(projects);
-      } finally {
-        setIsLoading(false);
-      }
-    })();
-  }, []);
-
-  useEffect(() => {
-    const createdUrls: string[] = [];
-    const nextMediaUrlsByProjectUrl: Record<string, string> = {};
-    for (const project of projects) {
-      if (project.media?.video) {
-        const objectUrl = URL.createObjectURL(project.media.video);
-        createdUrls.push(objectUrl);
-        nextMediaUrlsByProjectUrl[project.url] = objectUrl;
-        continue;
-      }
-      if (project.media?.image) {
-        const objectUrl = URL.createObjectURL(project.media.image);
-        createdUrls.push(objectUrl);
-        nextMediaUrlsByProjectUrl[project.url] = objectUrl;
-      }
-    }
-    setMediaUrlsByProjectUrl(nextMediaUrlsByProjectUrl);
-    return () => {
-      createdUrls.forEach((url) => URL.revokeObjectURL(url));
-    };
-  }, [projects]);
-
-  useEffect(() => {
-    return () => {
-      if (hidePopupTimeoutRef.current != null) {
-        window.clearTimeout(hidePopupTimeoutRef.current);
-      }
-    };
-  }, []);
-
-  const showPopup = useCallback((projectUrl: string): void => {
-    if (hidePopupTimeoutRef.current != null) {
-      window.clearTimeout(hidePopupTimeoutRef.current);
-      hidePopupTimeoutRef.current = null;
-    }
-    setHoveredProjectUrl(projectUrl);
-    window.requestAnimationFrame(() => setIsPopupVisible(true));
-  }, []);
-
-  const hidePopup = useCallback((): void => {
-    if (hoveredProjectUrl === null && !isPopupVisible) return;
-    setIsPopupVisible(false);
-    if (hidePopupTimeoutRef.current != null) {
-      window.clearTimeout(hidePopupTimeoutRef.current);
-    }
-    hidePopupTimeoutRef.current = window.setTimeout(() => {
-      setHoveredProjectUrl(null);
-      hidePopupTimeoutRef.current = null;
-    }, POPUP_FADE_DURATION_MS);
-  }, [isPopupVisible, hoveredProjectUrl]);
-
   useEffect(() => {
     const hideOnScroll = (): void => {
-      hidePopup();
+      setHoveredProjectUrl(null);
     };
     window.addEventListener('scroll', hideOnScroll, true);
     return () => {
       window.removeEventListener('scroll', hideOnScroll, true);
     };
-  }, [hidePopup]);
+  }, []);
 
   const CtaButton = (
     <TextLink
@@ -160,19 +95,18 @@ const Projects = ({ isActive }: ProjectsProps) => {
               project={project}
               hoveredProjectUrl={hoveredProjectUrl}
               setHoveredProjectUrl={setHoveredProjectUrl}
-              showPopup={showPopup}
-              hidePopup={hidePopup}
             />
           ))}
         </div>
       </ScrollLockPanel>
-      {hoveredProjectUrl !== null && (
-        <MediaPopup
-          media={projects.find((p) => p.url === hoveredProjectUrl)?.media}
-          mediaUrl={mediaUrlsByProjectUrl[hoveredProjectUrl]}
-          isVisible={isPopupVisible}
-        />
-      )}
+      <AnimatePresence>
+        {hoveredProjectUrl !== null && (
+          <MediaPopup
+            key={hoveredProjectUrl}
+            media={projects.find((p) => p.url === hoveredProjectUrl)?.media}
+          />
+        )}
+      </AnimatePresence>
     </Section>
   );
 };

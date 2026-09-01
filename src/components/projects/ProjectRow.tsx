@@ -1,10 +1,6 @@
 import ProjectForks from '@/src/components/projects/ProjectForks';
 import ProjectLanguages from '@/src/components/projects/ProjectLanguages';
-import {
-  DEFAULT_ANIMATION_ROW_VIEWPORT_AMOUNT,
-  DEFAULT_ANIMATION_DAMPING,
-  DEFAULT_ANIMATION_STIFFNESS,
-} from '@/src/constants/ui';
+import { ROW_VARIANTS, ROW_VIEWPORT } from '@/src/constants/ui';
 import { type Project, type ProjectRowProps } from '@/src/types/projects';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
@@ -44,36 +40,19 @@ const ProjectRow = ({
   project,
   hoveredProjectUrl,
   setHoveredProjectUrl,
-  showPopup,
-  hidePopup,
 }: ProjectRowProps) => (
   <motion.a
     href={project.url}
     target="_blank"
     rel="noreferrer"
     className="group relative p-4 transition-colors duration-200 hover:backdrop-blur-xl"
-    onMouseEnter={() => showPopup(project.url)}
-    onMouseOver={() =>
-      hoveredProjectUrl === null && setHoveredProjectUrl(project.url)
-    }
-    onMouseLeave={() => hidePopup()}
+    onMouseEnter={() => setHoveredProjectUrl(project.url)}
+    onMouseMove={() => setHoveredProjectUrl(project.url)}
+    onMouseLeave={() => setHoveredProjectUrl(null)}
     initial="hidden"
     whileInView="show"
-    variants={{
-      hidden: { opacity: 0 },
-      show: {
-        opacity: 1,
-        transition: {
-          type: 'spring',
-          stiffness: DEFAULT_ANIMATION_STIFFNESS,
-          damping: DEFAULT_ANIMATION_DAMPING,
-        },
-      },
-    }}
-    viewport={{
-      amount: DEFAULT_ANIMATION_ROW_VIEWPORT_AMOUNT,
-      once: false,
-    }}
+    variants={ROW_VARIANTS}
+    viewport={ROW_VIEWPORT}
   >
     <div
       className={clsx(

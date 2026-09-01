@@ -1,9 +1,10 @@
-import type { GithubProject } from '@/src/types/projects';
+import type { GithubProject, ProjectMedia } from '@/src/types/projects';
 
 const GITHUB_USERNAME = 'tristanparry';
 const GITHUB_USERS_API_URL = `https://api.github.com/users/${GITHUB_USERNAME}`;
 const GITHUB_REPOS_API_URL = `https://api.github.com/repos/${GITHUB_USERNAME}`;
-const GITHUB_RAW_IMAGE_URL = `https://raw.githubusercontent.com/${GITHUB_USERNAME}`;
+const GITHUB_REPOS_VIDEO_FILENAME = 'demo_video.mp4';
+const GITHUB_REPOS_IMAGE_FILENAME = 'demo_screenshot.png';
 
 interface GithubProjectResponse {
   name: string;
@@ -41,30 +42,33 @@ const getProjectLanguages = async (projectName: string): Promise<string[]> => {
   return Object.keys(data);
 };
 
-const fileExists = async (url: string): Promise<boolean> => {
-  try {
-    const res = await fetch(url, { method: 'HEAD' });
-    return res.ok;
-  } catch {
-    return false;
-  }
-};
+interface GithubContentResponse {
+  name: string;
+  download_url: string | null;
+  type: string;
+}
 
 const getProjectMedia = async (
   projectName: string,
-): Promise<{ image?: Blob; video?: Blob } | undefined> => {
-  const videoUrl = `${GITHUB_RAW_IMAGE_URL}/${projectName}/main/demo_video.mp4`;
-  const imageUrl = `${GITHUB_RAW_IMAGE_URL}/${projectName}/main/demo_screenshot.png`;
-
-  if (await fileExists(videoUrl)) {
-    const video = await fetch(videoUrl).then((r) => r.blob());
-    return { video };
+): Promise<ProjectMedia | undefined> => {
+  try {
+    const response = await fetch(
+      `${GITHUB_REPOS_API_URL}/${projectName}/contents`,
+    );
+    if (!response.ok) return undefined;
+    const contents = (await response.json()) as GithubContentResponse[];
+    const mediaFile = contents.find(
+      (file) =>
+        file.type === 'file' &&
+        (file.name === GITHUB_REPOS_VIDEO_FILENAME ||
+          file.name === GITHUB_REPOS_IMAGE_FILENAME),
+    );
+    if (!mediaFile?.download_url) return undefined;
+    return {
+      url: mediaFile.download_url,
+      type: mediaFile.name === GITHUB_REPOS_VIDEO_FILENAME ? 'video' : 'image',
+    };
+  } catch {
+    return undefined;
   }
-
-  if (await fileExists(imageUrl)) {
-    const image = await fetch(imageUrl).then((r) => r.blob());
-    return { image };
-  }
-
-  return undefined;
 };

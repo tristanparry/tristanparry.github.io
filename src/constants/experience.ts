@@ -1,9 +1,4 @@
 /* eslint-disable import/no-duplicates */
-import {
-  DEFAULT_ANIMATION_DAMPING,
-  DEFAULT_ANIMATION_ROW_VIEWPORT_AMOUNT,
-  DEFAULT_ANIMATION_STIFFNESS,
-} from '@/src/constants/ui';
 import AmdocsLogoSvg from '@/src/images/amdocs_logo.svg?raw';
 import AmdocsLogo from '@/src/images/amdocs_logo.svg?react';
 import LcboLogoSvg from '@/src/images/lcbo_logo.svg?raw';
@@ -31,21 +26,4 @@ export const COMPANY_ASSETS = {
     svg: PolarisLogoSvg,
   },
   mircom: { icon: MircomLogo, svg: MircomLogoSvg },
-} as const;
-
-export const ROW_VARIANTS = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      stiffness: DEFAULT_ANIMATION_STIFFNESS,
-      damping: DEFAULT_ANIMATION_DAMPING,
-    },
-  },
-} as const;
-
-export const ROW_VIEWPORT = {
-  amount: DEFAULT_ANIMATION_ROW_VIEWPORT_AMOUNT,
-  once: false,
 } as const;

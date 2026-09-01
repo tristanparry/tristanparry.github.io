@@ -39,3 +39,21 @@ export const DEFAULT_ANIMATION_STIFFNESS: number = 400;
 export const DEFAULT_ANIMATION_DAMPING: number = 20;
 export const DEFAULT_ANIMATION_ROW_VIEWPORT_AMOUNT: number = 0.25;
 export const DEFAULT_ANIMATION_HEADER_VIEWPORT_AMOUNT: number = 1;
+export const DEFAULT_ANIMATION_SCROLL_DURATION: number = 0.5;
+export const DEFAULT_ANIMATION_SCROLL_COOLDOWN_DURATION: number = 500;
+
+// Section Rows
+export const ROW_VARIANTS = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      duration: DEFAULT_ANIMATION_SCROLL_DURATION,
+      ease: DEFAULT_ANIMATION_EASE,
+    },
+  },
+} as const;
+export const ROW_VIEWPORT = {
+  amount: DEFAULT_ANIMATION_ROW_VIEWPORT_AMOUNT,
+  once: false,
+} as const;

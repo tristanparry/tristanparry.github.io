@@ -1,25 +1,22 @@
 import type { GithubProject } from '@/src/types/projects';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
+const POPUP_FADE_DURATION = 0.2;
+
 interface MediaPopupProps {
-  media: GithubProject['media'];
-  mediaUrl?: string;
-  isVisible?: boolean;
+  media?: GithubProject['media'];
   viewportWidth?: number;
   className?: string;
 }
 
 const MediaPopup = ({
   media,
-  mediaUrl,
-  isVisible = false,
   viewportWidth = 35,
   className,
 }: MediaPopupProps) => {
-  const videoBlob = media?.video;
-  const imageBlob = media?.image;
-  const shouldRender = Boolean((videoBlob || imageBlob) && mediaUrl);
+  const shouldRender = Boolean(media);
 
   const elRef = useRef<HTMLElement | null>(null);
   const mouseRef = useRef({ x: 0, y: 0 });
@@ -74,41 +71,41 @@ const MediaPopup = ({
 
   if (!shouldRender) return null;
 
-  if (videoBlob) {
+  if (media?.type === 'video') {
     return (
-      <video
+      <motion.video
         ref={(node) => {
           elRef.current = node;
         }}
-        src={mediaUrl}
+        src={media.url}
         style={style}
         autoPlay
         loop
         muted
         playsInline
         preload="auto"
-        className={clsx(
-          'shadow-md transition-opacity duration-200',
-          isVisible ? 'opacity-100' : 'opacity-0',
-          className,
-        )}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: POPUP_FADE_DURATION, ease: 'easeInOut' }}
+        className={clsx('shadow-md', className)}
       />
     );
   }
 
-  if (imageBlob) {
+  if (media?.type === 'image') {
     return (
-      <img
+      <motion.img
         ref={(node) => {
           elRef.current = node;
         }}
-        src={mediaUrl}
+        src={media.url}
         style={style}
-        className={clsx(
-          'shadow-md transition-opacity duration-200',
-          isVisible ? 'opacity-100' : 'opacity-0',
-          className,
-        )}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: POPUP_FADE_DURATION, ease: 'easeInOut' }}
+        className={clsx('shadow-md', className)}
       />
     );
   }
