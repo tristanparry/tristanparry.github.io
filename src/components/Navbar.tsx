@@ -1,9 +1,5 @@
 import TextLink from '@/src/components/TextLink';
 import { AppRoutes, SectionRoutes } from '@/src/constants/routes';
-import { useWindowScroll } from '@/src/utils/useWindowScroll';
-import clsx from 'clsx';
-import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
 import {
   DEFAULT_ANIMATION_STAGGER_CHILDREN,
   DEFAULT_ANIMATION_DELAY_CHILDREN,
@@ -11,8 +7,12 @@ import {
   DEFAULT_ANIMATION_STIFFNESS,
   DEFAULT_ANIMATION_DURATION,
   DEFAULT_ANIMATION_EASE,
-} from '../constants/ui';
-import { usePageTransitionComplete } from '../utils/usePageTransitionComplete';
+} from '@/src/constants/ui';
+import { usePageTransitionComplete } from '@/src/utils/usePageTransitionComplete';
+import { useWindowScroll } from '@/src/utils/useWindowScroll';
+import clsx from 'clsx';
+import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
   const { t } = useTranslation();

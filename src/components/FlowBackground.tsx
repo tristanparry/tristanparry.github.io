@@ -1,6 +1,6 @@
 import { useTheme } from '@/src/contexts/ThemeContext';
+import { Theme } from '@/src/types/ui';
 import { useEffect, useRef } from 'react';
-import { Theme } from '../types/ui';
 
 const clamp = (value: number, min: number, max: number) =>
   Math.min(max, Math.max(min, value));

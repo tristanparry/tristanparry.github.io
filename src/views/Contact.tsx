@@ -2,8 +2,8 @@ import Section from '@/src/components/Section';
 import SocialButtons from '@/src/components/SocialButtons';
 import Terminal from '@/src/components/Terminal';
 import { SectionRoutes } from '@/src/constants/routes';
+import { TooltipPlacement } from '@/src/types/ui';
 import Footer from '@/src/views/Footer';
-import { TooltipPlacement } from '../types/ui';
 
 const Contact = () => {
   return (
