@@ -11,7 +11,7 @@ import { openUrl } from '@/src/utils/urls';
 import { useTerminal } from '@/src/utils/useTerminal';
 import clsx from 'clsx';
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface TerminalProps {
@@ -23,6 +23,8 @@ const Terminal = ({ className }: TerminalProps) => {
   const { theme } = useTheme();
   const terminalRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const visibilityFrameRef = useRef<number | null>(null);
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
   const isTerminalInView = useInView(terminalRef, {
     amount: 0.25,
     once: true,
@@ -42,6 +44,94 @@ const Terminal = ({ className }: TerminalProps) => {
     resetSession();
     window.requestAnimationFrame(() => inputRef.current?.focus());
   };
+
+  const keepInputVisible = () => {
+    const input = inputRef.current;
+    const viewport = window.visualViewport;
+    if (!input || !viewport) return;
+
+    const inputRect = input.getBoundingClientRect();
+    const viewportTop = viewport.offsetTop;
+    const viewportBottom = viewportTop + viewport.height;
+    if (inputRect.top >= viewportTop && inputRect.bottom <= viewportBottom) {
+      return;
+    }
+
+    input.scrollIntoView({ block: 'center', inline: 'nearest' });
+  };
+
+  const handleInputFocus = () => {
+    const viewport = window.visualViewport;
+    if (!viewport) return;
+
+    const updateInputPosition = () => {
+      visibilityFrameRef.current = null;
+      keepInputVisible();
+    };
+    const scheduleInputPosition = () => {
+      if (visibilityFrameRef.current !== null) return;
+      visibilityFrameRef.current =
+        window.requestAnimationFrame(updateInputPosition);
+    };
+
+    viewport.addEventListener('resize', scheduleInputPosition);
+    viewport.addEventListener('scroll', scheduleInputPosition);
+    scheduleInputPosition();
+
+    inputRef.current?.addEventListener(
+      'blur',
+      () => {
+        viewport.removeEventListener('resize', scheduleInputPosition);
+        viewport.removeEventListener('scroll', scheduleInputPosition);
+      },
+      { once: true },
+    );
+  };
+
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    const touch = event.touches[0];
+    touchStartRef.current = touch
+      ? { x: touch.clientX, y: touch.clientY }
+      : null;
+  };
+
+  const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+    const start = touchStartRef.current;
+    touchStartRef.current = null;
+    const touch = event.changedTouches[0];
+    if (!start || !touch) return;
+
+    const deltaY = touch.clientY - start.y;
+    const deltaX = touch.clientX - start.x;
+    if (deltaY < 48 || Math.abs(deltaY) < Math.abs(deltaX)) return;
+
+    const terminal = event.currentTarget;
+    if (terminal.scrollTop > 0) return;
+
+    const container = terminal.closest<HTMLElement>('[data-scroll-container]');
+    const section = terminal.closest<HTMLElement>('section[id]');
+    if (!container || !section) return;
+
+    const sections = Array.from(
+      container.querySelectorAll<HTMLElement>('section[id]'),
+    );
+    const previousSection = sections[sections.indexOf(section) - 1];
+    if (!previousSection) return;
+
+    container.scrollTo({
+      top: previousSection.offsetTop,
+      behavior: 'smooth',
+    });
+  };
+
+  useEffect(
+    () => () => {
+      if (visibilityFrameRef.current !== null) {
+        window.cancelAnimationFrame(visibilityFrameRef.current);
+      }
+    },
+    [],
+  );
 
   return (
     <motion.div
@@ -63,6 +153,8 @@ const Terminal = ({ className }: TerminalProps) => {
         ref={outputRef}
         role="log"
         aria-live="polite"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
         onWheelCapture={(event) => {
           const terminal = event.currentTarget;
           const hasOverflow = terminal.scrollHeight > terminal.clientHeight;
@@ -81,7 +173,7 @@ const Terminal = ({ className }: TerminalProps) => {
           event.stopPropagation();
           terminal.scrollBy({ top: event.deltaY });
         }}
-        className="terminal-scrollbar min-h-0 min-w-0 flex-1 overflow-y-auto overscroll-contain"
+        className="terminal-scrollbar min-h-0 min-w-0 flex-1 overflow-y-auto overscroll-y-auto"
       >
         <div className="text-tertiary-text flex flex-col">
           {Object.entries(SocialLinks).map(([name, url]) => (
@@ -140,6 +232,7 @@ const Terminal = ({ className }: TerminalProps) => {
                 value={input}
                 onChange={handleInputChange}
                 onKeyDown={handleKeyDown}
+                onFocus={handleInputFocus}
                 aria-label="Terminal command"
                 autoComplete="off"
                 autoCapitalize="off"
