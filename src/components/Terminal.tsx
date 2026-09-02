@@ -24,7 +24,6 @@ const Terminal = ({ className }: TerminalProps) => {
   const terminalRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const visibilityFrameRef = useRef<number | null>(null);
-  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
   const isTerminalInView = useInView(terminalRef, {
     amount: 0.25,
     once: true,
@@ -88,42 +87,6 @@ const Terminal = ({ className }: TerminalProps) => {
     );
   };
 
-  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
-    const touch = event.touches[0];
-    touchStartRef.current = touch
-      ? { x: touch.clientX, y: touch.clientY }
-      : null;
-  };
-
-  const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
-    const start = touchStartRef.current;
-    touchStartRef.current = null;
-    const touch = event.changedTouches[0];
-    if (!start || !touch) return;
-
-    const deltaY = touch.clientY - start.y;
-    const deltaX = touch.clientX - start.x;
-    if (deltaY < 48 || Math.abs(deltaY) < Math.abs(deltaX)) return;
-
-    const terminal = event.currentTarget;
-    if (terminal.scrollTop > 0) return;
-
-    const container = terminal.closest<HTMLElement>('[data-scroll-container]');
-    const section = terminal.closest<HTMLElement>('section[id]');
-    if (!container || !section) return;
-
-    const sections = Array.from(
-      container.querySelectorAll<HTMLElement>('section[id]'),
-    );
-    const previousSection = sections[sections.indexOf(section) - 1];
-    if (!previousSection) return;
-
-    container.scrollTo({
-      top: previousSection.offsetTop,
-      behavior: 'smooth',
-    });
-  };
-
   useEffect(
     () => () => {
       if (visibilityFrameRef.current !== null) {
@@ -153,8 +116,6 @@ const Terminal = ({ className }: TerminalProps) => {
         ref={outputRef}
         role="log"
         aria-live="polite"
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
         onWheelCapture={(event) => {
           const terminal = event.currentTarget;
           const hasOverflow = terminal.scrollHeight > terminal.clientHeight;
@@ -173,7 +134,7 @@ const Terminal = ({ className }: TerminalProps) => {
           event.stopPropagation();
           terminal.scrollBy({ top: event.deltaY });
         }}
-        className="terminal-scrollbar min-h-0 min-w-0 flex-1 overflow-y-auto overscroll-y-auto"
+        className="terminal-scrollbar min-h-0 min-w-0 flex-1 overflow-y-auto"
       >
         <div className="text-tertiary-text flex flex-col">
           {Object.entries(SocialLinks).map(([name, url]) => (

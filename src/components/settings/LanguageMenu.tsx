@@ -6,8 +6,10 @@ import { type LanguageCode, Language } from '@/src/types/i18n';
 import clsx from 'clsx';
 import { startCase } from 'lodash';
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const LanguageMenu = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -30,6 +32,17 @@ const LanguageMenu = () => {
       document.removeEventListener('keydown', onKeyDown);
     };
   }, [isOpen]);
+
+  useEffect(() => {
+    const setDocumentTitle = (language: string) => {
+      document.title = i18n.t('documentTitle', { lng: language });
+    };
+    setDocumentTitle(i18n.language);
+    i18n.on('languageChanged', setDocumentTitle);
+    return () => {
+      i18n.off('languageChanged', setDocumentTitle);
+    };
+  }, [t]);
 
   return (
     <div ref={containerRef} className="relative">
