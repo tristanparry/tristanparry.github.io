@@ -206,6 +206,37 @@
       }
     }
   },
+  "contact": {
+    "terminal": {
+        "links": {
+        "github": "View my GitHub",
+        "linkedin": "Connect on LinkedIn",
+        "email": "Send me an email"
+      },
+      "helpText": "Type 'help' to see available commands.",
+      "hostname": "portfolio",
+      "mobile": "Mobile",
+      "notFound": "command not found",
+      "reset": "Start new session",
+      "utils": {
+        "email": "Opening email client...",
+        "exit": "Session exited.",
+        "help": [
+          "Available commands:",
+          "- clear: Clear the terminal output.",
+          "- echo [text]: Display the provided text.",
+          "- email | mail: Send Tristan Parry an email.",
+          "- exit: End the terminal session.",
+          "- help: Show this help message.",
+          "- github: View Tristan Parry's GitHub profile.",
+          "- linkedin: View Tristan Parry's LinkedIn profile.",
+          "- ls: List available sections."
+        ],
+        "github": "Opening GitHub...",
+        "linkedin": "Opening LinkedIn..."
+      }
+    }
+  },
   "resume": {
     "actions": {
       "back": "Back",

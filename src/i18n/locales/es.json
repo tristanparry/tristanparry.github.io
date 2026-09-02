@@ -206,6 +206,37 @@
       }
     }
   },
+  "contact": {
+    "terminal": {
+      "links": {
+        "github": "Ver mi GitHub",
+        "linkedin": "Conecta conmigo en LinkedIn",
+        "email": "Envíame un correo electrónico"
+      },
+      "helpText": "Escribe 'help' para ver los comandos disponibles.",
+      "hostname": "portfolio",
+      "mobile": "Móvil",
+      "notFound": "comando no encontrado",
+      "reset": "Iniciar una nueva sesión",
+      "utils": {
+        "email": "Abriendo el cliente de correo...",
+        "exit": "Sesión finalizada.",
+        "help": [
+          "Comandos disponibles:",
+          "- clear: Limpia la salida de la terminal.",
+          "- echo [texto]: Muestra el texto proporcionado.",
+          "- email | mail: Envía un correo electrónico a Tristan Parry.",
+          "- exit: Finaliza la sesión de la terminal.",
+          "- help: Muestra este mensaje de ayuda.",
+          "- github: Abre el perfil de GitHub de Tristan Parry.",
+          "- linkedin: Abre el perfil de LinkedIn de Tristan Parry.",
+          "- ls: Muestra las secciones disponibles."
+        ],
+        "github": "Abriendo GitHub...",
+        "linkedin": "Abriendo LinkedIn..."
+      }
+    }
+  },
   "resume": {
     "actions": {
       "back": "Volver",

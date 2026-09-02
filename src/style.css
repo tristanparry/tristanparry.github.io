@@ -47,6 +47,20 @@ body::-webkit-scrollbar {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+.terminal-scrollbar {
+  scrollbar-color: var(--color-tertiary-bg) transparent;
+  scrollbar-width: thin;
+}
+.terminal-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.terminal-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.terminal-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-tertiary-bg);
+  border-radius: 999px;
+}
 
 body {
   cursor: var(--cursor-default, default);
@@ -70,6 +84,8 @@ button {
   --color-tertiary-text: hsl(0 0% 50%);
   --color-primary-accent: hsl(145 85% 30%);
   --color-secondary-accent: hsl(145 85% 40%);
+  --color-primary-terminal-accent: hsl(46, 100%, 57%);
+  --color-secondary-terminal-accent: hsl(300, 57%, 47%);
   --logo-total-length: 2900px;
   --font-size-base: 1rem;
   --type-scale: 1.25;
@@ -99,6 +115,8 @@ button {
   --color-tertiary-text: hsl(0 0% 50%);
   --color-primary-accent: hsl(145 85% 70%);
   --color-secondary-accent: hsl(145 85% 60%);
+  --color-primary-terminal-accent: hsl(46, 100%, 43%);
+  --color-secondary-terminal-accent: hsl(300, 57%, 53%);
 }
 
 h1 {
@@ -212,6 +230,8 @@ body.page-transition * {
   --color-tertiary-text: var(--color-tertiary-text);
   --color-primary-accent: var(--color-primary-accent);
   --color-secondary-accent: var(--color-secondary-accent);
+  --color-primary-terminal-accent: var(--color-primary-terminal-accent);
+  --color-secondary-terminal-accent: var(--color-secondary-terminal-accent);
   --font-heading: 'Fustat', sans-serif;
   --font-body: 'Manrope', sans-serif;
   --font-terminal: courier, monospace;

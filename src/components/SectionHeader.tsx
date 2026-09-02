@@ -25,7 +25,7 @@ const SectionHeader = ({ id, className }: SectionHeaderProps) => {
         ease: DEFAULT_ANIMATION_EASE,
       }}
       viewport={{ amount: 'all', once: false }}
-      className={clsx('font-heading mb-4 font-bold', className)}
+      className={clsx('font-heading mb-2 font-bold sm:mb-4', className)}
       style={{
         marginTop: `${navbarHeight}px`,
       }}

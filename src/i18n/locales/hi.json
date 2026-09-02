@@ -206,6 +206,37 @@
       }
     }
   },
+  "contact": {
+    "terminal": {
+      "links": {
+        "github": "मेरा GitHub देखें",
+        "linkedin": "LinkedIn पर जुड़ें",
+        "email": "मुझे ईमेल भेजें"
+      },
+      "helpText": "उपलब्ध commands देखने के लिए 'help' टाइप करें।",
+      "hostname": "portfolio",
+      "mobile": "मोबाइल",
+      "notFound": "command नहीं मिला",
+      "reset": "नया session शुरू करें",
+      "utils": {
+        "email": "ईमेल client खोला जा रहा है...",
+        "exit": "Session समाप्त हुआ।",
+        "help": [
+          "उपलब्ध commands:",
+          "- clear: Terminal output साफ़ करें।",
+          "- echo [text]: दिया गया text दिखाएँ।",
+          "- email | mail: Tristan Parry को ईमेल भेजें।",
+          "- exit: Terminal session समाप्त करें।",
+          "- help: यह help message दिखाएँ।",
+          "- github: Tristan Parry की GitHub profile खोलें।",
+          "- linkedin: Tristan Parry की LinkedIn profile खोलें।",
+          "- ls: उपलब्ध sections दिखाएँ।"
+        ],
+        "github": "GitHub खोला जा रहा है...",
+        "linkedin": "LinkedIn खोला जा रहा है..."
+      }
+    }
+  },
   "resume": {
     "actions": {
       "back": "वापस",

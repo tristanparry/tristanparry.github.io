@@ -200,6 +200,37 @@
       }
     }
   },
+  "contact": {
+    "terminal": {
+      "links": {
+        "github": "查看我的 GitHub",
+        "linkedin": "在 LinkedIn 上联系我",
+        "email": "给我发送电子邮件"
+      },
+      "helpText": "输入 'help' 查看可用命令。",
+      "hostname": "portfolio",
+      "mobile": "移动端",
+      "notFound": "找不到命令",
+      "reset": "开始新会话",
+      "utils": {
+        "email": "正在打开邮件客户端...",
+        "exit": "会话已结束。",
+        "help": [
+          "可用命令：",
+          "- clear：清除终端输出。",
+          "- echo [文本]：显示提供的文本。",
+          "- email | mail：给 Tristan Parry 发送电子邮件。",
+          "- exit：结束终端会话。",
+          "- help：显示此帮助信息。",
+          "- github：打开 Tristan Parry 的 GitHub 个人资料。",
+          "- linkedin：打开 Tristan Parry 的 LinkedIn 个人资料。",
+          "- ls：列出可用的页面部分。"
+        ],
+        "github": "正在打开 GitHub...",
+        "linkedin": "正在打开 LinkedIn..."
+      }
+    }
+  },
   "resume": {
     "actions": {
       "back": "返回",

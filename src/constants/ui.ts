@@ -10,6 +10,9 @@ export const DEFAULT_ICON_SIZE: number = 24;
 export const DEFAULT_CURSOR_SIZE: number = 16;
 export const DEFAULT_TOOLTIP_PLACEMENT: TooltipPlacement = TooltipPlacement.Top;
 
+// Copy
+export const SPACE = '\u00A0';
+
 // Icon Library
 const DEFAULT_ICON_LIBRARY = 'mynaui';
 export enum Icons {
