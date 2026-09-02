@@ -39,9 +39,13 @@ const Terminal = ({ className }: TerminalProps) => {
     resetSession,
   } = useTerminal();
 
+  const focusInput = () => {
+    inputRef.current?.focus({ preventScroll: true });
+  };
+
   const handleReset = () => {
     resetSession();
-    window.requestAnimationFrame(() => inputRef.current?.focus());
+    window.requestAnimationFrame(focusInput);
   };
 
   const keepInputVisible = () => {
@@ -52,11 +56,15 @@ const Terminal = ({ className }: TerminalProps) => {
     const inputRect = input.getBoundingClientRect();
     const viewportTop = viewport.offsetTop;
     const viewportBottom = viewportTop + viewport.height;
-    if (inputRect.top >= viewportTop && inputRect.bottom <= viewportBottom) {
-      return;
-    }
+    const isInputAboveViewport = inputRect.top < viewportTop + 12;
+    const isInputBelowViewport = inputRect.bottom > viewportBottom - 12;
+    if (!isInputAboveViewport && !isInputBelowViewport) return;
 
-    input.scrollIntoView({ block: 'center', inline: 'nearest' });
+    input.scrollIntoView({
+      block: 'nearest',
+      inline: 'nearest',
+      behavior: 'instant',
+    });
   };
 
   const handleInputFocus = () => {
@@ -65,6 +73,7 @@ const Terminal = ({ className }: TerminalProps) => {
 
     const updateInputPosition = () => {
       visibilityFrameRef.current = null;
+      if (document.activeElement !== inputRef.current) return;
       keepInputVisible();
     };
     const scheduleInputPosition = () => {
@@ -73,18 +82,22 @@ const Terminal = ({ className }: TerminalProps) => {
         window.requestAnimationFrame(updateInputPosition);
     };
 
-    viewport.addEventListener('resize', scheduleInputPosition);
-    viewport.addEventListener('scroll', scheduleInputPosition);
+    const stopTrackingInputPosition = () => {
+      viewport.removeEventListener('resize', scheduleInputPosition);
+      viewport.removeEventListener('scroll', scheduleInputPosition);
+    };
+
+    viewport.addEventListener('resize', scheduleInputPosition, {
+      passive: true,
+    });
+    viewport.addEventListener('scroll', scheduleInputPosition, {
+      passive: true,
+    });
     scheduleInputPosition();
 
-    inputRef.current?.addEventListener(
-      'blur',
-      () => {
-        viewport.removeEventListener('resize', scheduleInputPosition);
-        viewport.removeEventListener('scroll', scheduleInputPosition);
-      },
-      { once: true },
-    );
+    inputRef.current?.addEventListener('blur', stopTrackingInputPosition, {
+      once: true,
+    });
   };
 
   useEffect(
@@ -105,7 +118,7 @@ const Terminal = ({ className }: TerminalProps) => {
         duration: DEFAULT_ANIMATION_SCROLL_DURATION,
         ease: DEFAULT_ANIMATION_EASE,
       }}
-      onClick={() => inputRef.current?.focus()}
+      onClick={focusInput}
       className={clsx(
         'border-tertiary-bg font-terminal flex min-h-0 flex-col rounded-xl border p-4 text-white backdrop-blur-lg duration-200 hover:cursor-text',
         theme === Theme.Light ? 'bg-black/90' : 'bg-black/40',
